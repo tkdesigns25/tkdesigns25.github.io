@@ -1,0 +1,50 @@
+/* Custom Styles & Utilities */
+body {
+    /* Default to light mode colors, overridden by dark mode classes */
+    background-color: #F4F4F5;
+    color: #18181B;
+    overflow-x: hidden;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Spotlight Effect */
+.bento-grid:hover .bento-card {
+    opacity: 0.5;
+    transition: opacity 0.4s ease;
+}
+
+.bento-grid .bento-card:hover {
+    opacity: 1;
+    transform: scale(1.01);
+    z-index: 10;
+}
+
+/* Hide scrollbar for clean look */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #d4d4d8;
+    border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #121212;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #333;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a1a1aa;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
