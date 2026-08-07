@@ -225,15 +225,29 @@
                     <img src="assets/willowkitchen.png" alt="Willow Kitchen KDS"
                          class="absolute inset-0 w-full h-full object-cover
                                 transition-transform duration-400 ease-premium
-                                group-hover:scale-[1.04]">
+                                group-hover:scale-[1.04]
+                                grayscale-[40%] brightness-75">
+                    <!-- grey desaturating overlay -->
+                    <div class="absolute inset-0 bg-zinc-900/40"></div>
                     <!-- gradient overlay -->
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+                    <!-- WIP badge -->
+                    <div class="absolute top-4 left-4 flex items-center gap-2
+                                px-3 py-1.5 rounded-full
+                                bg-zinc-900/80 backdrop-blur-sm
+                                border border-zinc-600/60">
+                        <span class="relative flex h-2 w-2 shrink-0">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
+                        </span>
+                        <span class="text-[10px] font-mono font-semibold tracking-widest uppercase text-amber-300">Work in Progress</span>
+                    </div>
                     <!-- text -->
                     <div class="absolute bottom-0 left-0 w-full p-6">
                         <span class="text-[10px] font-mono text-zinc-400 tracking-widest uppercase block mb-2">Kitchen Display System &middot; UX Case Study</span>
                         <h3 class="text-xl font-serif text-white mb-1.5">Willow Kitchen KDS</h3>
                         <p class="text-zinc-300 text-sm leading-relaxed line-clamp-2">
-                            Designing visual calm and failsafe logic for high-throughput cloud kitchens — a real-time, multi-brand order display system.
+                            Designing visual calm and failsafe logic for high-throughput cloud kitchens &mdash; a real-time, multi-brand order display system.
                         </p>
                     </div>
                 </a>
