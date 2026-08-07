@@ -278,6 +278,13 @@
       nav.topnav { padding: 0 16px; }
       footer { padding: 32px 20px; }
     }
+    /* WIP: grey out all sections except Decision Stories */
+    .wip-grey { position: relative; pointer-events: none; user-select: none; }
+    .wip-grey::after { content: ''; position: absolute; inset: 0; background: rgba(253,248,241,0.72); backdrop-filter: grayscale(0.6); z-index: 10; pointer-events: none; }
+    .dark-bg.wip-grey::after { background: rgba(55,8,8,0.72); }
+    .alt-bg.wip-grey::after { background: rgba(242,232,216,0.72); }
+    #s1.wip-grey, footer { pointer-events: none; }
+    a.wip-grey, a.wip-grey * { pointer-events: none; }
   </style>
 </head>
 <body>
@@ -315,7 +322,7 @@
 <main>
 
 <!-- S1: MISSION -->
-<section id="s1" class="section">
+<section id="s1" class="section wip-grey">
   <div class="hero-wrap">
     <div class="hero-left">
       <div class="hero-kicker reveal"><em>01 / 09</em> &nbsp;Defining the Mission</div>
@@ -362,7 +369,7 @@
 </section>
 
 <!-- S2: PROBLEM -->
-<section id="s2" class="section alt-bg">
+<section id="s2" class="section alt-bg wip-grey">
   <div class="section-inner">
     <div class="s-num reveal">02 / 09</div>
     <h2 class="s-title reveal">Stepping into the Steamy Kitchen: Why Standard SaaS Dashboards Fail Cooks</h2>
@@ -408,7 +415,7 @@
 </section>
 
 <!-- S3: WORKFLOW -->
-<section id="s3" class="section">
+<section id="s3" class="section wip-grey">
   <div class="section-inner">
     <div class="s-num reveal">03 / 09</div>
     <h2 class="s-title reveal">From Ingestion to Handover: The 4-Column Operational Journey</h2>
@@ -647,7 +654,7 @@
 </section>
 
 <!-- S5: USER FLOWS -->
-<section id="s5" class="section">
+<section id="s5" class="section wip-grey">
   <div class="section-inner">
     <div class="s-num reveal">05 / 09</div>
     <h2 class="s-title reveal">Beyond the Happy Path: How Three Different Staff Members Navigate the Pass</h2>
@@ -743,7 +750,7 @@
 </section>
 
 <!-- S6: CRAFT -->
-<section id="s6" class="section dark-bg">
+<section id="s6" class="section dark-bg wip-grey">
   <div class="section-inner">
     <div class="s-num reveal">06 / 09</div>
     <h2 class="s-title reveal">Craft &amp; Execution: How Systematic Tokens and Auto Layout Built a Rugged UI</h2>
@@ -779,7 +786,7 @@
 </section>
 
 <!-- S7: REFLECTION -->
-<section id="s7" class="section alt-bg">
+<section id="s7" class="section alt-bg wip-grey">
   <div class="section-inner">
     <div class="s-num reveal">07 / 09</div>
     <h2 class="s-title reveal">Shift Reflection: What Building Under Pressure Taught Me About Visual Discipline</h2>
@@ -800,7 +807,7 @@
 </section>
 
 <!-- S8: UNFINISHED EDGE -->
-<section id="s8" class="section">
+<section id="s8" class="section wip-grey">
   <div class="section-inner">
     <div class="s-num reveal">08 / 09</div>
     <h2 class="s-title reveal">The Unfinished Edge: What I Would Explore with More Time</h2>
@@ -822,7 +829,7 @@
 </section>
 
 <!-- S9: FEEDBACK -->
-<section id="s9" class="section dark-bg">
+<section id="s9" class="section dark-bg wip-grey">
   <div class="section-inner">
     <div class="s-num reveal">09 / 09</div>
     <h2 class="s-title reveal">Closing the Shift: A Human Invitation for Feedback</h2>
