@@ -441,7 +441,7 @@
   </div>
   <div class="proto-wrap reveal" style="max-width:1100px;margin:0 auto;padding:0 40px 0 80px;">
     <div id="proto-box" style="position:relative;width:100%;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fdf8f1;box-shadow:0 16px 48px rgba(55,8,8,0.12);">
-      <iframe src="kds/index.html?preview=true" id="proto-iframe" style="width:1440px;height:880px;border:none;transform-origin:top left;display:block;" title="Willow Kitchen KDS Interactive Preview"></iframe>
+      <iframe src="kds/index.html?preview=true" id="proto-iframe" style="width:1280px;height:780px;border:none;transform-origin:top left;display:block;" title="Willow Kitchen KDS Interactive Preview"></iframe>
     </div>
   </div>
 </section>
@@ -1249,10 +1249,10 @@
     const iframe = document.getElementById('proto-iframe');
     if (!box || !iframe) return;
     const containerWidth = box.clientWidth;
-    const targetWidth = 1440;
+    const targetWidth = 1280;
     const scale = containerWidth / targetWidth;
     iframe.style.transform = `scale(${scale})`;
-    box.style.height = `${880 * scale}px`;
+    box.style.height = `${780 * scale}px`;
   }
   window.addEventListener('resize', resizeProtoIframe);
   window.addEventListener('load', resizeProtoIframe);
