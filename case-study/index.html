@@ -348,6 +348,20 @@
     .ds-half-body strong { color: var(--ink); }
     .ds-half-body code { font-family: var(--font-mono); font-size: 11px; background: var(--parchment); padding: 1px 5px; border-radius: 3px; color: var(--oxblood); }
     @media (max-width: 768px) { .ds-two-col { grid-template-columns: 1fr; } }
+    /* Eyebrow & Monitor Frame */
+    .hero-eyebrow { display: inline-block; padding: 5px 12px; background: var(--linen); border-radius: 5px; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--graphite); margin-bottom: 20px; }
+    .monitor-frame { position: relative; width: 100%; display: flex; flex-direction: column; align-items: center; }
+    .monitor-screen { width: 100%; background: #1a1410; border-radius: 12px; padding: 10px; border: 1px solid var(--border); box-shadow: 0 32px 80px rgba(55,8,8,0.22); }
+    .monitor-screen img { width: 100%; display: block; border-radius: 6px; }
+    .monitor-stand { width: 70px; height: 24px; background: linear-gradient(180deg, var(--parchment), var(--linen)); border: 1px solid var(--border); border-top: none; }
+    .monitor-base { width: 180px; height: 8px; background: var(--linen); border: 1px solid var(--border); border-radius: 3px 3px 6px 6px; box-shadow: 0 4px 12px rgba(55,8,8,0.1); }
+    
+    /* Interactive Prototype Controls & Station Buttons */
+    .proto-lane-btn-group { display: flex; gap: 3px; align-items: center; }
+    .proto-lane-btn-sm { padding: 3px 6px; background: var(--linen); border: 1px solid var(--border); border-radius: 2px; font-size: 9px; font-weight: 700; color: var(--oxblood); cursor: pointer; font-family: var(--font-ui); }
+    .proto-lane-btn-sm:hover { background: var(--parchment); }
+    .proto-rider-bar { font-size: 10px; font-family: var(--font-mono); color: var(--oxblood); background: rgba(55,8,8,0.05); padding: 4px 8px; border-radius: 3px; display: flex; justify-content: space-between; align-items: center; margin-top: 4px; }
+    .proto-call-rider-btn { font-size: 9px; font-weight: 700; padding: 2px 6px; background: var(--oxblood); color: var(--vellum); border: none; border-radius: 2px; cursor: pointer; }
   </style>
 </head>
 <body>
@@ -389,35 +403,33 @@
 <section id="s1" class="section wip-grey">
   <div class="hero-wrap">
     <div class="hero-left">
-      <div class="hero-kicker reveal"><em>01 / 10</em> &nbsp;Willow Kitchen KDS</div>
-      <h1 class="hero-h1 reveal d1">A real-time display system built to make kitchen managers&rsquo; decision-making faster and accelerate order preparation during the rush.</h1>
-      <p class="hero-p reveal d2">It unifies fragmented delivery apps into one clear, glare-free workspace, helping kitchen teams balance station loads, save canceled food, and coordinate couriers with zero manual friction.</p>
-      <div class="hero-meta reveal d3">
-        <div class="meta-item"><span class="meta-label">Role</span><span class="meta-val">Product Designer &amp; Developer</span></div>
-        <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-val">4-week sprint &middot; 1-week code</span></div>
-        <div class="meta-item"><span class="meta-label">Platform</span><span class="meta-val">React &middot; TypeScript &middot; Vite</span></div>
-      </div>
+      <div class="hero-eyebrow reveal">01 / 10 &middot; WILLOW KITCHEN KDS</div>
+      <h1 class="hero-h1 reveal d1" style="font-size: clamp(28px, 4vw, 40px);">A cloud kitchen dashboard built to make manager&rsquo;s decision making faster and help accelerate order delivery</h1>
+      <p class="hero-p reveal d2" style="font-size: 18px; max-width: 520px;">It unifies fragmented delivery apps into one clear, glare-free workspace, helping kitchen teams balance station loads, save canceled food, and coordinate couriers with zero manual friction.</p>
       <div class="btn-row reveal d4">
-        <a class="btn-primary" href="https://willow-kitchen.vercel.app/" target="_blank" rel="noopener">Open Live Prototype &rarr;</a>
-        <a class="btn-ghost" href="#s3">Replay Case Study &darr;</a>
+        <a class="btn-primary" href="https://willow-kitchen.vercel.app/" target="_blank" rel="noopener">OPEN LIVE PROTOTYPE &rarr;</a>
+        <a class="btn-ghost" href="#s3" style="background: var(--linen);">READ CASE STUDY &darr;</a>
       </div>
     </div>
     <div class="hero-visual reveal d2">
-      <img src="Hero Mockup.png" alt="Willow Kitchen KDS dashboard" style="width:100%;border-radius:8px;box-shadow:0 24px 64px rgba(55,8,8,0.22);display:block;">
+      <div class="monitor-frame">
+        <div class="monitor-screen">
+          <img src="Hero Mockup.png" alt="Willow Kitchen KDS dashboard interface" class="hero-mockup-img">
+        </div>
+        <div class="monitor-stand"></div>
+        <div class="monitor-base"></div>
+      </div>
     </div>
   </div>
 </section>
-
-
-<!-- S2: INTERACTIVE PROTOTYPE -->
-<section id="s2" class="section alt-bg wip-grey">
-  <div class="section-inner">
+<section id="s2" class="section alt-bg wip-grey" style="background: var(--vellum);">
+  <div class="section-inner" style="max-width:1100px;padding:0 40px 0 80px;">
     <div class="s-num reveal">02 / 10</div>
     <h2 class="s-title reveal">Try It: The Interactive Prototype</h2>
-    <p class="s-sub reveal">A restricted preview of the working KDS. Walk a two-order cycle from arrival to handover. Advanced controls are locked &mdash; they&rsquo;ll prompt you to open the full live app.</p>
+    <p class="s-sub reveal">An integrated preview of the working KDS using production components. Walk a two-order cycle from arrival to handover. Advanced controls will prompt you to open the full live app.</p>
     <div class="divider reveal"></div>
   </div>
-  <div class="proto-wrap reveal">
+  <div class="proto-wrap reveal" style="border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--vellum);">
     <div class="proto-header">
       <div class="proto-brand">
         <svg width="18" height="18" viewBox="0 0 100 100" fill="none" stroke="var(--oxblood)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M 12 86 C 38 74 62 74 88 86 C 62 80 38 80 12 86 Z" fill="var(--oxblood)" stroke="none"/><path d="M 50 82 L 50 42" stroke-width="7"/><path d="M 50 46 C 70 40 90 22 90 44 L 90 70 M 83 44 L 83 70 M 76 40 L 76 70 M 69 36 L 69 70"/></svg>
@@ -460,16 +472,15 @@
   <div class="proto-modal-overlay" id="proto-teaser-modal" style="display:none;">
     <div class="proto-modal">
       <div class="proto-modal-eyebrow">VIEW FULL WORKING PRODUCT?</div>
-      <h3 class="proto-modal-title">This control is locked in preview mode.</h3>
+      <h3 class="proto-modal-title">This advanced control is locked in the preview mode.</h3>
       <p class="proto-modal-body">Would you like to experience the full, live KDS with simulated order floods and active platform toggles?</p>
       <div class="proto-modal-actions">
-        <button class="proto-modal-btn-ghost" onclick="protoCloseModal()">No, Keep Exploring</button>
+        <button class="proto-modal-btn-ghost" onclick="protoCloseModal()">No, Keep Reading</button>
         <a class="proto-modal-btn-primary" href="https://willow-kitchen.vercel.app/" target="_blank" rel="noopener" onclick="protoCloseModal()">Yes, Open Live App &rarr;</a>
       </div>
     </div>
   </div>
 </section>
-<!-- S3: PROBLEM -->
 <section id="s3" class="section alt-bg wip-grey">
   <div class="section-inner">
     <div class="s-num reveal">03 / 10</div>
@@ -966,42 +977,248 @@
 </footer>
 
 <script>
-  const bar = document.getElementById('progress-bar');
-  window.addEventListener('scroll', () => {
-    const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
-    bar.style.width = Math.min(pct, 100) + '%';
-  }, { passive: true });
+// ── Willow Kitchen Interactive Prototype ──────────────────────
+(function() {
+  const ORDERS = [
+    { id:'#138', brand:'Patty & Bun', source:'Swiggy', customer:'Ankit S.', rider:'Rahul (Swiggy)', riderEta:'3m away', items:[
+      {name:'Classic Burger', station:'Grill', qty:1},
+      {name:'Loaded Fries', station:'Hot', qty:1},
+      {name:'Oreo Shake', station:'Assembly', qty:1}
+    ]},
+    { id:'#139', brand:'Wok & Roll', source:'Zomato', customer:'Priya M.', rider:'Vikram (Zomato)', riderEta:'5m away', items:[
+      {name:'Veg Fried Rice', station:'Hot', qty:1},
+      {name:'Chilli Paneer', station:'Grill', qty:1},
+      {name:'Spring Roll x2', station:'Assembly', qty:2}
+    ]},
+    { id:'#140', brand:'Patty & Bun', source:'Swiggy', customer:'Rohan K.', rider:'Suresh (Swiggy)', riderEta:'2m away', items:[
+      {name:'Double Smash Burger', station:'Grill', qty:1},
+      {name:'Peri-Peri Fries', station:'Hot', qty:1},
+      {name:'Mango Lassi', station:'Assembly', qty:1}
+    ]},
+    { id:'#141', brand:'Wok & Roll', source:'Zomato', customer:'Neha T.', rider:'Amit (Zomato)', riderEta:'4m away', items:[
+      {name:'Hakka Noodles', station:'Hot', qty:1},
+      {name:'Crispy Corn', station:'Assembly', qty:1},
+      {name:'Paneer Tikka', station:'Grill', qty:1}
+    ]}
+  ];
 
-  const sections = document.querySelectorAll('section[id]');
-  const dots = document.querySelectorAll('.toc-dot');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        const id = e.target.id;
-        dots.forEach(d => d.classList.toggle('active', d.dataset.s === id));
-      }
+  let state = { phase:0, itemStates:{}, itemLanes:{}, handedOver:[], rejected:{} };
+  let currentPair = [0,1];
+
+  function qs(id){ return document.getElementById(id); }
+  function setStatus(msg){ const el=qs('proto-status-msg'); if(el) el.innerHTML=msg; }
+  function setCount(id,n){ const el=qs(id); if(el) el.textContent=n; }
+
+  function renderNewOrderCard(ord) {
+    const div = document.createElement('div');
+    div.className = 'proto-order-card';
+    div.id = 'new-card-'+ord.id;
+    div.innerHTML = `
+      <div class="proto-card-head">
+        <span class="proto-card-id">${ord.id}</span>
+        <span class="proto-card-brand">${ord.source} &middot; ${ord.customer}</span>
+      </div>
+      <div class="proto-card-items">
+        ${ord.items.map(i=>`<div class="proto-card-item">${i.qty > 1 ? i.qty+'x ':''} ${i.name}</div>`).join('')}
+      </div>
+      <div style="display:flex;gap:4px;margin-top:4px;">
+        <button class="proto-btn" style="flex:2;" onclick="protoStartOrder('${ord.id}')">Start Order &rarr;</button>
+        <button class="proto-btn" style="flex:1;background:var(--linen);color:var(--graphite);border:1px solid var(--border);" onclick="protoRejectOrder('${ord.id}')">Reject</button>
+      </div>
+    `;
+    return div;
+  }
+
+  function renderActiveCard(ord) {
+    const div = document.createElement('div');
+    div.className = 'proto-order-card';
+    div.id = 'active-card-'+ord.id;
+    const allDone = ord.items.every(i => (state.itemStates[ord.id+'_'+i.name]||'queued') === 'done');
+    if(allDone) div.classList.add('proto-ready-card');
+    
+    div.innerHTML = `
+      <div class="proto-card-head">
+        <span class="proto-card-id">${ord.id}</span>
+        <span class="proto-card-brand">${ord.brand} &middot; ${ord.customer}</span>
+      </div>
+      <div class="proto-card-items">
+        ${ord.items.map(i=>{
+          const st = state.itemStates[ord.id+'_'+i.name] || 'queued';
+          const icon = st==='done' ? '&#10003; ' : st==='cooking' ? '&#128293; ' : st==='hold' ? '&#9208; ' : '&#9679; ';
+          return `<div class="proto-card-item" style="color:${st==='done'?'var(--green)':st==='cooking'?'var(--oxblood)':st==='hold'?'var(--graphite)':'var(--graphite)'}">${icon}${i.qty > 1 ? i.qty+'x ':''}${i.name} <span style="float:right;font-size:9px;opacity:0.6;">${st}</span></div>`;
+        }).join('')}
+      </div>
+      <div class="proto-rider-bar">
+        <span>&#128757; ${ord.rider}</span>
+        <button class="proto-call-rider-btn" onclick="alert('Calling rider ${ord.rider}...')">Call Rider</button>
+      </div>
+      ${allDone ? `<button class="proto-btn proto-btn-gold" style="margin-top:6px;" onclick="protoHandover('${ord.id}')">&#10003; Confirm Handover</button>` : '<div style="font-size:10px;color:var(--graphite);text-align:center;padding:4px 0">Prep in progress&hellip;</div>'}
+    `;
+    return div;
+  }
+
+  function renderLaneItem(ordId, item, index, total) {
+    const key = ordId+'_'+item.name;
+    const st = state.itemStates[key] || 'queued';
+    const div = document.createElement('div');
+    div.className = 'proto-lane-item state-'+st;
+    div.id = 'lane-item-'+key.replace(/[^a-z0-9]/gi,'_');
+    div.innerHTML = `
+      <div style="flex:1">
+        <div class="proto-lane-item-name">${item.qty > 1 ? item.qty+'x ':''}${item.name}</div>
+        <div class="proto-lane-item-order">${ordId} &middot; <span style="opacity:0.7;">${st}</span></div>
+      </div>
+      <div class="proto-lane-btn-group">
+        ${st === 'queued' ? `<button class="proto-lane-btn" onclick="protoMarkCooking('${ordId}','${item.name}')">Prep</button>` :
+          st === 'cooking' ? `<button class="proto-lane-btn" style="background:var(--green);" onclick="protoMarkDone('${ordId}','${item.name}')">Done</button>` :
+          '<span style="font-size:10px;color:var(--green);">&#10003;</span>'}
+        <button class="proto-lane-btn-sm" title="Hold Item" onclick="protoToggleHold('${ordId}','${item.name}')">${st==='hold'?'Resume':'Hold'}</button>
+        <button class="proto-lane-btn-sm" title="Move Up" onclick="protoMoveItem('${ordId}','${item.name}', -1)">&#9650;</button>
+        <button class="proto-lane-btn-sm" title="Move Down" onclick="protoMoveItem('${ordId}','${item.name}', 1)">&#9660;</button>
+      </div>
+    `;
+    return div;
+  }
+
+  function renderHandoverCard(ord) {
+    const div = document.createElement('div');
+    div.className = 'proto-handover-card';
+    div.innerHTML = `
+      <div class="proto-card-head">
+        <span class="proto-card-id" style="color:var(--gold);">${ord.id}</span>
+        <span class="proto-card-brand">${ord.customer}</span>
+      </div>
+      <div style="font-size:11px;color:var(--graphite);margin-top:4px;">Bag packed &amp; sealed &mdash; ready for delivery.</div>
+      <div class="proto-rider-bar" style="margin-top:8px;">
+        <span>&#127975; ${ord.rider}</span>
+        <button class="proto-call-rider-btn" onclick="alert('Calling rider ${ord.rider}...')">Call Rider</button>
+      </div>
+    `;
+    return div;
+  }
+
+  function fullRender() {
+    const col1 = qs('proto-new-orders');
+    const col2 = qs('proto-active-orders');
+    const hot = qs('hot-items');
+    const grill = qs('grill-items');
+    const assembly = qs('assembly-items');
+    const col4 = qs('proto-handover');
+    if(!col1||!col2||!hot||!grill||!assembly||!col4) return;
+
+    col1.innerHTML=''; col2.innerHTML=''; hot.innerHTML=''; grill.innerHTML=''; assembly.innerHTML=''; col4.innerHTML='';
+
+    const newOrds = currentPair.filter(i => !state['started_'+ORDERS[i].id] && !state['done_'+ORDERS[i].id] && !state.rejected[ORDERS[i].id]);
+    const activeOrds = currentPair.filter(i => state['started_'+ORDERS[i].id] && !state['done_'+ORDERS[i].id]);
+    const doneOrds = currentPair.filter(i => state['done_'+ORDERS[i].id]);
+
+    newOrds.forEach(i => col1.appendChild(renderNewOrderCard(ORDERS[i])));
+    activeOrds.forEach(i => {
+      col2.appendChild(renderActiveCard(ORDERS[i]));
+      ORDERS[i].items.forEach((item, idx) => {
+        const el = renderLaneItem(ORDERS[i].id, item, idx, ORDERS[i].items.length);
+        if(item.station==='Hot') hot.appendChild(el);
+        else if(item.station==='Grill') grill.appendChild(el);
+        else assembly.appendChild(el);
+      });
     });
-  }, { rootMargin: '-38% 0px -38% 0px' });
-  sections.forEach(s => io.observe(s));
+    doneOrds.forEach(i => col4.appendChild(renderHandoverCard(ORDERS[i])));
 
-  const reveals = document.querySelectorAll('.reveal');
-  const ro = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
-  reveals.forEach(el => ro.observe(el));
+    setCount('col1-count', newOrds.length);
+    setCount('col2-count', activeOrds.length);
+    setCount('col4-count', doneOrds.length);
 
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const t = document.getElementById(a.getAttribute('href').slice(1));
-      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
-    });
+    // Check if both done/rejected → spawn next pair
+    const totalProcessed = doneOrds.length + Object.keys(state.rejected).filter(id => currentPair.some(i => ORDERS[i].id === id)).length;
+    if(totalProcessed === currentPair.length && currentPair[0] < 2) {
+      setTimeout(() => {
+        currentPair = [2,3];
+        state = { phase:0, itemStates:{}, itemLanes:{}, handedOver:[], rejected:{} };
+        setStatus('&#9654; Next pair arrived! Walk orders #140 and #141 through the kitchen.');
+        fullRender();
+      }, 1200);
+    } else if(totalProcessed === currentPair.length && currentPair[0] >= 2) {
+      setStatus('&#10003; Full cycle complete! All orders processed. Click &ldquo;Reset Demo&rdquo; to restart.');
+    } else if(activeOrds.length > 0) {
+      setStatus('Click &ldquo;Prep&rdquo; on station items to cook. Reorder with &#9650;/&#9660; or Hold. Confirm handover when ready.');
+    } else if(newOrds.length > 0) {
+      setStatus('&#9654; Two orders arrived &mdash; click &ldquo;Start Order&rdquo; on both cards to begin prep.');
+    }
+  }
+
+  window.protoStartOrder = function(ordId) {
+    const ord = ORDERS.find(o => o.id === ordId);
+    if(!ord) return;
+    state['started_'+ordId] = true;
+    ord.items.forEach(item => { state.itemStates[ordId+'_'+item.name] = 'queued'; });
+    fullRender();
+  };
+
+  window.protoRejectOrder = function(ordId) {
+    state.rejected[ordId] = true;
+    fullRender();
+  };
+
+  window.protoMarkCooking = function(ordId, itemName) {
+    state.itemStates[ordId+'_'+itemName] = 'cooking';
+    fullRender();
+  };
+
+  window.protoMarkDone = function(ordId, itemName) {
+    state.itemStates[ordId+'_'+itemName] = 'done';
+    fullRender();
+  };
+
+  window.protoToggleHold = function(ordId, itemName) {
+    const key = ordId+'_'+itemName;
+    state.itemStates[key] = state.itemStates[key] === 'hold' ? 'queued' : 'hold';
+    fullRender();
+  };
+
+  window.protoMoveItem = function(ordId, itemName, dir) {
+    const ord = ORDERS.find(o => o.id === ordId);
+    if(!ord) return;
+    const idx = ord.items.findIndex(i => i.name === itemName);
+    if(idx < 0) return;
+    const targetIdx = idx + dir;
+    if(targetIdx >= 0 && targetIdx < ord.items.length) {
+      const temp = ord.items[idx];
+      ord.items[idx] = ord.items[targetIdx];
+      ord.items[targetIdx] = temp;
+      fullRender();
+    }
+  };
+
+  window.protoHandover = function(ordId) {
+    state['done_'+ordId] = true;
+    fullRender();
+  };
+
+  window.protoTriggerLocked = function() {
+    const m = qs('proto-teaser-modal');
+    if(m) m.style.display = 'flex';
+  };
+
+  window.protoCloseModal = function() {
+    const m = qs('proto-teaser-modal');
+    if(m) m.style.display = 'none';
+  };
+
+  window.protoReset = function() {
+    currentPair = [0,1];
+    state = { phase:0, itemStates:{}, itemLanes:{}, handedOver:[], rejected:{} };
+    setStatus('&#9654; Two orders are ready &mdash; click &ldquo;Start Order&rdquo; on both cards to begin.');
+    fullRender();
+  };
+
+  document.addEventListener('click', function(e) {
+    const overlay = qs('proto-teaser-modal');
+    if(e.target === overlay) protoCloseModal();
   });
 
-  window.addEventListener('load', () => {
-    document.querySelectorAll('#s1 .reveal').forEach((el, i) => {
-      setTimeout(() => el.classList.add('visible'), i * 100);
-    });
-  });
+  document.addEventListener('DOMContentLoaded', function() { fullRender(); });
+  if(document.readyState !== 'loading') fullRender();
+})();
 </script>
 <script>
 // ── Willow Kitchen Interactive Prototype ──────────────────────
