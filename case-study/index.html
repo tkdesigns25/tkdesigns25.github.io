@@ -621,19 +621,19 @@
       <div class="ds-badge reveal"><span class="ds-badge-dot"></span>DECISION STORY 1 &middot; STATION QUEUE SYSTEM</div>
       <div class="ds-title reveal">Why I decided to show prep items in station-wise queues instead of keeping them inside individual order cards.</div>
       <img src="Station Queue.gif" alt="Station Queue System demo" class="ds-gif reveal" style="width:100%;border-radius:6px;border:1px solid var(--border);display:block;margin:16px 0;">
-      <div class="ds-three-col reveal">
-        <div class="ds-card">
-          <div class="ds-card-label">The Problem</div>
-          <p class="ds-card-body">When I tried showing items under <strong>individual order cards</strong>, it was too much to look at for the manager when trying to organize, prioritize, or cook things together. With multiple orders coming through, it was very chaotic, and an item at the top of the column might be the exact same as an item at the bottom. The manager had to constantly shift their eyes between different cards to manage timings, taking up all their time just to <strong>recognize items</strong> instead of taking action, directly <strong>delaying the orders</strong>.</p>
+      <div class="ds-two-col reveal">
+        <div class="ds-half">
+          <div class="ds-half-label">THE OPERATIONAL BOTTLENECK</div>
+          <p class="ds-half-body">When I tried showing items under <strong>individual order cards</strong>, it was too much to look at for the manager when trying to organize, prioritize, or cook things together. With multiple orders coming through, it was very chaotic, and an item at the top of the column might be the exact same as an item at the bottom. The manager had to constantly shift their eyes between different cards to manage timings, taking up all their time just to <strong>recognize items</strong> instead of taking action, directly <strong>delaying the orders</strong>.</p>
         </div>
-        <div class="ds-card">
-          <div class="ds-card-label">The Design Solution</div>
-          <p class="ds-card-body">So, I built a <strong>station-wise queue system</strong> where items split automatically into dedicated lanes (<code>Hot</code>, <code>Grill</code>, <code>Assembly</code>) based on stations, allowing the manager to track them by <code>order number</code>. I added simple arrow buttons and <code>drag-and-drop</code> so the manager can comfortably move items up or down. I also added a <code>Prep Together</code> option for similar items, with the granular control to <strong>hold back a specific item</strong> if some need to go out immediately while others can be delayed.</p>
+        <div class="ds-half">
+          <div class="ds-half-label">THE DESIGN RESOLUTION</div>
+          <p class="ds-half-body">So, I built a <strong>station-wise queue system</strong> where items split automatically into dedicated lanes (<code>Hot</code>, <code>Grill</code>, <code>Assembly</code>) based on stations, allowing the manager to track them by <code>order number</code>. I added simple arrow buttons and <code>drag-and-drop</code> so the manager can comfortably move items up or down. I also added a <code>Prep Together</code> option for similar items, with the granular control to <strong>hold back a specific item</strong> if some need to go out immediately while others can be delayed.</p>
         </div>
-        <div class="ds-card ds-result">
-          <div class="ds-card-label">The Result</div>
-          <p class="ds-card-body">Once an item is finished cooking and leaves the station queue, it is automatically marked as finished inside the parent order card. This allows the manager to track items based on the order number, <strong>take decisions faster</strong>, and <strong>take actions faster</strong>, directly increasing speed in the kitchen and delivering orders on time.</p>
-        </div>
+      </div>
+      <div class="result-box reveal">
+        <div class="result-label">THE RESULT</div>
+        <p class="result-text">Once an item is finished cooking and leaves the station queue, it is automatically marked as finished inside the parent order card. This allows the manager to track items based on the order number, <strong>take decisions faster</strong>, and <strong>take actions faster</strong>, directly increasing speed in the kitchen and delivering orders on time.</p>
       </div>
     </div>
 
@@ -647,19 +647,19 @@
         <span class="img-ph-sub">Order cancellation event triggers in Column 2. Item transitions smoothly into the Column 4 &ldquo;Up for Grabs&rdquo; pool. New order lands, showing the golden &ldquo;Use Up for Grabs&rdquo; trigger.</span>
         <span class="img-ph-tag">&#127909; 16:9 GIF &middot; Up for Grabs Recovery</span>
       </div>
-      <div class="ds-three-col reveal">
-        <div class="ds-card">
-          <div class="ds-card-label">The Problem</div>
-          <p class="ds-card-body">Cancellations happen frequently in the middle of preparation, but in my early drafts, when an aggregator sent a cancellation, the ticket was simply deleted from the screen. If I am the kitchen manager, completely erasing the card means good food goes straight into the trash, causing <strong>high food waste</strong> and directly hurting <strong>restaurant margins</strong>. I wanted a system that would prevent this waste by letting the manager reuse canceled, prepped food for other orders.</p>
+      <div class="ds-two-col reveal">
+        <div class="ds-half">
+          <div class="ds-half-label">THE OPERATIONAL BOTTLENECK</div>
+          <p class="ds-half-body">Cancellations happen frequently in the middle of preparation, but in my early drafts, when an aggregator sent a cancellation, the ticket was simply deleted from the screen. If I am the kitchen manager, completely erasing the card means good food goes straight into the trash, causing <strong>high food waste</strong> and directly hurting <strong>restaurant margins</strong>. I wanted a system that would prevent this waste by letting the manager reuse canceled, prepped food for other orders.</p>
         </div>
-        <div class="ds-card">
-          <div class="ds-card-label">The Design Solution</div>
-          <p class="ds-card-body">I created the <strong>&ldquo;Up for Grabs&rdquo;</strong> section in Column 4 where canceled items sit for exactly 30 minutes, backed by an active countdown bar to ensure food safety and freshness. If a new order arrives requiring that exact item within the 30-minute window, a subtle <code>&#8635; Fulfill from Canceled</code> prompt appears on the card, letting the manager decide to reuse it with a <strong>single click</strong>.</p>
+        <div class="ds-half">
+          <div class="ds-half-label">THE DESIGN RESOLUTION</div>
+          <p class="ds-half-body">I created the <strong>&ldquo;Up for Grabs&rdquo;</strong> section in Column 4 where canceled items sit for exactly 30 minutes, backed by an active countdown bar to ensure food safety and freshness. If a new order arrives requiring that exact item within the 30-minute window, a subtle <code>&#8635; Fulfill from Canceled</code> prompt appears on the card, letting the manager decide to reuse it with a <strong>single click</strong>.</p>
         </div>
-        <div class="ds-card ds-result">
-          <div class="ds-card-label">The Result</div>
-          <p class="ds-card-body">Food is not wasted, and reusing the canceled item <strong>instantly speeds up the new order</strong>. The manager can <strong>bypass the cook stations entirely</strong>, which directly increases kitchen speed and gets new orders delivered faster.</p>
-        </div>
+      </div>
+      <div class="result-box reveal">
+        <div class="result-label">THE RESULT</div>
+        <p class="result-text">Food is not wasted, and reusing the canceled item <strong>instantly speeds up the new order</strong>. The manager can <strong>bypass the cook stations entirely</strong>, which directly increases kitchen speed and gets new orders delivered faster.</p>
       </div>
     </div>
 
@@ -673,19 +673,19 @@
         <span class="img-ph-sub">Toggling Auto-Accept OFF reveals the incoming triage feed. Clicking Decline opens the centered, spacious Rejection Modal. Single tap on Cancel does nothing; a double-tap triggers cancel.</span>
         <span class="img-ph-tag">&#127909; 16:9 GIF &middot; Dual-Accept &amp; Safeguard Demo</span>
       </div>
-      <div class="ds-three-col reveal">
-        <div class="ds-card">
-          <div class="ds-card-label">The Problem</div>
-          <p class="ds-card-body">During peak hours, a manager cannot manually accept every single incoming order when they are flooding the screen, but aggregators like Swiggy and Zomato charge <strong>expensive penalty fees</strong> if an order is not accepted within a strict three-minute window. Additionally, on the active order cards, I had placed the <code>Cancel</code> and <code>Call Rider</code> buttons right next to each other, creating a high risk where the manager could <strong>mistakenly tap the cancel button</strong> during a busy rush.</p>
+      <div class="ds-two-col reveal">
+        <div class="ds-half">
+          <div class="ds-half-label">THE OPERATIONAL BOTTLENECK</div>
+          <p class="ds-half-body">During peak hours, a manager cannot manually accept every single incoming order when they are flooding the screen, but aggregators like Swiggy and Zomato charge <strong>expensive penalty fees</strong> if an order is not accepted within a strict three-minute window. Additionally, on the active order cards, I had placed the <code>Cancel</code> and <code>Call Rider</code> buttons right next to each other, creating a high risk where the manager could <strong>mistakenly tap the cancel button</strong> during a busy rush.</p>
         </div>
-        <div class="ds-card">
-          <div class="ds-card-label">The Design Solution</div>
-          <p class="ds-card-body">I built a global <code>Auto-Accept ON/OFF</code> toggle in the header to auto-approve orders and bypass aggregator fees during peak rushes. When turned off, declining an order opens a centered modal to select reasons cleanly, and for cancellations on active cards, I designed a <strong>double-tap gesture</strong> on the <code>Cancel</code> action to get a physical, split-second reconfirmation.</p>
+        <div class="ds-half">
+          <div class="ds-half-label">THE DESIGN RESOLUTION</div>
+          <p class="ds-half-body">I built a global <code>Auto-Accept ON/OFF</code> toggle in the header to auto-approve orders and bypass aggregator fees during peak rushes. When turned off, declining an order opens a centered modal to select reasons cleanly, and for cancellations on active cards, I designed a <strong>double-tap gesture</strong> on the <code>Cancel</code> action to get a physical, split-second reconfirmation.</p>
         </div>
-        <div class="ds-card ds-result">
-          <div class="ds-card-label">The Result</div>
-          <p class="ds-card-body">The restaurant <strong>avoids expensive penalty fees</strong> and completely <strong>eliminates accidental order cancellations</strong>, providing a physical safety net for the manager without slowing down the fast pace of the kitchen.</p>
-        </div>
+      </div>
+      <div class="result-box reveal">
+        <div class="result-label">THE RESULT</div>
+        <p class="result-text">The restaurant <strong>avoids expensive penalty fees</strong> and completely <strong>eliminates accidental order cancellations</strong>, providing a physical safety net for the manager without slowing down the fast pace of the kitchen.</p>
       </div>
     </div>
 
@@ -699,19 +699,19 @@
         <span class="img-ph-sub">Manager opens the Stop Apps modal, selecting specific channels. Sets a 30-minute pause duration; active warning banner appears. Demonstrates manual &ldquo;Resume&rdquo; overriding the live countdown timer.</span>
         <span class="img-ph-tag">&#127909; 16:9 GIF &middot; Stop Apps &amp; Auto-Resume</span>
       </div>
-      <div class="ds-three-col reveal">
-        <div class="ds-card">
-          <div class="ds-card-label">The Problem</div>
-          <p class="ds-card-body">During peak hours, too many orders flowing from multiple apps to multiple stations causes <strong>panic and kitchen overload</strong>. I noticed local restaurants manually stop orders during busy Sunday afternoons when they can't handle the rush, but they often <strong>forget to turn them back on</strong>, leading to major revenue loss. Standard systems only offer total shutdowns, preventing managers from pausing just one busy app while keeping quieter channels open.</p>
+      <div class="ds-two-col reveal">
+        <div class="ds-half">
+          <div class="ds-half-label">THE OPERATIONAL BOTTLENECK</div>
+          <p class="ds-half-body">During peak hours, too many orders flowing from multiple apps to multiple stations causes <strong>panic and kitchen overload</strong>. I noticed local restaurants manually stop orders during busy Sunday afternoons when they can't handle the rush, but they often <strong>forget to turn them back on</strong>, leading to major revenue loss. Standard systems only offer total shutdowns, preventing managers from pausing just one busy app while keeping quieter channels open.</p>
         </div>
-        <div class="ds-card">
-          <div class="ds-card-label">The Design Solution</div>
-          <p class="ds-card-body">I designed a &ldquo;Stop Apps&rdquo; modal where the manager can pause specific apps or brands for set times (15m, 30m, 1h, 2h) depending on kitchen load. The system runs an <strong>auto-resume countdown timer</strong> on the screen with a manual override button, letting the manager easily turn the apps back on whenever they are ready.</p>
+        <div class="ds-half">
+          <div class="ds-half-label">THE DESIGN RESOLUTION</div>
+          <p class="ds-half-body">I designed a &ldquo;Stop Apps&rdquo; modal where the manager can pause specific apps or brands for set times (15m, 30m, 1h, 2h) depending on kitchen load. The system runs an <strong>auto-resume countdown timer</strong> on the screen with a manual override button, letting the manager easily turn the apps back on whenever they are ready.</p>
         </div>
-        <div class="ds-card ds-result">
-          <div class="ds-card-label">The Result</div>
-          <p class="ds-card-body">The manager can pause the inflow based on requirements and <strong>stay calm</strong>, ensuring <strong>current orders deliver on time</strong>. New orders are paused for some time and arrive only when the kitchen is free, so they can also be prepared and delivered on time.</p>
-        </div>
+      </div>
+      <div class="result-box reveal">
+        <div class="result-label">THE RESULT</div>
+        <p class="result-text">The manager can pause the inflow based on requirements and <strong>stay calm</strong>, ensuring <strong>current orders deliver on time</strong>. New orders are paused for some time and arrive only when the kitchen is free, so they can also be prepared and delivered on time.</p>
       </div>
     </div>
 
@@ -725,19 +725,19 @@
         <span class="img-ph-sub">Opening the OOS modal and selecting the &ldquo;Patty &amp; Bun&rdquo; brand. Toggling &ldquo;Classic French Fries&rdquo; to OFF. New incoming order with Fries is held and flagged with an alert.</span>
         <span class="img-ph-tag">&#127909; 16:9 GIF &middot; Out of Stock Manager</span>
       </div>
-      <div class="ds-three-col reveal">
-        <div class="ds-card">
-          <div class="ds-card-label">The Problem</div>
-          <p class="ds-card-body">Running out of ingredients mid-rush is one of the biggest challenges, and usually, restaurants accept orders and only realize they are out of stock after the ticket goes to the kitchen. This causes panic and confusion, often forcing restaurants to make <strong>silent ingredient substitutions</strong> that reduce customer ratings. Sifting through a massive scrolling list to deactivate an item is too slow.</p>
+      <div class="ds-two-col reveal">
+        <div class="ds-half">
+          <div class="ds-half-label">THE OPERATIONAL BOTTLENECK</div>
+          <p class="ds-half-body">Running out of ingredients mid-rush is one of the biggest challenges, and usually, restaurants accept orders and only realize they are out of stock after the ticket goes to the kitchen. This causes panic and confusion, often forcing restaurants to make <strong>silent ingredient substitutions</strong> that reduce customer ratings. Sifting through a massive scrolling list to deactivate an item is too slow.</p>
         </div>
-        <div class="ds-card">
-          <div class="ds-card-label">The Design Solution</div>
-          <p class="ds-card-body">Based on a verbal update from the chef, the manager uses a streamlined panel with a brand dropdown and exactly 10 high-velocity toggles to mark items out of stock. New incoming orders containing OOS items are held in the triage list with a warning badge, allowing the manager to <strong>reject unfulfillable orders upfront</strong> before they enter the kitchen.</p>
+        <div class="ds-half">
+          <div class="ds-half-label">THE DESIGN RESOLUTION</div>
+          <p class="ds-half-body">Based on a verbal update from the chef, the manager uses a streamlined panel with a brand dropdown and exactly 10 high-velocity toggles to mark items out of stock. New incoming orders containing OOS items are held in the triage list with a warning badge, allowing the manager to <strong>reject unfulfillable orders upfront</strong> before they enter the kitchen.</p>
         </div>
-        <div class="ds-card ds-result">
-          <div class="ds-card-label">The Result</div>
-          <p class="ds-card-body">The kitchen <strong>avoids wasting time</strong> on unfulfillable orders, and customers are notified of the rejection right away instead of receiving wrong, substituted items.</p>
-        </div>
+      </div>
+      <div class="result-box reveal">
+        <div class="result-label">THE RESULT</div>
+        <p class="result-text">The kitchen <strong>avoids wasting time</strong> on unfulfillable orders, and customers are notified of the rejection right away instead of receiving wrong, substituted items.</p>
       </div>
     </div>
 
