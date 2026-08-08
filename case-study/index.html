@@ -372,6 +372,14 @@
     .ds-card.ds-result { background: var(--gold-bg); border-color: rgba(201,150,42,0.4); }
     .ds-card.ds-result .ds-card-label { color: var(--gold); opacity: 1; }
     @media (max-width: 900px) { .ds-three-col { grid-template-columns: 1fr; } }
+    /* WIP Grey Out System */
+    .wip-grey { opacity: 0.25 !important; filter: grayscale(100%) !important; pointer-events: none !important; user-select: none !important; }
+    
+    /* Result Box Yellow Styling */
+    .result-box { padding: 18px 22px; border-radius: 6px; margin-top: 16px; background: #fdf3da; border: 1px solid #c9962a; border-left: 4px solid #c9962a; }
+    .result-label { font-size: 10px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #b45309; margin-bottom: 8px; }
+    .result-text { font-size: 13px; color: #1a1410; line-height: 1.65; }
+    .result-text strong { font-weight: 700; color: #370808; }
   </style>
 </head>
 <body>
@@ -612,8 +620,8 @@
 <section id="s5" class="section alt-bg">
   <div class="section-inner">
     <div class="s-num reveal">05 / 10</div>
-    <h2 class="s-title reveal">The Core Decision Stories: Five Turning Points That Tamed the Chaos</h2>
-    <p class="s-sub reveal">These are the five architectural decisions that had the highest leverage on the system&rsquo;s ability to perform under real dinner-rush pressure.</p>
+    <h2 class="s-title reveal">The Core Decision Stories</h2>
+    <p class="s-sub reveal">These are the five decisions that helped in making the system effective for taking faster decisions and achieving faster food handover</p>
     <div class="divider reveal"></div>
 
     <!-- DS1 -->
