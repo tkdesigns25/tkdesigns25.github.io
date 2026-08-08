@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Willow Kitchen KDS â€” UX Case Study</title>
+  <title>Willow Kitchen KDS — UX Case Study</title>
   <meta name="description" content="Designing Visual Calm and Failsafe Logic for High-Throughput Cloud Kitchens. A UX case study." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -192,13 +192,6 @@
     /* DECISION STORIES */
     .ds-section { padding: 60px 0; border-top: 1px solid var(--border); }
     .ds-section:first-of-type { border-top: none; padding-top: 0; }
-    .ds-group { margin: 20px 0; }
-    .ds-group-label { font-size: 10px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--oxblood); opacity: 0.7; margin-bottom: 10px; }
-    .ds-bullets { padding-left: 18px; display: flex; flex-direction: column; gap: 8px; }
-    .ds-bullets li { font-size: 13px; color: var(--graphite); line-height: 1.7; }
-    .ds-bullets li strong { color: var(--ink); }
-    .ds-bullets li em { color: var(--ink); font-style: italic; }
-    .ds-bullets li code { font-family: var(--font-mono); font-size: 11px; background: var(--parchment); padding: 1px 5px; border-radius: 3px; color: var(--oxblood); }
     .ds-badge { display: inline-flex; align-items: center; gap: 7px; padding: 4px 12px; border: 1px solid var(--border); border-radius: 3px; background: var(--linen); font-size: 9px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--graphite); margin-bottom: 14px; }
     .ds-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--oxblood); flex-shrink: 0; }
     .ds-title { font-family: var(--font-ser); font-size: 20px; font-weight: 700; color: var(--ink); line-height: 1.25; margin-bottom: 18px; }
@@ -285,13 +278,68 @@
       nav.topnav { padding: 0 16px; }
       footer { padding: 32px 20px; }
     }
-    /* WIP: grey out all sections except Decision Stories */
-    .wip-grey { position: relative; pointer-events: none; user-select: none; }
-    .wip-grey::after { content: ''; position: absolute; inset: 0; background: rgba(253,248,241,0.72); backdrop-filter: grayscale(0.6); z-index: 10; pointer-events: none; }
-    .dark-bg.wip-grey::after { background: rgba(55,8,8,0.72); }
-    .alt-bg.wip-grey::after { background: rgba(242,232,216,0.72); }
-    #s1.wip-grey, footer { pointer-events: none; }
-    a.wip-grey, a.wip-grey * { pointer-events: none; }
+    /* ── Hero Mockup ─────────────────────────────────────────── */
+    .hero-mockup-img { width:100%; border-radius:8px; box-shadow:0 24px 64px rgba(55,8,8,0.22); display:block; }
+    /* ── Interactive Prototype ────────────────────────────────── */
+    .proto-wrap { max-width:1100px; margin:0 auto 0; padding:0 40px 0 80px; }
+    .proto-header { display:flex; align-items:center; justify-content:space-between; padding:10px 16px; background:var(--oxblood); border-radius:8px 8px 0 0; }
+    .proto-brand { display:flex; align-items:center; gap:8px; }
+    .proto-brand-name { font-size:12px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:var(--vellum); }
+    .proto-brand-tag { font-size:9px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:rgba(253,248,241,0.45); background:rgba(255,255,255,0.08); padding:2px 7px; border-radius:3px; }
+    .proto-controls { display:flex; gap:8px; flex-wrap:wrap; }
+    .proto-ctrl-btn { display:flex; align-items:center; gap:6px; padding:5px 11px; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14); border-radius:4px; color:rgba(253,248,241,0.8); font-size:10px; font-weight:600; letter-spacing:0.06em; cursor:pointer; font-family:var(--font-ui); transition:background 0.2s; }
+    .proto-ctrl-btn:hover { background:rgba(255,255,255,0.15); }
+    .proto-ctrl-dot { width:7px; height:7px; border-radius:50%; background:#3ecf8e; display:inline-block; }
+    .proto-rail { display:grid; grid-template-columns:1fr 1.5fr 1.5fr 1fr; min-height:420px; background:var(--linen); border:1px solid var(--border); border-top:none; border-radius:0 0 8px 8px; overflow:hidden; }
+    .proto-col { border-right:1px solid var(--border); display:flex; flex-direction:column; }
+    .proto-col:last-child { border-right:none; }
+    .proto-col-head { padding:10px 12px; background:rgba(55,8,8,0.04); border-bottom:1px solid var(--border); display:flex; align-items:center; justify-content:space-between; }
+    .proto-col-title { font-size:9px; font-weight:800; letter-spacing:0.18em; text-transform:uppercase; color:var(--oxblood); }
+    .proto-col-count { font-size:10px; font-weight:800; color:var(--vellum); background:var(--oxblood); padding:1px 6px; border-radius:10px; min-width:18px; text-align:center; }
+    .proto-col-body { padding:8px; display:flex; flex-direction:column; gap:6px; flex:1; overflow-y:auto; }
+    /* Order cards */
+    .proto-order-card { background:var(--vellum); border:1px solid var(--border); border-radius:5px; padding:10px 12px; display:flex; flex-direction:column; gap:6px; }
+    .proto-card-head { display:flex; justify-content:space-between; align-items:center; }
+    .proto-card-id { font-size:11px; font-weight:800; color:var(--oxblood); font-family:var(--font-mono); }
+    .proto-card-brand { font-size:9px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--graphite); }
+    .proto-card-items { display:flex; flex-direction:column; gap:3px; }
+    .proto-card-item { font-size:11px; color:var(--graphite); padding:2px 0; border-bottom:1px dashed var(--border); }
+    .proto-card-item:last-child { border-bottom:none; }
+    .proto-btn { width:100%; padding:7px; background:var(--oxblood); color:var(--vellum); border:none; border-radius:3px; font-size:10px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; font-family:var(--font-ui); transition:background 0.2s, transform 0.1s; }
+    .proto-btn:hover { background:var(--crimson); transform:translateY(-1px); }
+    .proto-btn.proto-btn-gold { background:var(--gold); color:var(--oxblood); }
+    .proto-btn.proto-btn-gold:hover { background:#b5841e; }
+    /* Station lanes */
+    .proto-station-lane { border-bottom:1px solid var(--border); padding:8px; }
+    .proto-station-lane:last-child { border-bottom:none; }
+    .proto-lane-head { font-size:9px; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:var(--oxblood); margin-bottom:6px; }
+    .proto-lane-body { display:flex; flex-direction:column; gap:4px; }
+    .proto-lane-item { background:var(--vellum); border:1px solid var(--border); border-radius:3px; padding:6px 8px; display:flex; align-items:center; justify-content:space-between; font-size:11px; color:var(--graphite); }
+    .proto-lane-item.state-queued { background:rgba(201,150,42,0.12); border-color:var(--gold); }
+    .proto-lane-item.state-cooking { background:rgba(26,92,56,0.07); border-color:var(--green); }
+    .proto-lane-item.state-done { opacity:0.45; text-decoration:line-through; }
+    .proto-lane-item-name { font-weight:700; color:var(--ink); }
+    .proto-lane-item-order { font-size:9px; font-family:var(--font-mono); color:var(--oxblood); }
+    .proto-lane-btn { padding:3px 7px; background:var(--oxblood); color:var(--vellum); border:none; border-radius:2px; font-size:9px; font-weight:700; cursor:pointer; font-family:var(--font-ui); }
+    /* Handover card */
+    .proto-handover-card { background:rgba(201,150,42,0.1); border:2px solid var(--gold); border-radius:5px; padding:10px 12px; }
+    /* Status bar */
+    .proto-status-bar { display:flex; align-items:center; justify-content:space-between; padding:10px 16px; background:var(--linen); border:1px solid var(--border); border-top:none; border-radius:0 0 8px 8px; gap:10px; }
+    #proto-status-msg { font-size:12px; color:var(--graphite); line-height:1.5; flex:1; }
+    .proto-reset-btn { padding:6px 14px; background:transparent; border:1px solid var(--border); border-radius:3px; font-size:10px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--graphite); cursor:pointer; font-family:var(--font-ui); white-space:nowrap; transition:border-color 0.2s; }
+    .proto-reset-btn:hover { border-color:var(--oxblood); color:var(--oxblood); }
+    /* Teaser modal */
+    .proto-modal-overlay { position:fixed; inset:0; background:rgba(26,20,16,0.65); backdrop-filter:blur(4px); z-index:2000; display:flex; align-items:center; justify-content:center; }
+    .proto-modal { background:var(--vellum); border:1px solid var(--border); border-radius:8px; padding:36px 40px; max-width:480px; width:90%; box-shadow:0 24px 80px rgba(55,8,8,0.3); }
+    .proto-modal-eyebrow { font-size:9px; font-weight:800; letter-spacing:0.22em; text-transform:uppercase; color:var(--oxblood); margin-bottom:12px; }
+    .proto-modal-title { font-family:var(--font-ser); font-size:22px; font-weight:700; color:var(--ink); margin-bottom:12px; line-height:1.2; }
+    .proto-modal-body { font-size:13px; color:var(--graphite); line-height:1.7; margin-bottom:24px; }
+    .proto-modal-actions { display:flex; gap:10px; flex-wrap:wrap; }
+    .proto-modal-btn-ghost { padding:10px 18px; background:transparent; border:1px solid var(--border); border-radius:4px; font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--graphite); cursor:pointer; font-family:var(--font-ui); transition:border-color 0.2s; }
+    .proto-modal-btn-ghost:hover { border-color:var(--oxblood); color:var(--oxblood); }
+    .proto-modal-btn-primary { display:inline-flex; align-items:center; padding:10px 18px; background:var(--oxblood); color:var(--vellum); border-radius:4px; font-size:11px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; text-decoration:none; transition:background 0.2s; }
+    .proto-modal-btn-primary:hover { background:var(--crimson); }
+    @media (max-width:900px) { .proto-wrap { padding:0 16px; } .proto-rail { grid-template-columns:1fr 1fr; } .proto-col:nth-child(3), .proto-col:nth-child(4) { border-top:1px solid var(--border); } }
   </style>
 </head>
 <body>
@@ -315,26 +363,27 @@
 </nav>
 
 <nav id="side-toc" aria-label="Page sections">
-  <a href="#s1" class="toc-dot active" data-s="s1"><span class="toc-circle"></span><span class="toc-lbl">01 Mission</span></a>
-  <a href="#s2" class="toc-dot" data-s="s2"><span class="toc-circle"></span><span class="toc-lbl">02 Problem</span></a>
-  <a href="#s3" class="toc-dot" data-s="s3"><span class="toc-circle"></span><span class="toc-lbl">03 Workflow</span></a>
-  <a href="#s4" class="toc-dot" data-s="s4"><span class="toc-circle"></span><span class="toc-lbl">04 Decisions</span></a>
-  <a href="#s5" class="toc-dot" data-s="s5"><span class="toc-circle"></span><span class="toc-lbl">05 User Flows</span></a>
-  <a href="#s6" class="toc-dot" data-s="s6"><span class="toc-circle"></span><span class="toc-lbl">06 Craft</span></a>
-  <a href="#s7" class="toc-dot" data-s="s7"><span class="toc-circle"></span><span class="toc-lbl">07 Reflection</span></a>
-  <a href="#s8" class="toc-dot" data-s="s8"><span class="toc-circle"></span><span class="toc-lbl">08 Next Steps</span></a>
-  <a href="#s9" class="toc-dot" data-s="s9"><span class="toc-circle"></span><span class="toc-lbl">09 Feedback</span></a>
+  <a href="#s1" class="toc-dot active" data-s="s1"><span class="toc-circle"></span><span class="toc-lbl">01 Hero</span></a>
+  <a href="#s2" class="toc-dot" data-s="s2"><span class="toc-circle"></span><span class="toc-lbl">02 Prototype</span></a>
+  <a href="#s3" class="toc-dot" data-s="s3"><span class="toc-circle"></span><span class="toc-lbl">03 Problem</span></a>
+  <a href="#s4" class="toc-dot" data-s="s4"><span class="toc-circle"></span><span class="toc-lbl">04 Workflow</span></a>
+  <a href="#s5" class="toc-dot" data-s="s5"><span class="toc-circle"></span><span class="toc-lbl">05 Decisions</span></a>
+  <a href="#s6" class="toc-dot" data-s="s6"><span class="toc-circle"></span><span class="toc-lbl">06 User Flows</span></a>
+  <a href="#s7" class="toc-dot" data-s="s7"><span class="toc-circle"></span><span class="toc-lbl">07 Craft</span></a>
+  <a href="#s8" class="toc-dot" data-s="s8"><span class="toc-circle"></span><span class="toc-lbl">08 Reflection</span></a>
+  <a href="#s9" class="toc-dot" data-s="s10"><span class="toc-circle"></span><span class="toc-lbl">09 Next Steps</span></a>
+  <a href="#s10" class="toc-dot" data-s="s10"><span class="toc-circle"></span><span class="toc-lbl">10 Feedback</span></a>
 </nav>
 
 <main>
 
-<!-- S1: MISSION -->
+<!-- S1: HERO -->
 <section id="s1" class="section wip-grey">
   <div class="hero-wrap">
     <div class="hero-left">
-      <div class="hero-kicker reveal"><em>01 / 09</em> &nbsp;Defining the Mission</div>
-      <h1 class="hero-h1 reveal d1">Designing Visual Calm &amp; Failsafe Logic for High-Throughput Cloud Kitchens</h1>
-      <p class="hero-p reveal d2">In a high-volume cloud kitchen, a lunch or dinner rush means pure noise &mdash; managers shouting, paper tickets getting lost, and delivery riders crowding the doors. Most B2B kitchen tools are designed like complex corporate spreadsheets: visually cluttered, hard to read at a distance, and ignorant of the physical reality of a hot, loud, and greasy kitchen.</p>
+      <div class="hero-kicker reveal"><em>01 / 10</em> &nbsp;Willow Kitchen KDS</div>
+      <h1 class="hero-h1 reveal d1">A real-time display system built to make kitchen managers&rsquo; decision-making faster and accelerate order preparation during the rush.</h1>
+      <p class="hero-p reveal d2">It unifies fragmented delivery apps into one clear, glare-free workspace, helping kitchen teams balance station loads, save canceled food, and coordinate couriers with zero manual friction.</p>
       <div class="hero-meta reveal d3">
         <div class="meta-item"><span class="meta-label">Role</span><span class="meta-val">Product Designer &amp; Developer</span></div>
         <div class="meta-item"><span class="meta-label">Duration</span><span class="meta-val">4-week sprint &middot; 1-week code</span></div>
@@ -342,43 +391,80 @@
       </div>
       <div class="btn-row reveal d4">
         <a class="btn-primary" href="https://willow-kitchen.vercel.app/" target="_blank" rel="noopener">Open Live Prototype &rarr;</a>
-        <a class="btn-ghost" href="#s2">Read the Case Study &darr;</a>
+        <a class="btn-ghost" href="#s3">Replay Case Study &darr;</a>
       </div>
     </div>
     <div class="hero-visual reveal d2">
-      <div class="mock-screen">
-        <div class="mock-bar"><div class="mdot r"></div><div class="mdot y"></div><div class="mdot g"></div><div class="mock-titlebar"></div></div>
-        <div class="mock-cols">
-          <div class="mock-col"><div class="mock-col-head">Just Came In</div><div class="mock-card ac"><div class="mline gl"></div><div class="mline gl s"></div></div><div class="mock-card"><div class="mline m"></div><div class="mline s"></div></div></div>
-          <div class="mock-col"><div class="mock-col-head">Cooking Now</div><div class="mock-card rd"><div class="mline m"></div><div class="mline s"></div><div class="mline m"></div></div><div class="mock-card"><div class="mline"></div><div class="mline s"></div></div><div class="mock-card"><div class="mline m"></div><div class="mline"></div></div></div>
-          <div class="mock-col"><div class="mock-col-head">Stations</div><div class="mock-card"><div class="mline s"></div></div><div class="mock-card ac"><div class="mline gl m"></div></div><div class="mock-card"><div class="mline s"></div></div><div class="mock-card"><div class="mline m"></div></div></div>
-          <div class="mock-col"><div class="mock-col-head">Handover</div><div class="mock-card gr"><div class="mline grn"></div><div class="mline grn s"></div></div><div class="mock-card"><div class="mline s"></div></div></div>
-        </div>
-      </div>
-      <div class="stat-badge tr"><div class="stat-val">100%</div><div class="stat-lbl">Waste Recovery</div></div>
-      <div class="stat-badge bl"><div class="stat-val">&lt;15s</div><div class="stat-lbl">KOT Processing</div></div>
-    </div>
-  </div>
-  <div style="max-width:860px;margin:0 auto;padding:0 40px 0 80px;">
-    <div class="img-placeholder tall reveal">
-      <div class="img-ph-cols">
-        <div class="img-ph-col-mock"><div class="img-ph-col-mock-line"></div><div class="img-ph-col-mock-line s"></div><div class="img-ph-col-mock-line"></div></div>
-        <div class="img-ph-col-mock"><div class="img-ph-col-mock-line"></div><div class="img-ph-col-mock-line s"></div><div class="img-ph-col-mock-line"></div><div class="img-ph-col-mock-line s"></div></div>
-        <div class="img-ph-col-mock"><div class="img-ph-col-mock-line s"></div><div class="img-ph-col-mock-line"></div><div class="img-ph-col-mock-line s"></div></div>
-        <div class="img-ph-col-mock"><div class="img-ph-col-mock-line"></div><div class="img-ph-col-mock-line s"></div></div>
-      </div>
-      <svg class="img-ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-      <span class="img-ph-label">Full Interface Screenshot</span>
-      <span class="img-ph-sub">Add a screenshot of the complete 4-column KDS interface here</span>
-      <span class="img-ph-tag">&#128247; Product Screenshot &middot; Full Dashboard View</span>
+      <img src="Hero Mockup.png" alt="Willow Kitchen KDS dashboard" style="width:100%;border-radius:8px;box-shadow:0 24px 64px rgba(55,8,8,0.22);display:block;">
     </div>
   </div>
 </section>
 
-<!-- S2: PROBLEM -->
+
+<!-- S2: INTERACTIVE PROTOTYPE -->
 <section id="s2" class="section alt-bg wip-grey">
   <div class="section-inner">
-    <div class="s-num reveal">02 / 09</div>
+    <div class="s-num reveal">02 / 10</div>
+    <h2 class="s-title reveal">Try It: The Interactive Prototype</h2>
+    <p class="s-sub reveal">A restricted preview of the working KDS. Walk a two-order cycle from arrival to handover. Advanced controls are locked &mdash; they&rsquo;ll prompt you to open the full live app.</p>
+    <div class="divider reveal"></div>
+  </div>
+  <div class="proto-wrap reveal">
+    <div class="proto-header">
+      <div class="proto-brand">
+        <svg width="18" height="18" viewBox="0 0 100 100" fill="none" stroke="var(--oxblood)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M 12 86 C 38 74 62 74 88 86 C 62 80 38 80 12 86 Z" fill="var(--oxblood)" stroke="none"/><path d="M 50 82 L 50 42" stroke-width="7"/><path d="M 50 46 C 70 40 90 22 90 44 L 90 70 M 83 44 L 83 70 M 76 40 L 76 70 M 69 36 L 69 70"/></svg>
+        <span class="proto-brand-name">Willow Kitchen</span>
+        <span class="proto-brand-tag">Preview Mode</span>
+      </div>
+      <div class="proto-controls">
+        <button class="proto-ctrl-btn" onclick="protoTriggerLocked()"><span class="proto-ctrl-dot"></span>Auto-Accept: ON</button>
+        <button class="proto-ctrl-btn" onclick="protoTriggerLocked()">&#9646;&#9646; Stop Apps</button>
+        <button class="proto-ctrl-btn" onclick="protoTriggerLocked()">&#9675; Out of Stock</button>
+      </div>
+    </div>
+    <div class="proto-rail">
+      <div class="proto-col">
+        <div class="proto-col-head"><span class="proto-col-title">Just Came In</span><span class="proto-col-count" id="col1-count">0</span></div>
+        <div class="proto-col-body" id="proto-new-orders"></div>
+      </div>
+      <div class="proto-col proto-col-wide">
+        <div class="proto-col-head"><span class="proto-col-title">Cooking Now</span><span class="proto-col-count" id="col2-count">0</span></div>
+        <div class="proto-col-body" id="proto-active-orders"></div>
+      </div>
+      <div class="proto-col proto-col-wide">
+        <div class="proto-col-head"><span class="proto-col-title">Station Queues</span></div>
+        <div class="proto-col-body" id="proto-stations">
+          <div class="proto-station-lane"><div class="proto-lane-head">&#x1F525; Hot Station</div><div class="proto-lane-body" id="hot-items"></div></div>
+          <div class="proto-station-lane"><div class="proto-lane-head">&#x1F356; Grill Station</div><div class="proto-lane-body" id="grill-items"></div></div>
+          <div class="proto-station-lane"><div class="proto-lane-head">&#x1F9FA; Assembly</div><div class="proto-lane-body" id="assembly-items"></div></div>
+        </div>
+      </div>
+      <div class="proto-col">
+        <div class="proto-col-head"><span class="proto-col-title">Handover</span><span class="proto-col-count" id="col4-count">0</span></div>
+        <div class="proto-col-body" id="proto-handover"></div>
+      </div>
+    </div>
+    <div class="proto-status-bar">
+      <span id="proto-status-msg">&#9654; Two orders are ready &mdash; click &ldquo;Start This Order&rdquo; on both cards to begin.</span>
+      <button class="proto-reset-btn" onclick="protoReset()">&#8635; Reset Demo</button>
+    </div>
+  </div>
+  <div class="proto-modal-overlay" id="proto-teaser-modal" style="display:none;">
+    <div class="proto-modal">
+      <div class="proto-modal-eyebrow">VIEW FULL WORKING PRODUCT?</div>
+      <h3 class="proto-modal-title">This control is locked in preview mode.</h3>
+      <p class="proto-modal-body">Would you like to experience the full, live KDS with simulated order floods and active platform toggles?</p>
+      <div class="proto-modal-actions">
+        <button class="proto-modal-btn-ghost" onclick="protoCloseModal()">No, Keep Exploring</button>
+        <a class="proto-modal-btn-primary" href="https://willow-kitchen.vercel.app/" target="_blank" rel="noopener" onclick="protoCloseModal()">Yes, Open Live App &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- S3: PROBLEM -->
+<section id="s3" class="section alt-bg wip-grey">
+  <div class="section-inner">
+    <div class="s-num reveal">03 / 10</div>
     <h2 class="s-title reveal">Stepping into the Steamy Kitchen: Why Standard SaaS Dashboards Fail Cooks</h2>
     <p class="s-sub reveal">Standard dashboards show past data. Kitchen passes show <em>present action</em>. When 80 orders flood in over a single hour across three virtual brands, the physical kitchen pass breaks down.</p>
     <div class="divider reveal"></div>
@@ -422,9 +508,9 @@
 </section>
 
 <!-- S3: WORKFLOW -->
-<section id="s3" class="section wip-grey">
+<section id="s4" class="section wip-grey">
   <div class="section-inner">
-    <div class="s-num reveal">03 / 09</div>
+    <div class="s-num reveal">04 / 10</div>
     <h2 class="s-title reveal">From Ingestion to Handover: The 4-Column Operational Journey</h2>
     <p class="s-sub reveal">To understand the final working solution, let us walk through the happy path of a customer&rsquo;s order through the kitchen. The system organizes this lifecycle into a structured 4-column workflow.</p>
     <div class="divider reveal"></div>
@@ -540,9 +626,9 @@
 </section>
 
 <!-- S4: DECISION STORIES -->
-<section id="s4" class="section alt-bg">
+<section id="s5" class="section alt-bg">
   <div class="section-inner">
-    <div class="s-num reveal">04 / 09</div>
+    <div class="s-num reveal">05 / 10</div>
     <h2 class="s-title reveal">The Core Decision Stories: Five Turning Points That Tamed the Chaos</h2>
     <p class="s-sub reveal">These are the five architectural decisions that had the highest leverage on the system&rsquo;s ability to perform under real dinner-rush pressure.</p>
     <div class="divider reveal"></div>
@@ -768,9 +854,10 @@
 </section>
 
 <!-- S5: USER FLOWS -->
-<section id="s5" class="section wip-grey">
+
+<section id="s6" class="section wip-grey">
   <div class="section-inner">
-    <div class="s-num reveal">05 / 09</div>
+    <div class="s-num reveal">06 / 10</div>
     <h2 class="s-title reveal">Beyond the Happy Path: How Three Different Staff Members Navigate the Pass</h2>
     <p class="s-sub reveal">To show how different roles interact with the system, here are the step-by-step user flows designed for three key kitchen scenarios.</p>
     <div class="divider reveal"></div>
@@ -864,9 +951,9 @@
 </section>
 
 <!-- S6: CRAFT -->
-<section id="s6" class="section dark-bg wip-grey">
+<section id="s7" class="section dark-bg wip-grey">
   <div class="section-inner">
-    <div class="s-num reveal">06 / 09</div>
+    <div class="s-num reveal">07 / 10</div>
     <h2 class="s-title reveal">Craft &amp; Execution: How Systematic Tokens and Auto Layout Built a Rugged UI</h2>
     <p class="s-sub reveal">Willow Kitchen is built on a clean, high-contrast, light-mode visual design inspired by standard restaurant KDS systems &mdash; featuring crisp whites, deep oxbloods, and high-visibility typography.</p>
     <div class="divider reveal"></div>
@@ -900,9 +987,9 @@
 </section>
 
 <!-- S7: REFLECTION -->
-<section id="s7" class="section alt-bg wip-grey">
+<section id="s8" class="section alt-bg wip-grey">
   <div class="section-inner">
-    <div class="s-num reveal">07 / 09</div>
+    <div class="s-num reveal">08 / 10</div>
     <h2 class="s-title reveal">Shift Reflection: What Building Under Pressure Taught Me About Visual Discipline</h2>
     <div class="divider reveal"></div>
     <div class="big-quote reveal">
@@ -921,9 +1008,9 @@
 </section>
 
 <!-- S8: UNFINISHED EDGE -->
-<section id="s8" class="section wip-grey">
+<section id="s9" class="section wip-grey">
   <div class="section-inner">
-    <div class="s-num reveal">08 / 09</div>
+    <div class="s-num reveal">09 / 10</div>
     <h2 class="s-title reveal">The Unfinished Edge: What I Would Explore with More Time</h2>
     <p class="s-sub reveal">While the current version of the Willow Kitchen KDS is fully functional, there are two key areas I would explore with more resources.</p>
     <div class="divider reveal"></div>
@@ -943,9 +1030,9 @@
 </section>
 
 <!-- S9: FEEDBACK -->
-<section id="s9" class="section dark-bg wip-grey">
+<section id="s10" class="section dark-bg wip-grey">
   <div class="section-inner">
-    <div class="s-num reveal">09 / 09</div>
+    <div class="s-num reveal">10 / 10</div>
     <h2 class="s-title reveal">Closing the Shift: A Human Invitation for Feedback</h2>
     <p class="s-sub reveal">Willow Kitchen KDS proves that thoughtful, disciplined operations design can bring quiet structure to one of the most chaotic work environments. I am eager to continue learning and growing.</p>
     <div class="divider reveal"></div>
@@ -1017,6 +1104,213 @@
       setTimeout(() => el.classList.add('visible'), i * 100);
     });
   });
+</script>
+<script>
+// ── Willow Kitchen Interactive Prototype ──────────────────────
+(function() {
+  const ORDERS = [
+    { id:'#138', brand:'Patty & Bun', source:'Swiggy', items:[
+      {name:'Classic Burger', station:'Grill', qty:1},
+      {name:'Loaded Fries', station:'Hot', qty:1},
+      {name:'Oreo Shake', station:'Assembly', qty:1}
+    ]},
+    { id:'#139', brand:'Wok & Roll', source:'Zomato', items:[
+      {name:'Veg Fried Rice', station:'Hot', qty:1},
+      {name:'Chilli Paneer', station:'Grill', qty:1},
+      {name:'Spring Roll x2', station:'Assembly', qty:2}
+    ]},
+    { id:'#140', brand:'Patty & Bun', source:'Swiggy', items:[
+      {name:'Double Smash Burger', station:'Grill', qty:1},
+      {name:'Peri-Peri Fries', station:'Hot', qty:1},
+      {name:'Mango Lassi', station:'Assembly', qty:1}
+    ]},
+    { id:'#141', brand:'Wok & Roll', source:'Zomato', items:[
+      {name:'Hakka Noodles', station:'Hot', qty:1},
+      {name:'Crispy Corn', station:'Assembly', qty:1},
+      {name:'Paneer Tikka', station:'Grill', qty:1}
+    ]}
+  ];
+
+  let state = { phase:0, activeCount:0, startedCount:0, itemStates:{}, handedOver:[] };
+  let currentPair = [0,1];
+
+  function qs(id){ return document.getElementById(id); }
+
+  function setStatus(msg){ const el=qs('proto-status-msg'); if(el) el.innerHTML=msg; }
+  function setCount(id,n){ const el=qs(id); if(el) el.textContent=n; }
+
+  function renderNewOrderCard(ord) {
+    const div = document.createElement('div');
+    div.className = 'proto-order-card';
+    div.id = 'new-card-'+ord.id;
+    div.innerHTML = `
+      <div class="proto-card-head">
+        <span class="proto-card-id">${ord.id}</span>
+        <span class="proto-card-brand">${ord.source}</span>
+      </div>
+      <div class="proto-card-items">
+        ${ord.items.map(i=>`<div class="proto-card-item">${i.qty > 1 ? i.qty+'x ':''} ${i.name}</div>`).join('')}
+      </div>
+      <button class="proto-btn" onclick="protoStartOrder('${ord.id}')">Start This Order &rarr;</button>
+    `;
+    return div;
+  }
+
+  function renderActiveCard(ord) {
+    const div = document.createElement('div');
+    div.className = 'proto-order-card';
+    div.id = 'active-card-'+ord.id;
+    const allDone = ord.items.every(i => (state.itemStates[ord.id+'_'+i.name]||'queued') === 'done');
+    div.innerHTML = `
+      <div class="proto-card-head">
+        <span class="proto-card-id">${ord.id}</span>
+        <span class="proto-card-brand">${ord.brand}</span>
+      </div>
+      <div class="proto-card-items">
+        ${ord.items.map(i=>{
+          const st = state.itemStates[ord.id+'_'+i.name] || 'queued';
+          const icon = st==='done' ? '&#10003; ' : st==='cooking' ? '&#128293; ' : '&#9679; ';
+          return `<div class="proto-card-item" style="color:${st==='done'?'var(--green)':st==='cooking'?'var(--graphite)':'var(--graphite)'}">${icon}${i.qty > 1 ? i.qty+'x ':''}${i.name}</div>`;
+        }).join('')}
+      </div>
+      ${allDone ? `<button class="proto-btn proto-btn-gold" onclick="protoHandover('${ord.id}')">&#10003; Confirm Handover</button>` : '<div style="font-size:10px;color:var(--graphite);text-align:center;padding:4px 0">Prep in progress&hellip;</div>'}
+    `;
+    return div;
+  }
+
+  function renderLaneItem(ordId, item) {
+    const key = ordId+'_'+item.name;
+    const st = state.itemStates[key] || 'queued';
+    const div = document.createElement('div');
+    div.className = 'proto-lane-item state-'+st;
+    div.id = 'lane-item-'+key.replace(/[^a-z0-9]/gi,'_');
+    div.innerHTML = `
+      <div>
+        <div class="proto-lane-item-name">${item.qty > 1 ? item.qty+'x ':''}${item.name}</div>
+        <div class="proto-lane-item-order">${ordId}</div>
+      </div>
+      ${st === 'queued' ? `<button class="proto-lane-btn" onclick="protoMarkCooking('${ordId}','${item.name}')">Prep</button>` :
+        st === 'cooking' ? `<button class="proto-lane-btn" style="background:var(--green);" onclick="protoMarkDone('${ordId}','${item.name}')">Done</button>` :
+        '<span style="font-size:10px;color:var(--green);">&#10003;</span>'}
+    `;
+    return div;
+  }
+
+  function renderHandoverCard(ord) {
+    const div = document.createElement('div');
+    div.className = 'proto-handover-card';
+    div.innerHTML = `
+      <div class="proto-card-head">
+        <span class="proto-card-id" style="color:var(--gold);">${ord.id}</span>
+        <span class="proto-card-brand">&#127975; Rider waiting</span>
+      </div>
+      <div style="font-size:11px;color:var(--graphite);margin-top:4px;">Bag packed &amp; sealed &mdash; order complete.</div>
+    `;
+    return div;
+  }
+
+  function fullRender() {
+    const col1 = qs('proto-new-orders');
+    const col2 = qs('proto-active-orders');
+    const hot = qs('hot-items');
+    const grill = qs('grill-items');
+    const assembly = qs('assembly-items');
+    const col4 = qs('proto-handover');
+    if(!col1||!col2||!hot||!grill||!assembly||!col4) return;
+
+    col1.innerHTML=''; col2.innerHTML=''; hot.innerHTML=''; grill.innerHTML=''; assembly.innerHTML=''; col4.innerHTML='';
+
+    const newOrds = currentPair.filter(i => !state['started_'+ORDERS[i].id] && !state['done_'+ORDERS[i].id]);
+    const activeOrds = currentPair.filter(i => state['started_'+ORDERS[i].id] && !state['done_'+ORDERS[i].id]);
+    const doneOrds = currentPair.filter(i => state['done_'+ORDERS[i].id]);
+
+    newOrds.forEach(i => col1.appendChild(renderNewOrderCard(ORDERS[i])));
+    activeOrds.forEach(i => {
+      col2.appendChild(renderActiveCard(ORDERS[i]));
+      ORDERS[i].items.forEach(item => {
+        const el = renderLaneItem(ORDERS[i].id, item);
+        if(item.station==='Hot') hot.appendChild(el);
+        else if(item.station==='Grill') grill.appendChild(el);
+        else assembly.appendChild(el);
+      });
+    });
+    doneOrds.forEach(i => col4.appendChild(renderHandoverCard(ORDERS[i])));
+
+    setCount('col1-count', newOrds.length);
+    setCount('col2-count', activeOrds.length);
+    setCount('col4-count', doneOrds.length);
+
+    // Check if both done → spawn next pair
+    if(doneOrds.length === currentPair.length && currentPair[0] < 2) {
+      setTimeout(() => {
+        currentPair = [2,3];
+        state = { phase:0, activeCount:0, startedCount:0, itemStates:{}, handedOver:[] };
+        setStatus('&#9654; Next pair arrived! Walk orders #140 and #141 through the kitchen.');
+        fullRender();
+      }, 1200);
+    } else if(doneOrds.length === currentPair.length && currentPair[0] >= 2) {
+      setStatus('&#10003; Full cycle complete! Both pairs delivered. Click &ldquo;Reset Demo&rdquo; to start again.');
+    } else if(activeOrds.length > 0) {
+      setStatus('Click &ldquo;Prep&rdquo; on station items to start cooking, then &ldquo;Done&rdquo; when finished. Once all items are ready, confirm handover.');
+    } else if(newOrds.length > 0) {
+      setStatus('&#9654; Two orders are ready &mdash; click &ldquo;Start This Order&rdquo; on both cards to begin.');
+    }
+  }
+
+  window.protoStartOrder = function(ordId) {
+    const ord = ORDERS.find(o => o.id === ordId);
+    if(!ord) return;
+    state['started_'+ordId] = true;
+    ord.items.forEach(item => { state.itemStates[ordId+'_'+item.name] = 'queued'; });
+    fullRender();
+  };
+
+  window.protoMarkCooking = function(ordId, itemName) {
+    state.itemStates[ordId+'_'+itemName] = 'cooking';
+    fullRender();
+  };
+
+  window.protoMarkDone = function(ordId, itemName) {
+    state.itemStates[ordId+'_'+itemName] = 'done';
+    fullRender();
+    // Update active card immediately
+    const ord = ORDERS.find(o => o.id === ordId);
+    if(ord) { const el=qs('active-card-'+ordId); if(el) { el.replaceWith(renderActiveCard(ord)); } }
+    fullRender();
+  };
+
+  window.protoHandover = function(ordId) {
+    state['done_'+ordId] = true;
+    fullRender();
+  };
+
+  window.protoTriggerLocked = function() {
+    const m = qs('proto-teaser-modal');
+    if(m) m.style.display = 'flex';
+  };
+
+  window.protoCloseModal = function() {
+    const m = qs('proto-teaser-modal');
+    if(m) m.style.display = 'none';
+  };
+
+  window.protoReset = function() {
+    currentPair = [0,1];
+    state = { phase:0, activeCount:0, startedCount:0, itemStates:{}, handedOver:[] };
+    setStatus('&#9654; Two orders are ready &mdash; click &ldquo;Start This Order&rdquo; on both cards to begin.');
+    fullRender();
+  };
+
+  // Close modal on overlay click
+  document.addEventListener('click', function(e) {
+    const overlay = qs('proto-teaser-modal');
+    if(e.target === overlay) protoCloseModal();
+  });
+
+  // Init on load
+  document.addEventListener('DOMContentLoaded', function() { fullRender(); });
+  if(document.readyState !== 'loading') fullRender();
+})();
 </script>
 </body>
 </html>
