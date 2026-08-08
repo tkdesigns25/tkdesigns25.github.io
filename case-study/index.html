@@ -362,6 +362,16 @@
     .proto-lane-btn-sm:hover { background: var(--parchment); }
     .proto-rider-bar { font-size: 10px; font-family: var(--font-mono); color: var(--oxblood); background: rgba(55,8,8,0.05); padding: 4px 8px; border-radius: 3px; display: flex; justify-content: space-between; align-items: center; margin-top: 4px; }
     .proto-call-rider-btn { font-size: 9px; font-weight: 700; padding: 2px 6px; background: var(--oxblood); color: var(--vellum); border: none; border-radius: 2px; cursor: pointer; }
+    /* Decision Stories Three-Col Layout */
+    .ds-three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 18px 0; }
+    .ds-card { background: var(--vellum); border: 1px solid var(--border); border-radius: 6px; padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+    .ds-card-label { font-size: 10px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--oxblood); opacity: 0.8; }
+    .ds-card-body { font-size: 13px; color: var(--graphite); line-height: 1.65; }
+    .ds-card-body strong { color: var(--ink); }
+    .ds-card-body code { font-family: var(--font-mono); font-size: 11px; background: var(--parchment); padding: 1px 5px; border-radius: 3px; color: var(--oxblood); }
+    .ds-card.ds-result { background: var(--gold-bg); border-color: rgba(201,150,42,0.4); }
+    .ds-card.ds-result .ds-card-label { color: var(--gold); opacity: 1; }
+    @media (max-width: 900px) { .ds-three-col { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -608,48 +618,54 @@
 
     <!-- DS1 -->
     <div class="ds-section">
-      <div class="ds-badge reveal"><span class="ds-badge-dot"></span>Decision Story 1 &middot; Station Queue System</div>
+      <div class="ds-badge reveal"><span class="ds-badge-dot"></span>DECISION STORY 1 &middot; STATION QUEUE SYSTEM</div>
       <div class="ds-title reveal">Why I decided to show prep items in station-wise queues instead of keeping them inside individual order cards.</div>
       <img src="Station Queue.gif" alt="Station Queue System demo" class="ds-gif reveal" style="width:100%;border-radius:6px;border:1px solid var(--border);display:block;margin:16px 0;">
-      <div class="ds-two-col reveal">
-        <div class="ds-half">
-          <div class="ds-half-label">The Operational Bottleneck</div>
-          <p class="ds-half-body">Keeping food items under <strong>individual order cards</strong> caused severe <code>visual noise</code> when 15+ orders flooded the screen. Managers suffered from <strong>cognitive lag</strong>, shifting eyes between different tickets to manually match duplicate items. This scanning delay wasted precious seconds, <strong>slowing down KOT processing speed</strong> before cooks could even take action.</p>
+      <div class="ds-three-col reveal">
+        <div class="ds-card">
+          <div class="ds-card-label">The Problem</div>
+          <p class="ds-card-body">When I tried showing items under <strong>individual order cards</strong>, it was too much to look at for the manager when trying to organize, prioritize, or cook things together. With multiple orders coming through, it was very chaotic, and an item at the top of the column might be the exact same as an item at the bottom. The manager had to constantly shift their eyes between different cards to manage timings, taking up all their time just to <strong>recognize items</strong> instead of taking action, directly <strong>delaying the orders</strong>.</p>
         </div>
-        <div class="ds-half">
-          <div class="ds-half-label">The Design Resolution</div>
-          <p class="ds-half-body">I decoupled items into dedicated <strong>station-wise queues</strong> (<code>Hot</code>, <code>Grill</code>, <code>Assembly</code>) with synced <code>parent Order IDs</code> and <code>SLA countdowns</code>. This allowed the manager to use simple <code>drag-and-drop</code> or arrow keys to <strong>shuffle priority</strong>, <code>hold</code> slow items, or trigger <code>Prep Together</code> batch prompts. When completed, items auto-clear and mark as done on the parent card, <strong>increasing preparation velocity</strong>.</p>
+        <div class="ds-card">
+          <div class="ds-card-label">The Design Solution</div>
+          <p class="ds-card-body">So, I built a <strong>station-wise queue system</strong> where items split automatically into dedicated lanes (<code>Hot</code>, <code>Grill</code>, <code>Assembly</code>) based on stations, allowing the manager to track them by <code>order number</code>. I added simple arrow buttons and <code>drag-and-drop</code> so the manager can comfortably move items up or down. I also added a <code>Prep Together</code> option for similar items, with the granular control to <strong>hold back a specific item</strong> if some need to go out immediately while others can be delayed.</p>
+        </div>
+        <div class="ds-card ds-result">
+          <div class="ds-card-label">The Result</div>
+          <p class="ds-card-body">Once an item is finished cooking and leaves the station queue, it is automatically marked as finished inside the parent order card. This allows the manager to track items based on the order number, <strong>take decisions faster</strong>, and <strong>take actions faster</strong>, directly increasing speed in the kitchen and delivering orders on time.</p>
         </div>
       </div>
-      <div class="result-box reveal" style="background:var(--gold-bg);border-color:var(--gold);"><div class="result-label" style="color:var(--gold);">Result</div><div class="result-text">The kitchen gained <strong>100% visual traceability</strong>. Cooks can see their prep sequence without the manager yelling, and the manager can monitor station loads on sight to prevent bottlenecks.</div></div>
     </div>
 
     <!-- DS2 -->
     <div class="ds-section">
-      <div class="ds-badge reveal"><span class="ds-badge-dot"></span>Decision Story 2 &middot; Canceled Stock Recovery</div>
-      <div class="ds-title reveal">How I use an &ldquo;Up for Grabs&rdquo; section to reduce prepared food wastage and make orders faster.</div>
+      <div class="ds-badge reveal"><span class="ds-badge-dot"></span>DECISION STORY 2 &middot; CANCELED STOCK RECOVERY</div>
+      <div class="ds-title reveal">How I use an up for grabs section to reduce prepared food wasteage and also making orders faster.</div>
       <div class="img-placeholder gif-ph reveal" style="aspect-ratio:16/9;min-height:unset;">
         <svg class="img-ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" opacity="0.3"/></svg>
         <span class="img-ph-label">Decision Story 2 &mdash; GIF Placeholder</span>
         <span class="img-ph-sub">Order cancellation event triggers in Column 2. Item transitions smoothly into the Column 4 &ldquo;Up for Grabs&rdquo; pool. New order lands, showing the golden &ldquo;Use Up for Grabs&rdquo; trigger.</span>
         <span class="img-ph-tag">&#127909; 16:9 GIF &middot; Up for Grabs Recovery</span>
       </div>
-      <div class="ds-two-col reveal">
-        <div class="ds-half">
-          <div class="ds-half-label">The Operational Bottleneck</div>
-          <p class="ds-half-body">When aggregators send <strong>mid-prep cancellations</strong>, typical systems simply erase the card. This causes <strong>massive food waste</strong> because finished or cooking items are thrown directly into the bin, hurting restaurant margins. The manager had no way to track or salvage this prepped food, forcing the kitchen to <strong>lose cash on discarded stock</strong>.</p>
+      <div class="ds-three-col reveal">
+        <div class="ds-card">
+          <div class="ds-card-label">The Problem</div>
+          <p class="ds-card-body">Cancellations happen frequently in the middle of preparation, but in my early drafts, when an aggregator sent a cancellation, the ticket was simply deleted from the screen. If I am the kitchen manager, completely erasing the card means good food goes straight into the trash, causing <strong>high food waste</strong> and directly hurting <strong>restaurant margins</strong>. I wanted a system that would prevent this waste by letting the manager reuse canceled, prepped food for other orders.</p>
         </div>
-        <div class="ds-half">
-          <div class="ds-half-label">The Design Resolution</div>
-          <p class="ds-half-body">I built a temporary <strong>&ldquo;Up for Grabs&rdquo; recovery pool</strong> in Column 4 with a strict <code>30-minute simulated decay timer</code> to ensure freshness. When new orders land requiring that item, a subtle <code>&#8635; Use Up for Grabs</code> prompt appears on the card. Tapping it instantly <strong>reassigns the prepped stock</strong>, bypassing cook stations and cutting preparation times for matching new orders to zero.</p>
+        <div class="ds-card">
+          <div class="ds-card-label">The Design Solution</div>
+          <p class="ds-card-body">I created the <strong>&ldquo;Up for Grabs&rdquo;</strong> section in Column 4 where canceled items sit for exactly 30 minutes, backed by an active countdown bar to ensure food safety and freshness. If a new order arrives requiring that exact item within the 30-minute window, a subtle <code>&#8635; Fulfill from Canceled</code> prompt appears on the card, letting the manager decide to reuse it with a <strong>single click</strong>.</p>
+        </div>
+        <div class="ds-card ds-result">
+          <div class="ds-card-label">The Result</div>
+          <p class="ds-card-body">Food is not wasted, and reusing the canceled item <strong>instantly speeds up the new order</strong>. The manager can <strong>bypass the cook stations entirely</strong>, which directly increases kitchen speed and gets new orders delivered faster.</p>
         </div>
       </div>
-      <div class="result-box reveal" style="background:var(--gold-bg);border-color:var(--gold);"><div class="result-label" style="color:var(--gold);">Result</div><div class="result-text">This single loop <strong>recovered prepped canceled stock</strong>, cutting preparation times for matching incoming orders to zero and saving operational food waste &mdash; directly recovering margin on every incident.</div></div>
     </div>
 
     <!-- DS3 -->
     <div class="ds-section">
-      <div class="ds-badge reveal"><span class="ds-badge-dot"></span>Decision Story 3 &middot; Order State Controls</div>
+      <div class="ds-badge reveal"><span class="ds-badge-dot"></span>DECISION STORY 3 &middot; ORDER STATE CONTROLS</div>
       <div class="ds-title reveal">Why I built an auto-acceptance system and double-tap failsafes to prevent expensive aggregator penalties and accidental misclicks.</div>
       <div class="img-placeholder gif-ph reveal" style="aspect-ratio:16/9;min-height:unset;">
         <svg class="img-ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" opacity="0.3"/></svg>
@@ -657,22 +673,25 @@
         <span class="img-ph-sub">Toggling Auto-Accept OFF reveals the incoming triage feed. Clicking Decline opens the centered, spacious Rejection Modal. Single tap on Cancel does nothing; a double-tap triggers cancel.</span>
         <span class="img-ph-tag">&#127909; 16:9 GIF &middot; Dual-Accept &amp; Safeguard Demo</span>
       </div>
-      <div class="ds-two-col reveal">
-        <div class="ds-half">
-          <div class="ds-half-label">The Operational Bottleneck</div>
-          <p class="ds-half-body">During a heavy rush, manually accepting every order is a <strong>massive cognitive bottleneck</strong>. Missed aggregator timeouts (2&ndash;3 minutes) trigger <strong>expensive penalty fees</strong> and drop search ratings. Additionally, placing the <code>Cancel</code> and <code>Call Rider</code> buttons right next to each other on cards made <strong>accidental cancellations</strong> from greasy fingers highly likely.</p>
+      <div class="ds-three-col reveal">
+        <div class="ds-card">
+          <div class="ds-card-label">The Problem</div>
+          <p class="ds-card-body">During peak hours, a manager cannot manually accept every single incoming order when they are flooding the screen, but aggregators like Swiggy and Zomato charge <strong>expensive penalty fees</strong> if an order is not accepted within a strict three-minute window. Additionally, on the active order cards, I had placed the <code>Cancel</code> and <code>Call Rider</code> buttons right next to each other, creating a high risk where the manager could <strong>mistakenly tap the cancel button</strong> during a busy rush.</p>
         </div>
-        <div class="ds-half">
-          <div class="ds-half-label">The Design Resolution</div>
-          <p class="ds-half-body">I built a global <code>Auto-Accept ON/OFF</code> toggle in the header to bypass manual acceptance limits and eliminate penalties during peak hours. When manual triage is active, rejections require a clear centered modal. For cancellations, I designed a <strong>double-tap gesture</strong> on the <code>Cancel</code> button, creating a physical safety net that prevents accidental inputs without slowing down the workflow with popups.</p>
+        <div class="ds-card">
+          <div class="ds-card-label">The Design Solution</div>
+          <p class="ds-card-body">I built a global <code>Auto-Accept ON/OFF</code> toggle in the header to auto-approve orders and bypass aggregator fees during peak rushes. When turned off, declining an order opens a centered modal to select reasons cleanly, and for cancellations on active cards, I designed a <strong>double-tap gesture</strong> on the <code>Cancel</code> action to get a physical, split-second reconfirmation.</p>
+        </div>
+        <div class="ds-card ds-result">
+          <div class="ds-card-label">The Result</div>
+          <p class="ds-card-body">The restaurant <strong>avoids expensive penalty fees</strong> and completely <strong>eliminates accidental order cancellations</strong>, providing a physical safety net for the manager without slowing down the fast pace of the kitchen.</p>
         </div>
       </div>
-      <div class="result-box reveal" style="background:var(--gold-bg);border-color:var(--gold);"><div class="result-label" style="color:var(--gold);">Result</div><div class="result-text">The system is protected against two of the most costly kitchen errors: <strong>missing the aggregator acceptance window</strong> and <strong>accidentally canceling an active mid-prep order</strong>.</div></div>
     </div>
 
     <!-- DS4 -->
     <div class="ds-section">
-      <div class="ds-badge reveal"><span class="ds-badge-dot"></span>Decision Story 4 &middot; Stop Apps with Timer</div>
+      <div class="ds-badge reveal"><span class="ds-badge-dot"></span>DECISION STORY 4 &middot; STOP APPS WITH TIMER</div>
       <div class="ds-title reveal">How I designed a time-controlled &ldquo;Stop Apps&rdquo; feature to prevent kitchen overload in peak hours.</div>
       <div class="img-placeholder gif-ph reveal" style="aspect-ratio:16/9;min-height:unset;">
         <svg class="img-ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" opacity="0.3"/></svg>
@@ -680,22 +699,25 @@
         <span class="img-ph-sub">Manager opens the Stop Apps modal, selecting specific channels. Sets a 30-minute pause duration; active warning banner appears. Demonstrates manual &ldquo;Resume&rdquo; overriding the live countdown timer.</span>
         <span class="img-ph-tag">&#127909; 16:9 GIF &middot; Stop Apps &amp; Auto-Resume</span>
       </div>
-      <div class="ds-two-col reveal">
-        <div class="ds-half">
-          <div class="ds-half-label">The Operational Bottleneck</div>
-          <p class="ds-half-body">Peak-hour order surges cause <strong>sudden kitchen overload</strong> as multiple apps flood specialized stations. Brute-force shutdowns are too restrictive; managers need selective control to pause Swiggy while keeping Zomato open. Worse, managers often <strong>forget to resume manually</strong>, causing major revenue leaks that last long after the rush.</p>
+      <div class="ds-three-col reveal">
+        <div class="ds-card">
+          <div class="ds-card-label">The Problem</div>
+          <p class="ds-card-body">During peak hours, too many orders flowing from multiple apps to multiple stations causes <strong>panic and kitchen overload</strong>. I noticed local restaurants manually stop orders during busy Sunday afternoons when they can't handle the rush, but they often <strong>forget to turn them back on</strong>, leading to major revenue loss. Standard systems only offer total shutdowns, preventing managers from pausing just one busy app while keeping quieter channels open.</p>
         </div>
-        <div class="ds-half">
-          <div class="ds-half-label">The Design Resolution</div>
-          <p class="ds-half-body">I designed a simplified <strong>Stop Apps</strong> modal allowing targeted channel or brand pauses for set durations (15m, 30m, 1h, 2h). A persistent header banner displays a running <strong>auto-resume countdown timer</strong> to protect the restaurant from forgetfulness. If the backlog clears early, a single <code>Resume</code> button manually overrides the pause, capturing business the moment the kitchen is ready.</p>
+        <div class="ds-card">
+          <div class="ds-card-label">The Design Solution</div>
+          <p class="ds-card-body">I designed a &ldquo;Stop Apps&rdquo; modal where the manager can pause specific apps or brands for set times (15m, 30m, 1h, 2h) depending on kitchen load. The system runs an <strong>auto-resume countdown timer</strong> on the screen with a manual override button, letting the manager easily turn the apps back on whenever they are ready.</p>
+        </div>
+        <div class="ds-card ds-result">
+          <div class="ds-card-label">The Result</div>
+          <p class="ds-card-body">The manager can pause the inflow based on requirements and <strong>stay calm</strong>, ensuring <strong>current orders deliver on time</strong>. New orders are paused for some time and arrive only when the kitchen is free, so they can also be prepared and delivered on time.</p>
         </div>
       </div>
-      <div class="result-box reveal" style="background:var(--gold-bg);border-color:var(--gold);"><div class="result-label" style="color:var(--gold);">Result</div><div class="result-text">The manager can pause the inflow, stay calm, and ensure active orders go out hot and on time, while <strong>safely capturing new business the moment the kitchen is ready</strong> &mdash; with zero risk of forgetting to resume.</div></div>
     </div>
 
     <!-- DS5 -->
     <div class="ds-section">
-      <div class="ds-badge reveal"><span class="ds-badge-dot"></span>Decision Story 5 &middot; Out of Stock Management</div>
+      <div class="ds-badge reveal"><span class="ds-badge-dot"></span>DECISION STORY 5 &middot; OUT OF STOCK MANAGEMENT</div>
       <div class="ds-title reveal">How I designed an Out of Stock toggle panel to prevent the kitchen from accepting orders they cannot prepare.</div>
       <div class="img-placeholder gif-ph reveal" style="aspect-ratio:16/9;min-height:unset;">
         <svg class="img-ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" opacity="0.3"/></svg>
@@ -703,17 +725,20 @@
         <span class="img-ph-sub">Opening the OOS modal and selecting the &ldquo;Patty &amp; Bun&rdquo; brand. Toggling &ldquo;Classic French Fries&rdquo; to OFF. New incoming order with Fries is held and flagged with an alert.</span>
         <span class="img-ph-tag">&#127909; 16:9 GIF &middot; Out of Stock Manager</span>
       </div>
-      <div class="ds-two-col reveal">
-        <div class="ds-half">
-          <div class="ds-half-label">The Operational Bottleneck</div>
-          <p class="ds-half-body">Running out of ingredients mid-rush causes <strong>immediate kitchen panic</strong> if unfulfillable orders are accepted. To avoid cancellations, restaurants make <strong>silent ingredient substitutions</strong>, which directly ruins customer trust and drops ratings. Sifting through a massive scrolling list of hundreds of menu items to deactivate an ingredient is too slow.</p>
+      <div class="ds-three-col reveal">
+        <div class="ds-card">
+          <div class="ds-card-label">The Problem</div>
+          <p class="ds-card-body">Running out of ingredients mid-rush is one of the biggest challenges, and usually, restaurants accept orders and only realize they are out of stock after the ticket goes to the kitchen. This causes panic and confusion, often forcing restaurants to make <strong>silent ingredient substitutions</strong> that reduce customer ratings. Sifting through a massive scrolling list to deactivate an item is too slow.</p>
         </div>
-        <div class="ds-half">
-          <div class="ds-half-label">The Design Resolution</div>
-          <p class="ds-half-body">I built a streamlined <strong>Out of Stock</strong> panel featuring a brand dropdown and exactly 10 high-velocity item toggles. Once toggled <code>OFF</code>, the system automatically communicates with the aggregator APIs and blocks the <code>Auto-Accept</code> engine for incoming tickets with that item. This flags the card for manual triage, allowing the manager to <strong>reject unfulfillable orders upfront</strong>.</p>
+        <div class="ds-card">
+          <div class="ds-card-label">The Design Solution</div>
+          <p class="ds-card-body">Based on a verbal update from the chef, the manager uses a streamlined panel with a brand dropdown and exactly 10 high-velocity toggles to mark items out of stock. New incoming orders containing OOS items are held in the triage list with a warning badge, allowing the manager to <strong>reject unfulfillable orders upfront</strong> before they enter the kitchen.</p>
+        </div>
+        <div class="ds-card ds-result">
+          <div class="ds-card-label">The Result</div>
+          <p class="ds-card-body">The kitchen <strong>avoids wasting time</strong> on unfulfillable orders, and customers are notified of the rejection right away instead of receiving wrong, substituted items.</p>
         </div>
       </div>
-      <div class="result-box reveal" style="background:var(--gold-bg);border-color:var(--gold);"><div class="result-label" style="color:var(--gold);">Result</div><div class="result-text">The kitchen can now act on a stock-out in under 10 seconds, <strong>preventing misfulfilled orders before they enter the prep pipeline</strong> and eliminating silent substitutions that damage platform ratings.</div></div>
     </div>
 
   </div>
