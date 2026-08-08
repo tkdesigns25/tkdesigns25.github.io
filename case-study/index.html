@@ -434,65 +434,8 @@
     <div class="divider reveal"></div>
   </div>
   <div class="proto-wrap reveal" style="max-width:1100px;margin:0 auto;padding:0 40px 0 80px;">
-    <div style="border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: var(--vellum); box-shadow: 0 16px 48px rgba(55,8,8,0.08);">
-      
-      <!-- Proto Header -->
-      <div class="proto-header">
-        <div class="proto-brand">
-          <svg width="18" height="18" viewBox="0 0 100 100" fill="none" stroke="var(--oxblood)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M 12 86 C 38 74 62 74 88 86 C 62 80 38 80 12 86 Z" fill="var(--oxblood)" stroke="none"/><path d="M 50 82 L 50 42" stroke-width="7"/><path d="M 50 46 C 70 40 90 22 90 44 L 90 70 M 83 44 L 83 70 M 76 40 L 76 70 M 69 36 L 69 70"/></svg>
-          <span class="proto-brand-name">Willow Kitchen</span>
-          <span class="proto-brand-tag">Preview Mode</span>
-        </div>
-        <div class="proto-controls">
-          <button class="proto-ctrl-btn" onclick="protoTriggerLocked()"><span class="proto-ctrl-dot"></span>Auto-Accept: ON</button>
-          <button class="proto-ctrl-btn" onclick="protoTriggerLocked()">&#9646;&#9646; Stop Apps</button>
-          <button class="proto-ctrl-btn" onclick="protoTriggerLocked()">&#9675; Out of Stock</button>
-        </div>
-      </div>
-
-      <!-- Proto 4-Column Rail -->
-      <div class="proto-rail">
-        <div class="proto-col">
-          <div class="proto-col-head"><span class="proto-col-title">Just Came In</span><span class="proto-col-count" id="col1-count">0</span></div>
-          <div class="proto-col-body" id="proto-new-orders"></div>
-        </div>
-        <div class="proto-col proto-col-wide">
-          <div class="proto-col-head"><span class="proto-col-title">Cooking Now</span><span class="proto-col-count" id="col2-count">0</span></div>
-          <div class="proto-col-body" id="proto-active-orders"></div>
-        </div>
-        <div class="proto-col proto-col-wide">
-          <div class="proto-col-head"><span class="proto-col-title">Station Queues</span></div>
-          <div class="proto-col-body" id="proto-stations">
-            <div class="proto-station-lane"><div class="proto-lane-head">&#x1F525; Hot Station</div><div class="proto-lane-body" id="hot-items"></div></div>
-            <div class="proto-station-lane"><div class="proto-lane-head">&#x1F356; Grill Station</div><div class="proto-lane-body" id="grill-items"></div></div>
-            <div class="proto-station-lane"><div class="proto-lane-head">&#x1F9FA; Assembly</div><div class="proto-lane-body" id="assembly-items"></div></div>
-          </div>
-        </div>
-        <div class="proto-col">
-          <div class="proto-col-head"><span class="proto-col-title">Handover</span><span class="proto-col-count" id="col4-count">0</span></div>
-          <div class="proto-col-body" id="proto-handover"></div>
-        </div>
-      </div>
-
-      <!-- Proto Status Bar -->
-      <div class="proto-status-bar">
-        <span id="proto-status-msg">&#9654; Two orders are ready &mdash; click &ldquo;Start Order&rdquo; on both cards to begin.</span>
-        <button class="proto-reset-btn" onclick="protoReset()">&#8635; Reset Demo</button>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Teaser Hook Modal -->
-  <div class="proto-modal-overlay" id="proto-teaser-modal" style="display:none;">
-    <div class="proto-modal">
-      <div class="proto-modal-eyebrow">VIEW FULL WORKING PRODUCT?</div>
-      <h3 class="proto-modal-title">This advanced control is locked in preview mode.</h3>
-      <p class="proto-modal-body">Would you like to experience the full, live KDS with simulated order floods and active platform toggles?</p>
-      <div class="proto-modal-actions">
-        <button class="proto-modal-btn-ghost" onclick="protoCloseModal()">No, Keep Reading</button>
-        <a class="proto-modal-btn-primary" href="https://willow-kitchen.vercel.app/" target="_blank" rel="noopener" onclick="protoCloseModal()">Yes, Open Live App &rarr;</a>
-      </div>
+    <div id="proto-box" style="position:relative;width:100%;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fdf8f1;box-shadow:0 16px 48px rgba(55,8,8,0.12);">
+      <iframe src="kds/index.html?preview=true" id="proto-iframe" style="width:1440px;height:880px;border:none;transform-origin:top left;display:block;" title="Willow Kitchen KDS Interactive Preview"></iframe>
     </div>
   </div>
 </section>
@@ -1293,6 +1236,21 @@
       setTimeout(() => el.classList.add('visible'), i * 100);
     });
   });
+</script>
+<script>
+  function resizeProtoIframe() {
+    const box = document.getElementById('proto-box');
+    const iframe = document.getElementById('proto-iframe');
+    if (!box || !iframe) return;
+    const containerWidth = box.clientWidth;
+    const targetWidth = 1440;
+    const scale = containerWidth / targetWidth;
+    iframe.style.transform = `scale(${scale})`;
+    box.style.height = `${880 * scale}px`;
+  }
+  window.addEventListener('resize', resizeProtoIframe);
+  window.addEventListener('load', resizeProtoIframe);
+  document.addEventListener('DOMContentLoaded', resizeProtoIframe);
 </script>
 </body>
 </html>
