@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -50,7 +50,7 @@
     .toc-dot.active .toc-lbl { color: var(--oxblood); }
     main { padding-top: 58px; }
     .section { padding: 88px 0; position: relative; }
-    .section-inner { max-width: 860px; margin: 0 auto; padding: 0 40px 0 80px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; padding: 0 40px 0 80px; }
     .alt-bg { background: var(--linen); }
     .dark-bg { background: var(--oxblood); color: var(--vellum); }
     .dark-bg .s-num { color: rgba(253,248,241,0.4); }
@@ -59,12 +59,69 @@
     .dark-bg .divider { background: var(--gold); opacity: 0.55; }
     .s-num { font-size: 10px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: var(--oxblood); opacity: 0.5; margin-bottom: 12px; }
     .s-title { font-family: var(--font-ser); font-size: clamp(24px, 3.5vw, 38px); font-weight: 700; color: var(--oxblood); line-height: 1.14; margin-bottom: 8px; }
-    .s-sub { font-size: 15px; color: var(--graphite); line-height: 1.68; margin-bottom: 44px; max-width: 620px; }
+    .s-sub { font-size: 15px; color: var(--graphite); line-height: 1.68; margin-bottom: 36px; max-width: 850px; }
     .divider { width: 44px; height: 3px; background: var(--oxblood); border-radius: 2px; margin-bottom: 22px; opacity: 0.3; }
     p.body { font-size: 14px; color: var(--graphite); line-height: 1.75; margin-bottom: 20px; }
     p.body strong { color: var(--ink); }
     code { font-family: var(--font-mono); font-size: 0.88em; background: rgba(55,8,8,0.07); padding: 1px 5px; border-radius: 3px; }
     .dark-bg code { background: rgba(255,255,255,0.1); }
+
+    /* JOURNEY UNBOXED CONTINUOUS STORY STEPS */
+    .journey-step {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 88px;
+      background: transparent;
+      border: none;
+      padding: 0;
+    }
+    .journey-step.reverse {
+      grid-template-columns: 1fr 380px;
+    }
+    .journey-step.reverse .journey-text {
+      order: 2;
+    }
+    .journey-step.reverse .journey-media {
+      order: 1;
+    }
+    .journey-text {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .journey-media, .ds-gif {
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--linen);
+      box-shadow: 0 10px 32px rgba(55,8,8,0.1);
+    }
+    .journey-media {
+      width: 100%;
+    }
+    .journey-media img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .ds-gif {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 18px 0;
+    }
+    @media (max-width: 960px) {
+      .journey-step, .journey-step.reverse {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        margin-bottom: 60px;
+      }
+      .journey-step.reverse .journey-text { order: 1; }
+      .journey-step.reverse .journey-media { order: 2; }
+    }
 
     /* IMAGE PLACEHOLDER STYLES */
     .img-placeholder {
@@ -109,8 +166,8 @@
     .img-ph-col-mock-line.s { width: 55%; }
 
     /* HERO */
-    #s1 { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 0; }
-    .hero-wrap { max-width: 1100px; margin: 0 auto; padding: 80px 40px 56px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; width: 100%; }
+    #s1 { position: relative; }
+    .hero-wrap { max-width: 1100px; margin: 0 auto; padding: 0 40px 0 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; width: 100%; }
     .hero-kicker { display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px; border: 1px solid var(--border); border-radius: 3px; background: var(--linen); font-size: 10px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--graphite); margin-bottom: 22px; }
     .hero-kicker em { color: var(--oxblood); font-style: normal; }
     .hero-h1 { font-family: var(--font-ser); font-size: clamp(32px, 5vw, 54px); font-weight: 700; line-height: 1.07; color: var(--oxblood); margin-bottom: 18px; }
@@ -380,6 +437,143 @@
     .result-label { font-size: 10px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #b45309; margin-bottom: 8px; }
     .result-text { font-size: 13px; color: #1a1410; line-height: 1.65; }
     .result-text strong { font-weight: 700; color: #370808; }
+
+    /* AI Workflow Pipeline & Instinct Cards */
+    .pipeline-wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 24px 0 32px;
+    }
+    .pipeline-step {
+      background: var(--vellum);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: 0 4px 16px rgba(55,8,8,0.04);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .pipeline-step:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(55,8,8,0.08);
+    }
+    .pipeline-badge {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--oxblood);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .pipeline-title {
+      font-family: var(--font-ser);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--oxblood);
+      line-height: 1.35;
+    }
+    .pipeline-desc {
+      font-size: 12.5px;
+      color: var(--graphite);
+      line-height: 1.6;
+    }
+    .pipeline-desc code {
+      font-size: 11px;
+    }
+    @media (max-width: 960px) {
+      .pipeline-wrap { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) {
+      .pipeline-wrap { grid-template-columns: 1fr; }
+    }
+
+    .instinct-card {
+      background: var(--vellum);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 26px 28px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 18px rgba(55,8,8,0.04);
+    }
+    .instinct-badge {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--oxblood);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .instinct-title {
+      font-family: var(--font-ser);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--oxblood);
+      margin-bottom: 14px;
+      line-height: 1.35;
+    }
+    .instinct-body {
+      font-size: 14.5px;
+      color: var(--ink);
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+    .instinct-body:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Floating Back to Top Button (Enters at Section 3) */
+    .floating-top-btn {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 995;
+      background: var(--oxblood);
+      color: var(--vellum);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      padding: 10px 18px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 24px rgba(55,8,8,0.22);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(16px);
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s ease, background 0.2s ease;
+      text-decoration: none;
+    }
+    .floating-top-btn:hover {
+      background: #270606;
+      color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(55,8,8,0.35);
+    }
+    .floating-top-btn.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    @media (max-width: 600px) {
+      .floating-top-btn {
+        bottom: 20px;
+        right: 20px;
+        padding: 8px 14px;
+        font-size: 10px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -398,7 +592,7 @@
     </svg>
     <span class="nav-brand-text">Willow Kitchen</span>
   </a>
-  <span class="nav-label">UX Case Study &middot; v0.0.1</span>
+  <span class="nav-label">UX CASE STUDY</span>
   <a class="nav-cta" href="https://willow-kitchen.vercel.app/" target="_blank" rel="noopener">Live Demo &#8599;</a>
 </nav>
 
@@ -406,13 +600,13 @@
   <a href="#s1" class="toc-dot active" data-s="s1"><span class="toc-circle"></span><span class="toc-lbl">01 Hero</span></a>
   <a href="#s2" class="toc-dot" data-s="s2"><span class="toc-circle"></span><span class="toc-lbl">02 Prototype</span></a>
   <a href="#s3" class="toc-dot" data-s="s3"><span class="toc-circle"></span><span class="toc-lbl">03 Problem</span></a>
-  <a href="#s4" class="toc-dot" data-s="s4"><span class="toc-circle"></span><span class="toc-lbl">04 Workflow</span></a>
-  <a href="#s5" class="toc-dot" data-s="s5"><span class="toc-circle"></span><span class="toc-lbl">05 Decisions</span></a>
-  <a href="#s6" class="toc-dot" data-s="s6"><span class="toc-circle"></span><span class="toc-lbl">06 User Flows</span></a>
-  <a href="#s7" class="toc-dot" data-s="s7"><span class="toc-circle"></span><span class="toc-lbl">07 Craft</span></a>
-  <a href="#s8" class="toc-dot" data-s="s8"><span class="toc-circle"></span><span class="toc-lbl">08 Reflection</span></a>
-  <a href="#s9" class="toc-dot" data-s="s10"><span class="toc-circle"></span><span class="toc-lbl">09 Next Steps</span></a>
-  <a href="#s10" class="toc-dot" data-s="s10"><span class="toc-circle"></span><span class="toc-lbl">10 Feedback</span></a>
+  <a href="#s4" class="toc-dot" data-s="s4"><span class="toc-circle"></span><span class="toc-lbl">04 Persona</span></a>
+  <a href="#s5" class="toc-dot" data-s="s5"><span class="toc-circle"></span><span class="toc-lbl">05 Journey</span></a>
+  <a href="#s6" class="toc-dot" data-s="s6"><span class="toc-circle"></span><span class="toc-lbl">06 Decisions</span></a>
+  <a href="#s7" class="toc-dot" data-s="s7"><span class="toc-circle"></span><span class="toc-lbl">07 Scope</span></a>
+  <a href="#s8" class="toc-dot" data-s="s8"><span class="toc-circle"></span><span class="toc-lbl">08 Stories</span></a>
+  <a href="#s9" class="toc-dot" data-s="s9"><span class="toc-circle"></span><span class="toc-lbl">09 AI Workflow</span></a>
+  <a href="#s10" class="toc-dot" data-s="s10"><span class="toc-circle"></span><span class="toc-lbl">10 Reflections</span></a>
 </nav>
 
 <main>
@@ -421,9 +615,9 @@
 <section id="s1" class="section">
   <div class="hero-wrap">
     <div class="hero-left">
-      <div class="hero-eyebrow reveal">01 / 10 &middot; WILLOW KITCHEN</div>
-      <h1 class="hero-h1 reveal d1" style="font-size: clamp(28px, 4vw, 40px);">A cloud kitchen dashboard built to help manager&rsquo;s decision making faster and help accelerate order delivery</h1>
-      <p class="hero-p reveal d2" style="font-size: 18px; max-width: 520px;">It unifies fragmented delivery apps into one clear, glare-free workspace, helping kitchen teams balance station loads, save canceled food, and coordinate couriers with zero manual friction.</p>
+      <div class="s-num reveal">01 / 10</div>
+      <h1 class="hero-h1 reveal d1" style="font-size: clamp(28px, 4vw, 40px); font-weight: 400; line-height: 1.15;"><strong>Cloud kitchen dashboard</strong> built to make <strong>manager</strong>&rsquo;s <strong>decision making</strong> <strong>faster</strong> and help <strong>accelerate order delivery</strong></h1>
+      <p class="hero-p reveal d2" style="font-size: 18px; max-width: 520px;">A single screen system that manages orders from first ping to rider handover helping kitchens balance station loads, save canceled food, and stay in control during chaotic hours.</p>
       <div class="btn-row reveal d4">
         <a class="btn-primary" href="https://willow-kitchen.vercel.app/" target="_blank" rel="noopener">OPEN LIVE PROTOTYPE &rarr;</a>
         <a class="btn-ghost" href="#s3" style="background: var(--linen);">READ CASE STUDY &darr;</a>
@@ -432,7 +626,7 @@
     <div class="hero-visual reveal d2">
       <div class="monitor-frame">
         <div class="monitor-screen">
-          <img src="image 25.png" alt="Willow Kitchen dashboard specimen" class="hero-mockup-img">
+          <img src="assets/hero-preview.png" alt="Willow Kitchen dashboard specimen" class="hero-mockup-img">
         </div>
         <div class="monitor-stand"></div>
         <div class="monitor-base"></div>
@@ -443,506 +637,773 @@
 <section id="s2" class="section alt-bg" style="background: var(--vellum);">
   <div class="section-inner" style="max-width:1100px;padding:0 40px 0 80px;">
     <div class="s-num reveal">02 / 10</div>
-    <h2 class="s-title reveal">Try It: The Interactive Prototype</h2>
-    <p class="s-sub reveal">An integrated preview of the working application using production components. Walk a two-order cycle from arrival to handover. Advanced controls will prompt you to open the full live app.</p>
+    <h2 class="s-title reveal">Try this interactive prototype</h2>
+    <p class="s-sub reveal" style="font-size: 18px; max-width: 620px;">Take a peek into the system that gives an experience of having full control over the cloud kitchen.</p>
     <div class="divider reveal"></div>
   </div>
   <div class="proto-wrap reveal" style="max-width:1100px;margin:0 auto;padding:0 40px 0 80px;">
-    <div id="proto-box" style="position:relative;width:100%;border:1px solid var(--border);border-radius:8px;overflow:hidden;background:#fdf8f1;box-shadow:0 16px 48px rgba(55,8,8,0.12);">
-      <iframe src="kds/index.html?preview=true" id="proto-iframe" style="width:1280px;height:780px;border:none;transform-origin:top left;display:block;" title="Willow Kitchen Interactive Preview"></iframe>
+    <div id="proto-box" class="preview-container" style="width:100%;position:relative;overflow:hidden;background-color:var(--vellum) !important;border:1px solid var(--border);border-radius:5px;box-shadow:0 16px 48px rgba(55,8,8,0.12);transition:height 0.15s ease;">
+      <iframe src="preview.html" id="proto-iframe" class="preview-canvas" style="width:1920px;height:1080px;position:absolute;top:0;left:0;transform-origin:top left;border:none;display:block;pointer-events:auto;" title="Willow Kitchen Interactive Preview"></iframe>
     </div>
   </div>
 </section>
-<section id="s3" class="section alt-bg wip-grey">
+<section id="s3" class="section alt-bg">
   <div class="section-inner">
     <div class="s-num reveal">03 / 10</div>
-    <h2 class="s-title reveal">Stepping into the Steamy Kitchen: Why Standard SaaS Dashboards Fail Cooks</h2>
-    <p class="s-sub reveal">Standard dashboards show past data. Kitchen passes show <em>present action</em>. When 80 orders flood in over a single hour across three virtual brands, the physical kitchen pass breaks down.</p>
+    <h2 class="s-title reveal">The Cloud Kitchen Problem</h2>
+    <p class="s-sub reveal">Let me take you inside the kitchen at 8:00 PM on a Saturday. This is exactly where things start breaking down, and why I designed this system in the first place.</p>
     <div class="divider reveal"></div>
-    <p class="body reveal">Before this solution, the kitchen operated on physical app tablets, wet paper chits, and constant verbal shouting. The operational consequences were severe:</p>
-    <div class="flow-row reveal">
-      <div class="flow-box">Aggregators (Swiggy / Zomato)</div><div class="flow-arr">&rarr;</div>
-      <div class="flow-box">Noise &amp; Wet Receipts</div><div class="flow-arr">&rarr;</div>
-      <div class="flow-box">Chaos at the Pass</div>
+
+    <!-- The Setting -->
+    <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px; margin-bottom: 24px;">
+      <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--oxblood); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+        <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--green);"></span>
+        SETTING
+      </div>
+      <p style="font-size: 15px; color: var(--ink); line-height: 1.7; margin-bottom: 0;">
+        Imagine one physical kitchen preparing gourmet burgers, deep-fried wings, and healthy salad bowls cooking orders for 3 different brands out of one kitchen and by one shared team on the three stations during the peak weekend dinner rush, handling easily 80 orders an hour coming in simultaneously from Swiggy, Zomato, and their own app.
+      </p>
     </div>
-    <div class="prob-list">
-      <div class="prob-item reveal">
-        <div class="prob-icon">&#128683;</div>
-        <div><div class="prob-title">Station Blindness</div><div class="prob-text">Cooks prepared tickets in the exact sequence they arrived. This completely overwhelmed the fry station while the assembly station stood empty and idle.</div></div>
+
+    <!-- The Problem -->
+    <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px; margin-bottom: 24px;">
+      <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: #b45309; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+        <span style="width: 8px; height: 8px; border-radius: 50%; background: #b45309;"></span>
+        PROBLEM
       </div>
-      <div class="prob-item reveal d1">
-        <div class="prob-icon">&#128226;</div>
-        <div><div class="prob-title">The Shouting Loop</div><div class="prob-text">Because different items on a single ticket cooked at different speeds, the manager had to constantly yell across the room: <em>&ldquo;Raju, did you start the Biryani for #102 yet?&rdquo;</em></div></div>
+      <p style="font-size: 15px; color: var(--ink); line-height: 1.7; margin-bottom: 14px;">
+        When the rush starts, orders flood in from different apps and the manager is holding a stack of paper chits, trying to coordinate everything. Cooks just grab whatever chit is closest, so everyone works in one station while other station is completely empty. Meanwhile, prepared food is going cold because the manager forgot to call the rider, or a rider stands at the door waiting for an order that haven't even started. If an order gets canceled due to delays, the food prepared goes straight into the trash causing food wastage and also kitchen ratings taking a hit.
+      </p>
+      <p style="font-size: 14px; font-weight: 700; color: var(--oxblood); line-height: 1.6;">
+        This operational chaos directly leads to delayed deliveries, refund requests, and dropped kitchen ratings.
+      </p>
+    </div>
+
+    <!-- Core Problems to Solve and Simple, Human Driven Goals -->
+    <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px; margin-bottom: 24px;">
+      <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--oxblood); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+        <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--oxblood);"></span>
+        CORE PROBLEMS TO SOLVE AND SIMPLE, HUMAN DRIVEN GOALS
       </div>
-      <div class="prob-item reveal d2">
-        <div class="prob-icon">&#128308;</div>
-        <div><div class="prob-title">Sensory Overload</div><div class="prob-text">Multiple tablet buzzers ringing, cards flashing, and layout boxes shaking on the screen made it impossible to prioritize on sight.</div></div>
-      </div>
-      <div class="prob-item reveal d3">
-        <div class="prob-icon">&#128465;&#65039;</div>
-        <div><div class="prob-title">Food Waste</div><div class="prob-text">When a customer or aggregator canceled an order mid-prep, the already cooked food went straight into the trash &mdash; a direct margin loss on every incident.</div></div>
+      <p style="font-size: 14px; color: var(--graphite); margin-bottom: 20px; line-height: 1.6;">
+        To measure success, I ignored complicated textbook metrics and focused strictly on the real, everyday challenges and goals of the kitchen manager to tackle them:
+      </p>
+      <div style="overflow-x: auto; border: 1px solid var(--border); border-radius: 6px; box-shadow: 0 4px 16px rgba(55,8,8,0.06);">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 13.5px;">
+          <thead>
+            <tr style="background: var(--oxblood); color: var(--vellum);">
+              <th style="padding: 14px 20px; font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--vellum); width: 48%; border-right: 1px solid rgba(255,255,255,0.15);">CORE PROBLEM TO SOLVE</th>
+              <th style="padding: 14px 20px; font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--vellum); width: 52%;">EXPECTED GOAL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border); background: var(--vellum);">
+              <td style="padding: 16px 20px; vertical-align: top; border-right: 1px solid var(--border); line-height: 1.65; color: var(--ink);">
+                Orders arrive from three apps at once, making it incredibly difficult to organize, assign, and prioritize items. This manual work slows down the manager's decisions.
+              </td>
+              <td style="padding: 16px 20px; vertical-align: top; color: var(--ink); line-height: 1.65;">
+                A system that centralizes all three apps, helping the manager make fast decisions, assign tasks to stations, and prioritize items inside queues for on-time delivery.
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border); background: var(--linen);">
+              <td style="padding: 16px 20px; vertical-align: top; border-right: 1px solid var(--border); line-height: 1.65; color: var(--ink);">
+                Active orders get canceled mid-preparation, causing prepared food to be thrown away, resulting in high food waste and direct financial loss.
+              </td>
+              <td style="padding: 16px 20px; vertical-align: top; color: var(--ink); line-height: 1.65;">
+                A system that tracks canceled prepared food and allows the manager to quickly reuse it to speed up and fulfill new incoming orders.
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border); background: var(--vellum);">
+              <td style="padding: 16px 20px; vertical-align: top; border-right: 1px solid var(--border); line-height: 1.65; color: var(--ink);">
+                The kitchen gets overloaded during peak hours with no way to control incoming orders, leading to massive operational stress and customer frustration.
+              </td>
+              <td style="padding: 16px 20px; vertical-align: top; color: var(--ink); line-height: 1.65;">
+                A control mechanism that lets the manager manage order inflow, allowing them to temporarily pause or stop incoming orders to let the kitchen catch up.
+              </td>
+            </tr>
+            <tr style="background: var(--linen);">
+              <td style="padding: 16px 20px; vertical-align: top; border-right: 1px solid var(--border); line-height: 1.65; color: var(--ink);">
+                Prepared food sits going cold at the pass, or riders stand waiting at the door for ten minutes because the kitchen hasn't started their order.
+              </td>
+              <td style="padding: 16px 20px; vertical-align: top; color: var(--ink); line-height: 1.65;">
+                A tracking system showing if a rider has arrived on-site or not, allowing the manager to make smart preparation and dispatch decisions based on rider status.
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-    <p style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--graphite);margin:36px 0 12px;" class="reveal">Operational North Stars &mdash; Concrete Business Metrics</p>
-    <div class="tbl-wrap reveal">
-      <table class="dtable">
-        <thead><tr><th>Metric</th><th>How We Measure It</th><th>Target Goal</th></tr></thead>
-        <tbody>
-          <tr><td>KOT Processing Speed</td><td>Average seconds to accept and route an incoming Kitchen Order Ticket</td><td><span class="target-badge">&lt; 15 seconds</span></td></tr>
-          <tr><td>Order Lag Time</td><td>Average minutes an order sits fully completed at the pass before handover</td><td><span class="target-badge">&lt; 60 seconds</span></td></tr>
-          <tr><td>Rider Wait Time</td><td>Idle time spent by delivery executives at the physical pickup point</td><td><span class="target-badge">Reduce by 40%</span></td></tr>
-          <tr><td>Prepped Waste Recovery</td><td>Percentage of completed or mid-prep canceled items successfully saved</td><td><span class="target-badge">Reclaim 100%</span></td></tr>
-        </tbody>
-      </table>
-    </div>
+
   </div>
 </section>
-
-<!-- S3: WORKFLOW -->
-<section id="s4" class="section wip-grey">
+<!-- S4: PERSONA -->
+<section id="s4" class="section alt-bg">
   <div class="section-inner">
     <div class="s-num reveal">04 / 10</div>
-    <h2 class="s-title reveal">From Ingestion to Handover: The 4-Column Operational Journey</h2>
-    <p class="s-sub reveal">To understand the final working solution, let us walk through the happy path of a customer&rsquo;s order through the kitchen. The system organizes this lifecycle into a structured 4-column workflow.</p>
+    <h2 class="s-title reveal">Meet Our Persona</h2>
+    <p class="s-sub reveal">Understanding the human behind the pass &mdash; the physical limits, mental load, and split-second decisions that define a cloud kitchen shift.</p>
     <div class="divider reveal"></div>
-    <div class="wf-diagram reveal">
-      <div class="wf-col">
-        <div class="wf-col-head">Column 1 &middot; New Orders</div>
-        <div class="wf-col-body">
-          <div class="wf-tag-list">
-            <span class="wf-tag blue">Auto-accept toggle</span>
-            <span class="wf-tag gold">Station tags</span>
-            <span class="wf-tag green">Batch match</span>
-            <span class="wf-tag red">Auto-cancel timer</span>
+
+    <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px;">
+      <!-- Top Row: Full Image with Overlay + Side Details (Tags & Primary Goal) -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; align-items: center; margin-bottom: 24px;">
+        <div style="position: relative; border-radius: 6px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(55,8,8,0.1); background: var(--linen);">
+          <img src="assets/persona-ramesh.jpg" alt="Ramesh - Cloud Kitchen Operations Manager" style="width: 100%; height: auto; display: block;">
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(35,8,8,0.72) 0%, rgba(35,8,8,0.35) 60%, transparent 100%); padding: 18px 16px 12px; color: var(--vellum);">
+            <div style="font-family: var(--font-ser); font-size: 17px; font-weight: 700; color: var(--vellum); letter-spacing: 0.02em; margin-bottom: 2px;">Ramesh, 28</div>
+            <div style="font-size: 11px; font-weight: 500; opacity: 0.9; color: var(--vellum);">Cloud Kitchen Operations Manager</div>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px; justify-content: center;">
+          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+            <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 14px; border-radius: 4px; background: var(--linen); border: 1px solid var(--border); color: var(--oxblood);">Role: Operations Manager</span>
+            <span style="font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 14px; border-radius: 4px; background: var(--linen); border: 1px solid var(--border); color: var(--oxblood);">Shift: 8&ndash;10 Hours on Feet</span>
+          </div>
+
+          <div style="background: var(--linen); border: 1px solid var(--border); border-left: 4px solid var(--oxblood); border-radius: 4px; padding: 14px 18px; font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--oxblood); line-height: 1.6;">
+            Primary Goal: Keep the kitchen completely organized, minimize prep bottlenecks, and dispatch orders on time without losing food to cancellations.
           </div>
         </div>
       </div>
-      <div class="wf-col">
-        <div class="wf-col-head">Column 2 &middot; Cooking Now</div>
-        <div class="wf-col-body">
-          <div class="wf-tag-list">
-            <span class="wf-tag red">SLA countdown</span>
-            <span class="wf-tag gold">Hold / Prep controls</span>
-            <span class="wf-tag green">Auto-packing</span>
-            <span class="wf-tag blue">Priority sorting</span>
-          </div>
-        </div>
-      </div>
-      <div class="wf-col">
-        <div class="wf-col-head">Column 3 &middot; Station Queues</div>
-        <div class="wf-col-body">
-          <div class="wf-tag-list">
-            <span class="wf-tag red">Hot Queue</span>
-            <span class="wf-tag gold">Grill Queue</span>
-            <span class="wf-tag green">Assembly Queue</span>
-            <span class="wf-tag blue">Bulk cook</span>
-          </div>
-        </div>
-      </div>
-      <div class="wf-col">
-        <div class="wf-col-head">Column 4 &middot; Handover</div>
-        <div class="wf-col-body">
-          <div class="wf-tag-list">
-            <span class="wf-tag green">Packed Orders</span>
-            <span class="wf-tag blue">Riders list</span>
-            <span class="wf-tag gold">Up for Grabs</span>
-            <span class="wf-tag red">30-min decay</span>
-          </div>
-        </div>
+
+      <!-- Bottom: Narrative text -->
+      <div style="border-top: 1px solid var(--border); padding-top: 20px;">
+        <p style="font-size: 15px; color: var(--ink); line-height: 1.8;">
+          Ramesh is a 28 year old Cloud Kitchen Operations Manager who spends 8 to 10 hours a day on his feet running the pass. Ramesh is a hands-on operator who relies entirely on memory, scribbling modifications on wet paper chits, and shouting numbers across the kitchen to keep his cooks moving. During peak rushes, he gets easily overwhelmed by multiple orders flooding in, and he is constantly stressed about orders getting canceled or letting packed orders go cold while riders crowd his pickup window.
+        </p>
       </div>
     </div>
-    <div class="steps-list reveal">
-      <div class="step-item">
-        <div class="step-num-col"><div class="step-num-circle">1</div><div class="step-num-line"></div></div>
-        <div class="step-content">
-          <div class="step-label">Column 1 &mdash; &ldquo;Just Came In&rdquo;</div>
-          <div class="step-title">Order Ingestion</div>
-          <div class="step-goal">User Goal: Instantly calculate if the kitchen can prepare the order before committing.</div>
-          <p class="step-text">The order lands in the system. If <code>Auto-Accept</code> is toggled <code>OFF</code> (manual triage mode), the ticket appears in Column 1 with a strict auto-cancel countdown timer. Subdued, italicized tags alert the manager if a required station is currently overloaded, while a green badge highlights potential batch-cooking opportunities (e.g., <strong>&#9889; Batch Match: 2x Fries already cooking</strong>). The manager clicks <code>&#10003; Start This Order</code>.</p>
-          <div class="img-placeholder short" style="margin-top:16px;">
-            <svg class="img-ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            <span class="img-ph-label">Column 1 &mdash; New Order Card</span>
-            <span class="img-ph-sub">Screenshot: incoming ticket with station load tag and batch match badge</span>
-            <span class="img-ph-tag">&#128247; Product Screenshot &middot; Column 1</span>
-          </div>
-        </div>
-      </div>
-      <div class="step-item">
-        <div class="step-num-col"><div class="step-num-circle">2</div><div class="step-num-line"></div></div>
-        <div class="step-content">
-          <div class="step-label">Column 2 &mdash; &ldquo;Cooking Now&rdquo;</div>
-          <div class="step-title">SLA-Prioritized Cooking</div>
-          <div class="step-goal">User Goal: Prepare different items in the same ticket so they finish cooking at the exact same moment.</div>
-          <p class="step-text">Once accepted, the ticket immediately moves to Column 2 and is sorted dynamically. <strong>Tickets with the least remaining preparation SLA are pinned strictly to the top.</strong> Fast-prep items are automatically placed on <code>HOLD</code> by the system. The manager lets the cook prepare the slow-prep item first, releasing the held fast item only when the timers align.</p>
-          <div class="img-placeholder short" style="margin-top:16px;">
-            <svg class="img-ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            <span class="img-ph-label">Column 2 &mdash; SLA-Sorted Active Order</span>
-            <span class="img-ph-sub">Screenshot: active cooking card with HOLD item, SLA timer, and item progress bars</span>
-            <span class="img-ph-tag">&#128247; Product Screenshot &middot; Column 2</span>
-          </div>
-        </div>
-      </div>
-      <div class="step-item">
-        <div class="step-num-col"><div class="step-num-circle">3</div><div class="step-num-line"></div></div>
-        <div class="step-content">
-          <div class="step-label">Column 3 &mdash; &ldquo;Station Queues&rdquo;</div>
-          <div class="step-title">Cook Execution</div>
-          <div class="step-goal">User Goal: Let cooks focus purely on food quality without micromanaging order delivery.</div>
-          <p class="step-text">Individual items are stripped from the parent ticket and sent directly to the dedicated vertical tracks in Column 3: <strong>Hot Station</strong>, <strong>Grill Station</strong>, or <strong>Assembly Station</strong>. Cooks read their vertical queue. Every item shows its parent Order ID and overall SLA countdown. When a cook finishes preparing an item, they tap <code>Done</code> on their station screen. The item automatically checks itself off on the master ticket in Column 2.</p>
-          <div class="img-placeholder short" style="margin-top:16px;">
-            <svg class="img-ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            <span class="img-ph-label">Column 3 &mdash; Station Queue View</span>
-            <span class="img-ph-sub">Screenshot: Hot / Grill / Assembly station lanes with parent order IDs and SLA countdowns</span>
-            <span class="img-ph-tag">&#128247; Product Screenshot &middot; Column 3</span>
-          </div>
-        </div>
-      </div>
-      <div class="step-item">
-        <div class="step-num-col"><div class="step-num-circle">4</div></div>
-        <div class="step-content">
-          <div class="step-label">Column 4 &mdash; &ldquo;Handover / Up for Grabs&rdquo;</div>
-          <div class="step-title">Packing &amp; Hands-Off Handover</div>
-          <div class="step-goal">User Goal: Hand the completed package to the correct delivery partner with zero wait time.</div>
-          <p class="step-text">Once all items on a ticket are checked off as Ready, the ticket background turns into a <strong>soft gold wash</strong> and moves to Column 4 under <code>Packed &amp; Waiting</code>. Arriving riders are listed in a compact grid showing their statuses. If the assigned rider is already marked <strong>&#127866; HERE NOW</strong>, the system executes a <strong>Zero-Click Auto-Handover</strong>, clearing the ticket from the board and triggering a celebratory delivery toast.</p>
-          <div class="img-placeholder short" style="margin-top:16px;">
-            <svg class="img-ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            <span class="img-ph-label">Column 4 &mdash; Handover &amp; Up for Grabs</span>
-            <span class="img-ph-sub">Screenshot: gold-washed packed order card, rider grid, and Up for Grabs pool with decay bars</span>
-            <span class="img-ph-tag">&#128247; Product Screenshot &middot; Column 4</span>
-          </div>
-        </div>
-      </div>
-    </div>
+
   </div>
 </section>
 
-<!-- S4: DECISION STORIES -->
-<section id="s5" class="section alt-bg">
+<!-- S5: SOLUTION AS A JOURNEY -->
+<section id="s5" class="section">
   <div class="section-inner">
     <div class="s-num reveal">05 / 10</div>
+    <h2 class="s-title reveal">Solution as a Journey</h2>
+    <p class="s-sub reveal">This journey shows how a <strong>cloud kitchen operations manager</strong> goes from <strong>facing a sudden, uncoordinated weekend order flood</strong> to <strong>clearing the entire rush calmly on time</strong>, covering steps like <strong>batching matching items together</strong>, <strong>reordering active station queues</strong>, and <strong>managing delivery executive dispatch times</strong>. The aim is to help them <strong>fast-track order preparation and handovers without letting food go cold</strong>.</p>
+    <div class="divider reveal"></div>
+
+    <!-- STEP 1 -->
+    <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px; margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;">
+        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 1 &middot; INGESTION &amp; TRIAGING</div>
+        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Column 1 &mdash; Just Came In</span>
+      </div>
+      
+      <div style="border-radius: 6px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(55,8,8,0.08); margin-bottom: 20px; background: var(--linen);">
+        <img src="assets/journey-step-1.png" alt="Step 1 — Ingestion &amp; Triaging" style="width: 100%; height: auto; display: block;" loading="lazy">
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; border-top: 1px solid var(--border); padding-top: 18px;">
+        <div>
+          <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #b45309; margin-bottom: 6px;">USER GOAL</div>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Evaluate the incoming order's items and prep opportunities before accepting.</p>
+        </div>
+        <div>
+          <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oxblood); margin-bottom: 6px;">USER ACTION</div>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Ramesh reads the card for Order <code>#111</code>. The system flags a <code>Prep Together</code> opportunity because the <code>Veg Patty Burger</code> matches an item already queued. He clicks <code>✓ Start This Order</code> to accept it.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 1 -> Step 2 Transition Ribbon -->
+    <div class="reveal" style="display: flex; align-items: center; justify-content: center; margin: 20px 0; gap: 12px; font-size: 12px; font-weight: 600;">
+      <div style="flex: 1; height: 1px; background: var(--border);"></div>
+      <div style="background: var(--linen); border: 1px solid var(--border); border-radius: 999px; padding: 6px 16px; display: flex; align-items: center; gap: 8px; color: var(--oxblood);">
+        <span>Ramesh clicks &ldquo;Start This Order&rdquo; to accept the ticket</span>
+        <span style="font-weight: 800;">&rarr;</span>
+      </div>
+      <div style="flex: 1; height: 1px; background: var(--border);"></div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px; margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;">
+        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 2 &middot; AUTOMATED ROUTING</div>
+        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Column 2 &amp; Column 3 &mdash; Active Pass</span>
+      </div>
+      
+      <div style="border-radius: 6px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(55,8,8,0.08); margin-bottom: 20px; background: var(--linen);">
+        <img src="assets/journey-step-2.png" alt="Step 2 — Automated Routing" style="width: 100%; height: auto; display: block;" loading="lazy">
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; border-top: 1px solid var(--border); padding-top: 18px;">
+        <div>
+          <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #b45309; margin-bottom: 6px;">USER GOAL</div>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Ensure the accepted order's items are distributed to the correct station lines.</p>
+        </div>
+        <div>
+          <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oxblood); margin-bottom: 6px;">USER ACTION</div>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">The system automatically splits the order. The items populate under <code>Hot Station</code> in Column 3, allowing Ramesh to track their individual prep states.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -> Step 3 Transition Ribbon -->
+    <div class="reveal" style="display: flex; align-items: center; justify-content: center; margin: 20px 0; gap: 12px; font-size: 12px; font-weight: 600;">
+      <div style="flex: 1; height: 1px; background: var(--border);"></div>
+      <div style="background: var(--linen); border: 1px solid var(--border); border-radius: 999px; padding: 6px 16px; display: flex; align-items: center; gap: 8px; color: var(--oxblood);">
+        <span>Ramesh opens the station queue in Column 3</span>
+        <span style="font-weight: 800;">&rarr;</span>
+      </div>
+      <div style="flex: 1; height: 1px; background: var(--border);"></div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px; margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;">
+        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 3 &middot; GROUP COOKING EXECUTION</div>
+        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Column 3A &mdash; Hot Station Queue</span>
+      </div>
+      
+      <div style="border-radius: 6px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(55,8,8,0.08); margin-bottom: 20px; background: var(--linen);">
+        <img src="assets/journey-step-3.png" alt="Step 3 — Group Cooking Execution" style="width: 100%; height: auto; display: block;" loading="lazy">
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; border-top: 1px solid var(--border); padding-top: 18px;">
+        <div>
+          <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #b45309; margin-bottom: 6px;">USER GOAL</div>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Batch-cook duplicate items across different orders to save preparation time.</p>
+        </div>
+        <div>
+          <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oxblood); margin-bottom: 6px;">USER ACTION</div>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Ramesh clicks the prominent <code>Prep Together</code> button on the highlighted green block, instantly putting the matching <code>Veg Patty Burgers</code> from both orders into <code>Cooking</code>.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 -> Step 4 Transition Ribbon -->
+    <div class="reveal" style="display: flex; align-items: center; justify-content: center; margin: 20px 0; gap: 12px; font-size: 12px; font-weight: 600;">
+      <div style="flex: 1; height: 1px; background: var(--border);"></div>
+      <div style="background: var(--linen); border: 1px solid var(--border); border-radius: 999px; padding: 6px 16px; display: flex; align-items: center; gap: 8px; color: var(--oxblood);">
+        <span>Ramesh starts the next item in the station queue</span>
+        <span style="font-weight: 800;">&rarr;</span>
+      </div>
+      <div style="flex: 1; height: 1px; background: var(--border);"></div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px; margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;">
+        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 4 &middot; QUEUE REPRIORITIZATION</div>
+        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Column 3A &mdash; Hot Station Queue</span>
+      </div>
+      
+      <div style="border-radius: 6px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(55,8,8,0.08); margin-bottom: 20px; background: var(--linen);">
+        <img src="assets/journey-step-4.png" alt="Step 4 — Queue Reprioritization" style="width: 100%; height: auto; display: block;" loading="lazy">
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; border-top: 1px solid var(--border); padding-top: 18px;">
+        <div>
+          <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #b45309; margin-bottom: 6px;">USER GOAL</div>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Change the cooking priority of a slow-prep item to speed it up.</p>
+        </div>
+        <div>
+          <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oxblood); margin-bottom: 6px;">USER ACTION</div>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Ramesh clicks <code>Prep</code> on the <code>Paneer Fresh Burger</code> and clicks <code>▲</code> to slide it to the top of the queue, ensuring the cook prepares it next.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4 -> Step 5 Transition Ribbon -->
+    <div class="reveal" style="display: flex; align-items: center; justify-content: center; margin: 20px 0; gap: 12px; font-size: 12px; font-weight: 600;">
+      <div style="flex: 1; height: 1px; background: var(--border);"></div>
+      <div style="background: var(--linen); border: 1px solid var(--border); border-radius: 999px; padding: 6px 16px; display: flex; align-items: center; gap: 8px; color: var(--oxblood);">
+        <span>The first item finishes prep at the griddle</span>
+        <span style="font-weight: 800;">&rarr;</span>
+      </div>
+      <div style="flex: 1; height: 1px; background: var(--border);"></div>
+    </div>
+
+    <!-- STEP 5 -->
+    <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px; margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;">
+        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 5 &middot; STEADY PACING</div>
+        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Column 2 &amp; Column 3A &mdash; Active Pass</span>
+      </div>
+      
+      <div style="border-radius: 6px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(55,8,8,0.08); margin-bottom: 20px; background: var(--linen);">
+        <img src="assets/journey-step-5.png" alt="Step 5 — Steady Pacing" style="width: 100%; height: auto; display: block;" loading="lazy">
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; border-top: 1px solid var(--border); padding-top: 18px;">
+        <div>
+          <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #b45309; margin-bottom: 6px;">USER GOAL</div>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Track completed items on the card and launch remaining held items.</p>
+        </div>
+        <div>
+          <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oxblood); margin-bottom: 6px;">USER ACTION</div>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">The <code>Veg Patty Burger</code> finishes cooking and automatically checks itself off on Card <code>#111</code>. Ramesh clicks <code>Prep</code> on the remaining <code>BBQ Bacon Smash Burger</code> to start its cooking timer.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 5 -> Step 6 Transition Ribbon -->
+    <div class="reveal" style="display: flex; align-items: center; justify-content: center; margin: 20px 0; gap: 12px; font-size: 12px; font-weight: 600;">
+      <div style="flex: 1; height: 1px; background: var(--border);"></div>
+      <div style="background: var(--linen); border: 1px solid var(--border); border-radius: 999px; padding: 6px 16px; display: flex; align-items: center; gap: 8px; color: var(--oxblood);">
+        <span>The second item is cooked and marked ready</span>
+        <span style="font-weight: 800;">&rarr;</span>
+      </div>
+      <div style="flex: 1; height: 1px; background: var(--border);"></div>
+    </div>
+
+    <!-- STEP 6 -->
+    <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px; margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;">
+        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 6 &middot; TRACKING MULTI-ITEM COHESION</div>
+        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Column 2 &amp; Column 3A &mdash; Active Pass</span>
+      </div>
+      
+      <div style="border-radius: 6px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(55,8,8,0.08); margin-bottom: 20px; background: var(--linen);">
+        <img src="assets/journey-step-6.png" alt="Step 6 — Tracking Multi-Item Cohesion" style="width: 100%; height: auto; display: block;" loading="lazy">
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; border-top: 1px solid var(--border); padding-top: 18px;">
+        <div>
+          <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #b45309; margin-bottom: 6px;">USER GOAL</div>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Keep an eye on the cooking balance of the remaining items.</p>
+        </div>
+        <div>
+          <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oxblood); margin-bottom: 6px;">USER ACTION</div>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">The <code>Paneer Fresh Burger</code> is fully cooked and marked ready, while the final <code>BBQ Bacon Smash Burger</code> is actively cooking.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 6 -> Step 7 Transition Ribbon -->
+    <div class="reveal" style="display: flex; align-items: center; justify-content: center; margin: 20px 0; gap: 12px; font-size: 12px; font-weight: 600;">
+      <div style="flex: 1; height: 1px; background: var(--border);"></div>
+      <div style="background: var(--linen); border: 1px solid var(--border); border-radius: 999px; padding: 6px 16px; display: flex; align-items: center; gap: 8px; color: var(--oxblood);">
+        <span>The final burger is cooked, and the order is boxed</span>
+        <span style="font-weight: 800;">&rarr;</span>
+      </div>
+      <div style="flex: 1; height: 1px; background: var(--border);"></div>
+    </div>
+
+    <!-- STEP 7 -->
+    <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px; margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;">
+        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 7 &middot; RIDER DELAY HANDLING</div>
+        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Column 4 &mdash; Packed &amp; Waiting</span>
+      </div>
+      
+      <div style="border-radius: 6px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(55,8,8,0.08); margin-bottom: 20px; background: var(--linen);">
+        <img src="assets/journey-step-7.png" alt="Step 7 — Rider Delay Handling" style="width: 100%; height: auto; display: block;" loading="lazy">
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; border-top: 1px solid var(--border); padding-top: 18px;">
+        <div>
+          <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #b45309; margin-bottom: 6px;">USER GOAL</div>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Coordinate pickup for a fully packed order when the courier is delayed.</p>
+        </div>
+        <div>
+          <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oxblood); margin-bottom: 6px;">USER ACTION</div>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">The final item is cooked, the card turns gold, and the packer boxes it. Because rider <code>Kavita N.</code> has not arrived, the order moves to Column 4. Ramesh clicks <code>[ Call Rider ]</code> to ping her.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 7 -> Step 8 Transition Ribbon -->
+    <div class="reveal" style="display: flex; align-items: center; justify-content: center; margin: 20px 0; gap: 12px; font-size: 12px; font-weight: 600;">
+      <div style="flex: 1; height: 1px; background: var(--border);"></div>
+      <div style="background: var(--linen); border: 1px solid var(--border); border-radius: 999px; padding: 6px 16px; display: flex; align-items: center; gap: 8px; color: var(--oxblood);">
+        <span>Kavita arrives, scans the bag, and clears the pass</span>
+        <span style="font-weight: 800;">&rarr;</span>
+      </div>
+      <div style="flex: 1; height: 1px; background: var(--border);"></div>
+    </div>
+
+    <!-- STEP 8 -->
+    <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px; margin-bottom: 24px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;">
+        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 8 &middot; SHIFT COMPLETION &amp; ANALYTICS</div>
+        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: System Overlay &mdash; Rush Summary Analytics</span>
+      </div>
+      
+      <div style="border-radius: 6px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(55,8,8,0.08); margin-bottom: 20px; background: var(--linen);">
+        <img src="assets/journey-step-8.png" alt="Step 8 — Shift Completion &amp; Analytics" style="width: 100%; height: auto; display: block;" loading="lazy">
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; border-top: 1px solid var(--border); padding-top: 18px;">
+        <div>
+          <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #b45309; margin-bottom: 6px;">USER GOAL</div>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Evaluate the team's operational performance once the active rush is cleared.</p>
+        </div>
+        <div>
+          <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oxblood); margin-bottom: 6px;">USER ACTION</div>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Kavita picks up the bag. With all active orders cleared (<code>0</code> remaining), the <code>Rush Summary</code> modal automatically pops up, showing an on-time rate of <code>100%</code> and key station load analytics.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- S6: DECISION STORIES -->
+<section id="s6" class="section">
+  <div class="section-inner">
+    <div class="s-num reveal">06 / 10</div>
     <h2 class="s-title reveal">The Core Decision Stories</h2>
-    <p class="s-sub reveal">These are the five decisions that helped in making the system effective for taking faster decisions and achieving faster food handover</p>
+    <p class="s-sub reveal">These are the three decisions that helped in making the system effective for taking faster decisions and achieving faster food handover</p>
     <div class="divider reveal"></div>
 
     <!-- DS1 -->
     <div class="ds-section">
       <div class="ds-badge reveal"><span class="ds-badge-dot"></span>DECISION STORY 1 &middot; STATION QUEUE SYSTEM</div>
       <div class="ds-title reveal">Why I decided to show prep items in station-wise queues instead of keeping them inside individual order cards.</div>
-      <img src="Station Queue.gif" alt="Station Queue System demo" class="ds-gif reveal" style="width:100%;border-radius:6px;border:1px solid var(--border);display:block;margin:16px 0;">
+      <img src="assets/decision-1-station-queue.gif" alt="Station Queue System demo" class="ds-gif reveal" loading="lazy">
       <div class="ds-two-col reveal">
         <div class="ds-half">
-          <div class="ds-half-label">THE OPERATIONAL BOTTLENECK</div>
-          <p class="ds-half-body">When I tried showing items under <strong>individual order cards</strong>, it was too much to look at for the manager when trying to organize, prioritize, or cook things together. With multiple orders coming through, it was very chaotic, and an item at the top of the column might be the exact same as an item at the bottom. The manager had to constantly shift their eyes between different cards to manage timings, taking up all their time just to <strong>recognize items</strong> instead of taking action, directly <strong>delaying the orders</strong>.</p>
+          <div class="ds-half-label">PROBLEM</div>
+          <p class="ds-half-body">When I tried showing items under <strong>individual order cards</strong>, it became <code>chaotic</code> for the manager. With multiple orders coming through, they had to constantly shift their eyes between different cards to manage timings and duplicate items. This manual searching took up too much time just to <strong>recognize items</strong>, leaving less time for actual decision-making and action—directly causing <strong>order delays</strong>.</p>
         </div>
         <div class="ds-half">
-          <div class="ds-half-label">THE DESIGN RESOLUTION</div>
-          <p class="ds-half-body">So, I built a <strong>station-wise queue system</strong> where items split automatically into dedicated lanes (<code>Hot</code>, <code>Grill</code>, <code>Assembly</code>) based on stations, allowing the manager to track them by <code>order number</code>. I added simple arrow buttons and <code>drag-and-drop</code> so the manager can comfortably move items up or down. I also added a <code>Prep Together</code> option for similar items, with the granular control to <strong>hold back a specific item</strong> if some need to go out immediately while others can be delayed.</p>
+          <div class="ds-half-label">SOLUTION</div>
+          <p class="ds-half-body">I built a <strong>station-wise queue system</strong> where items automatically split into dedicated lanes (<code>Hot</code>, <code>Grill</code>, <code>Assembly</code>) based on stations, allowing the manager to track them by <code>order number</code>. I added simple arrow buttons and <code>drag-and-drop</code> so the manager can comfortably move items up or down. I also added a <code>Prep Together</code> option for similar items, with the granular control to <strong>hold back a specific item</strong> if some need to go out immediately while others can be delayed.</p>
         </div>
       </div>
       <div class="result-box reveal">
-        <div class="result-label">THE RESULT</div>
-        <p class="result-text">Once an item is finished cooking and leaves the station queue, it is automatically marked as finished inside the parent order card. This allows the manager to track items based on the order number, <strong>take decisions faster</strong>, and <strong>take actions faster</strong>, directly increasing speed in the kitchen and delivering orders on time.</p>
+        <div class="result-label">RESULT</div>
+        <p class="result-text">The manager takes decisions and actions much faster, directly <strong>increasing kitchen speed</strong> and delivering orders on time with <strong>100% visual traceability</strong>.</p>
       </div>
     </div>
 
     <!-- DS2 -->
     <div class="ds-section">
-      <div class="ds-badge reveal"><span class="ds-badge-dot"></span>DECISION STORY 2 &middot; CANCELED STOCK RECOVERY</div>
-      <div class="ds-title reveal">How I use an up for grabs section to reduce prepared food wasteage and also making orders faster.</div>
-      <div class="img-placeholder gif-ph reveal" style="aspect-ratio:16/9;min-height:unset;">
-        <svg class="img-ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" opacity="0.3"/></svg>
-        <span class="img-ph-label">Decision Story 2 &mdash; GIF Placeholder</span>
-        <span class="img-ph-sub">Order cancellation event triggers in Column 2. Item transitions smoothly into the Column 4 &ldquo;Up for Grabs&rdquo; pool. New order lands, showing the golden &ldquo;Use Up for Grabs&rdquo; trigger.</span>
-        <span class="img-ph-tag">&#127909; 16:9 GIF &middot; Up for Grabs Recovery</span>
-      </div>
+      <div class="ds-badge reveal"><span class="ds-badge-dot"></span>DECISION STORY 2 &middot; ORDER STATE CONTROLS</div>
+      <div class="ds-title reveal">Why I built an auto-acceptance system and double-tap failsafes to prevent expensive aggregator penalties and accidental misclicks.</div>
+      <img src="assets/decision-2-order-state-controls.gif" alt="Decision Story 2 — Order State Controls" class="ds-gif reveal" loading="lazy">
       <div class="ds-two-col reveal">
         <div class="ds-half">
-          <div class="ds-half-label">THE OPERATIONAL BOTTLENECK</div>
-          <p class="ds-half-body">Cancellations happen frequently in the middle of preparation, but in my early drafts, when an aggregator sent a cancellation, the ticket was simply deleted from the screen. If I am the kitchen manager, completely erasing the card means good food goes straight into the trash, causing <strong>high food waste</strong> and directly hurting <strong>restaurant margins</strong>. I wanted a system that would prevent this waste by letting the manager reuse canceled, prepped food for other orders.</p>
+          <div class="ds-half-label">PROBLEM</div>
+          <p class="ds-half-body">During peak hours, managers cannot manually accept every incoming ticket. Aggregators like Swiggy and Zomato charge <strong>expensive penalty fees</strong> if orders are not accepted within three minutes. Also, placing the <code>Cancel</code> and <code>Call Rider</code> buttons right next to each other on the active card meant managers frequently made <strong>accidental cancellations</strong>.</p>
         </div>
         <div class="ds-half">
-          <div class="ds-half-label">THE DESIGN RESOLUTION</div>
-          <p class="ds-half-body">I created the <strong>&ldquo;Up for Grabs&rdquo;</strong> section in Column 4 where canceled items sit for exactly 30 minutes, backed by an active countdown bar to ensure food safety and freshness. If a new order arrives requiring that exact item within the 30-minute window, a subtle <code>&#8635; Fulfill from Canceled</code> prompt appears on the card, letting the manager decide to reuse it with a <strong>single click</strong>.</p>
+          <div class="ds-half-label">SOLUTION</div>
+          <p class="ds-half-body">I added a global <code>Auto-Accept</code> toggle to auto-approve orders and bypass fees during rushes. When turned off, rejections open a centered modal to select reasons cleanly. For active cards, I designed a <strong>double-tap gesture</strong> on the <code>Cancel</code> action, creating a physical safety net that <strong>prevents accidental inputs</strong> without slowing down the manager with annoying pop-ups.</p>
         </div>
       </div>
       <div class="result-box reveal">
-        <div class="result-label">THE RESULT</div>
-        <p class="result-text">Food is not wasted, and reusing the canceled item <strong>instantly speeds up the new order</strong>. The manager can <strong>bypass the cook stations entirely</strong>, which directly increases kitchen speed and gets new orders delivered faster.</p>
+        <div class="result-label">RESULT</div>
+        <p class="result-text">The kitchen <strong>avoids expensive penalty fees</strong> and completely eliminates accidental order cancellations without slowing down the fast pace of the manager.</p>
       </div>
     </div>
 
     <!-- DS3 -->
     <div class="ds-section">
-      <div class="ds-badge reveal"><span class="ds-badge-dot"></span>DECISION STORY 3 &middot; ORDER STATE CONTROLS</div>
-      <div class="ds-title reveal">Why I built an auto-acceptance system and double-tap failsafes to prevent expensive aggregator penalties and accidental misclicks.</div>
-      <div class="img-placeholder gif-ph reveal" style="aspect-ratio:16/9;min-height:unset;">
-        <svg class="img-ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" opacity="0.3"/></svg>
-        <span class="img-ph-label">Decision Story 3 &mdash; GIF Placeholder</span>
-        <span class="img-ph-sub">Toggling Auto-Accept OFF reveals the incoming triage feed. Clicking Decline opens the centered, spacious Rejection Modal. Single tap on Cancel does nothing; a double-tap triggers cancel.</span>
-        <span class="img-ph-tag">&#127909; 16:9 GIF &middot; Dual-Accept &amp; Safeguard Demo</span>
-      </div>
-      <div class="ds-two-col reveal">
-        <div class="ds-half">
-          <div class="ds-half-label">THE OPERATIONAL BOTTLENECK</div>
-          <p class="ds-half-body">During peak hours, a manager cannot manually accept every single incoming order when they are flooding the screen, but aggregators like Swiggy and Zomato charge <strong>expensive penalty fees</strong> if an order is not accepted within a strict three-minute window. Additionally, on the active order cards, I had placed the <code>Cancel</code> and <code>Call Rider</code> buttons right next to each other, creating a high risk where the manager could <strong>mistakenly tap the cancel button</strong> during a busy rush.</p>
-        </div>
-        <div class="ds-half">
-          <div class="ds-half-label">THE DESIGN RESOLUTION</div>
-          <p class="ds-half-body">I built a global <code>Auto-Accept ON/OFF</code> toggle in the header to auto-approve orders and bypass aggregator fees during peak rushes. When turned off, declining an order opens a centered modal to select reasons cleanly, and for cancellations on active cards, I designed a <strong>double-tap gesture</strong> on the <code>Cancel</code> action to get a physical, split-second reconfirmation.</p>
-        </div>
-      </div>
-      <div class="result-box reveal">
-        <div class="result-label">THE RESULT</div>
-        <p class="result-text">The restaurant <strong>avoids expensive penalty fees</strong> and completely <strong>eliminates accidental order cancellations</strong>, providing a physical safety net for the manager without slowing down the fast pace of the kitchen.</p>
-      </div>
-    </div>
-
-    <!-- DS4 -->
-    <div class="ds-section">
-      <div class="ds-badge reveal"><span class="ds-badge-dot"></span>DECISION STORY 4 &middot; STOP APPS WITH TIMER</div>
+      <div class="ds-badge reveal"><span class="ds-badge-dot"></span>DECISION STORY 3 &middot; STOP APPS WITH TIMER</div>
       <div class="ds-title reveal">How I designed a time-controlled &ldquo;Stop Apps&rdquo; feature to prevent kitchen overload in peak hours.</div>
-      <div class="img-placeholder gif-ph reveal" style="aspect-ratio:16/9;min-height:unset;">
-        <svg class="img-ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" opacity="0.3"/></svg>
-        <span class="img-ph-label">Decision Story 4 &mdash; GIF Placeholder</span>
-        <span class="img-ph-sub">Manager opens the Stop Apps modal, selecting specific channels. Sets a 30-minute pause duration; active warning banner appears. Demonstrates manual &ldquo;Resume&rdquo; overriding the live countdown timer.</span>
-        <span class="img-ph-tag">&#127909; 16:9 GIF &middot; Stop Apps &amp; Auto-Resume</span>
-      </div>
+      <img src="assets/decision-3-stop-apps.gif" alt="Decision Story 3 — Stop Apps with Timer" class="ds-gif reveal" loading="lazy">
       <div class="ds-two-col reveal">
         <div class="ds-half">
-          <div class="ds-half-label">THE OPERATIONAL BOTTLENECK</div>
-          <p class="ds-half-body">During peak hours, too many orders flowing from multiple apps to multiple stations causes <strong>panic and kitchen overload</strong>. I noticed local restaurants manually stop orders during busy Sunday afternoons when they can't handle the rush, but they often <strong>forget to turn them back on</strong>, leading to major revenue loss. Standard systems only offer total shutdowns, preventing managers from pausing just one busy app while keeping quieter channels open.</p>
+          <div class="ds-half-label">PROBLEM</div>
+          <p class="ds-half-body">During peak hours, too many orders flowing from multiple apps to multiple stations causes <strong>panic and kitchen overload</strong>. I noticed local restaurants manually stop orders during busy Sunday afternoons when they can't handle the rush, but they often <strong>forget to turn the apps back on</strong>, leading to major revenue loss. Standard systems only offer total shutdowns, preventing managers from pausing just one busy app while keeping quieter channels open.</p>
         </div>
         <div class="ds-half">
-          <div class="ds-half-label">THE DESIGN RESOLUTION</div>
-          <p class="ds-half-body">I designed a &ldquo;Stop Apps&rdquo; modal where the manager can pause specific apps or brands for set times (15m, 30m, 1h, 2h) depending on kitchen load. The system runs an <strong>auto-resume countdown timer</strong> on the screen with a manual override button, letting the manager easily turn the apps back on whenever they are ready.</p>
+          <div class="ds-half-label">SOLUTION</div>
+          <p class="ds-half-body">I designed a simplified <strong>Stop Apps</strong> modal allowing targeted channel or brand pauses for set times (15m, 30m, 1h, 2h). The system runs an <strong>auto-resume countdown timer</strong> on the screen with a manual override button, letting the manager easily turn the apps back on whenever they are ready.</p>
         </div>
       </div>
       <div class="result-box reveal">
-        <div class="result-label">THE RESULT</div>
-        <p class="result-text">The manager can pause the inflow based on requirements and <strong>stay calm</strong>, ensuring <strong>current orders deliver on time</strong>. New orders are paused for some time and arrive only when the kitchen is free, so they can also be prepared and delivered on time.</p>
+        <div class="result-label">RESULT</div>
+        <p class="result-text">The manager stays calm and manages orders without pressure, ensuring <strong>current orders deliver on time</strong> and new orders arrive only when the kitchen is free.</p>
       </div>
     </div>
 
-    <!-- DS5 -->
-    <div class="ds-section">
-      <div class="ds-badge reveal"><span class="ds-badge-dot"></span>DECISION STORY 5 &middot; OUT OF STOCK MANAGEMENT</div>
-      <div class="ds-title reveal">How I designed an Out of Stock toggle panel to prevent the kitchen from accepting orders they cannot prepare.</div>
-      <div class="img-placeholder gif-ph reveal" style="aspect-ratio:16/9;min-height:unset;">
-        <svg class="img-ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" opacity="0.3"/></svg>
-        <span class="img-ph-label">Decision Story 5 &mdash; GIF Placeholder</span>
-        <span class="img-ph-sub">Opening the OOS modal and selecting the &ldquo;Patty &amp; Bun&rdquo; brand. Toggling &ldquo;Classic French Fries&rdquo; to OFF. New incoming order with Fries is held and flagged with an alert.</span>
-        <span class="img-ph-tag">&#127909; 16:9 GIF &middot; Out of Stock Manager</span>
-      </div>
-      <div class="ds-two-col reveal">
-        <div class="ds-half">
-          <div class="ds-half-label">THE OPERATIONAL BOTTLENECK</div>
-          <p class="ds-half-body">Running out of ingredients mid-rush is one of the biggest challenges, and usually, restaurants accept orders and only realize they are out of stock after the ticket goes to the kitchen. This causes panic and confusion, often forcing restaurants to make <strong>silent ingredient substitutions</strong> that reduce customer ratings. Sifting through a massive scrolling list to deactivate an item is too slow.</p>
-        </div>
-        <div class="ds-half">
-          <div class="ds-half-label">THE DESIGN RESOLUTION</div>
-          <p class="ds-half-body">Based on a verbal update from the chef, the manager uses a streamlined panel with a brand dropdown and exactly 10 high-velocity toggles to mark items out of stock. New incoming orders containing OOS items are held in the triage list with a warning badge, allowing the manager to <strong>reject unfulfillable orders upfront</strong> before they enter the kitchen.</p>
-        </div>
-      </div>
-      <div class="result-box reveal">
-        <div class="result-label">THE RESULT</div>
-        <p class="result-text">The kitchen <strong>avoids wasting time</strong> on unfulfillable orders, and customers are notified of the rejection right away instead of receiving wrong, substituted items.</p>
-      </div>
-    </div>
+    
 
   </div>
 </section>
-<section id="s6" class="section wip-grey">
-  <div class="section-inner">
-    <div class="s-num reveal">06 / 10</div>
-    <h2 class="s-title reveal">Beyond the Happy Path: How Three Different Staff Members Navigate the Pass</h2>
-    <p class="s-sub reveal">To show how different roles interact with the system, here are the step-by-step user flows designed for three key kitchen scenarios.</p>
-    <div class="divider reveal"></div>
-    <div class="persona-grid">
-
-      <!-- Persona 1: Manager -->
-      <div class="persona-card reveal">
-        <div class="persona-head">
-          <div class="persona-icon">&#128101;</div>
-          <div>
-            <div class="persona-title">The Manager Balancing Station Loads</div>
-            <div class="persona-scenario">Scenario: The Grill Station is buried under 12 active burger orders while the Assembly Station is free.</div>
-          </div>
-        </div>
-        <div class="persona-body">
-          <ol class="persona-steps">
-            <li class="persona-step"><div class="persona-step-num">1</div><div>The manager looks up at the <strong>Header Load Indicators</strong>.</div></li>
-            <li class="persona-step"><div class="persona-step-num">2</div><div>They notice the <code>Grill</code> track is solid red (Overloaded), while the <code>Bowls</code> track is empty.</div></li>
-            <li class="persona-step"><div class="persona-step-num">3</div><div>The manager opens the <strong>Station Queue Monitor</strong> in Column 3.</div></li>
-            <li class="persona-step"><div class="persona-step-num">4</div><div>They use the <code>[Move Down]</code> action on low-priority burger orders to buffer the griddle, while clicking <code>Prep</code> on simple cold-assembly salads to keep the assembly cook busy.</div></li>
-          </ol>
-          <div class="inline-flow" style="margin-bottom:14px;">
-            <div class="inline-flow-box">Check Header Load</div><div class="inline-flow-arr">&rarr;</div>
-            <div class="inline-flow-box">Spot Overloaded Station</div><div class="inline-flow-arr">&rarr;</div>
-            <div class="inline-flow-box">Re-order Queue in Col 3</div>
-          </div>
-          <div class="persona-outcome"><strong>Outcome:</strong> The workflow is balanced on sight, reducing peak bottlenecks.</div>
-          <div class="img-placeholder short" style="margin-top:16px;">
-            <svg class="img-ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            <span class="img-ph-label">Manager Flow &mdash; Load Balancing</span>
-            <span class="img-ph-sub">Screenshot: header with overloaded Grill track (red) and queue reordering in Column 3</span>
-            <span class="img-ph-tag">&#128247; Product Screenshot &middot; User Flow 1</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Persona 2: Cook -->
-      <div class="persona-card reveal">
-        <div class="persona-head">
-          <div class="persona-icon">&#128104;&#8205;&#127859;</div>
-          <div>
-            <div class="persona-title">The Cook Executing Station Priorities</div>
-            <div class="persona-scenario">Scenario: The Grill Cook has 6 different tickets requiring fries at different times.</div>
-          </div>
-        </div>
-        <div class="persona-body">
-          <ol class="persona-steps">
-            <li class="persona-step"><div class="persona-step-num">1</div><div>The cook looks at the <strong>Grill Station Queue</strong> in Column 3.</div></li>
-            <li class="persona-step"><div class="persona-step-num">2</div><div>They see three separate cards requiring <code>Classic French Fries</code> with similar SLA countdowns.</div></li>
-            <li class="persona-step"><div class="persona-step-num">3</div><div>Instead of cooking them separately, the cook taps the prominent <strong><code>Cook Bulk</code></strong> button.</div></li>
-            <li class="persona-step"><div class="persona-step-num">4</div><div>The cook drops one large triple-portion of fries, completing three different order requirements in a single batch.</div></li>
-          </ol>
-          <div class="persona-outcome"><strong>Outcome:</strong> Three different order requirements fulfilled in a single batch cook &mdash; fryer throughput maximized.</div>
-          <div class="img-placeholder short" style="margin-top:16px;">
-            <svg class="img-ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            <span class="img-ph-label">Cook Flow &mdash; Bulk Cook Action</span>
-            <span class="img-ph-sub">Screenshot: Grill Station queue with matching fries items highlighted and Cook Bulk button active</span>
-            <span class="img-ph-tag">&#128247; Product Screenshot &middot; User Flow 2</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Persona 3: Packer -->
-      <div class="persona-card reveal">
-        <div class="persona-head">
-          <div class="persona-icon">&#128230;</div>
-          <div>
-            <div class="persona-title">The Packer Coordinating Rider Arrivals</div>
-            <div class="persona-scenario">Scenario: 4 completed bags on the counter, pass getting congested with riders.</div>
-          </div>
-        </div>
-        <div class="persona-body">
-          <ol class="persona-steps">
-            <li class="persona-step"><div class="persona-step-num">1</div><div>The packer checks the <strong>Riders Waiting</strong> panel in Column 4.</div></li>
-            <li class="persona-step"><div class="persona-step-num">2</div><div>They spot a rider marked <strong>&#127866; HERE NOW</strong> (waiting 2:15 mins) for Order <code>#134</code>.</div></li>
-            <li class="persona-step"><div class="persona-step-num">3</div><div>The packer matches the <code>Tag: Blue-3</code> label on the screen with the physical blue tag on the bag.</div></li>
-            <li class="persona-step"><div class="persona-step-num">4</div><div>The packer confirms handover &mdash; the system instantly clears the rider card and the order card simultaneously.</div></li>
-          </ol>
-          <div class="persona-outcome"><strong>Outcome:</strong> The pass is cleared quickly with zero manual search errors.</div>
-          <div class="img-placeholder short" style="margin-top:16px;">
-            <svg class="img-ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            <span class="img-ph-label">Packer Flow &mdash; Rider Handover</span>
-            <span class="img-ph-sub">Screenshot: Column 4 rider panel with HERE NOW status, bag tag label, and Confirm Handover button</span>
-            <span class="img-ph-tag">&#128247; Product Screenshot &middot; User Flow 3</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- S6: CRAFT -->
-<section id="s7" class="section dark-bg wip-grey">
+<!-- S7: SCOPE -->
+<section id="s7" class="section alt-bg">
   <div class="section-inner">
     <div class="s-num reveal">07 / 10</div>
-    <h2 class="s-title reveal">Craft &amp; Execution: How Systematic Tokens and Auto Layout Built a Rugged UI</h2>
-    <p class="s-sub reveal">Willow Kitchen is built on a clean, high-contrast, light-mode visual design inspired by standard restaurant display systems &mdash; featuring crisp whites, deep oxbloods, and high-visibility typography.</p>
+    <h2 class="s-title reveal">Scope of the Project</h2>
+    <p class="s-sub reveal">Since I had to ship a fully working prototype in exactly 7 days, I had to prioritize ruthlessly. I focused strictly on the core features that solve the immediate dinner rush chaos, and skipped everything else.</p>
     <div class="divider reveal"></div>
-    <div class="token-box reveal">
-      <div class="token-head">Design System Tokens</div>
-      <div class="token-rows">
-        <div class="token-row"><div class="t-swatch" style="background:#ffffff;"></div><div class="t-name">Page Canvas</div><div class="t-hex">#ffffff</div><div class="t-use">Pure, clean, glare-resistant background</div></div>
-        <div class="token-row"><div class="t-swatch" style="background:#f4ebd7;"></div><div class="t-name">--kds-linen</div><div class="t-hex">#f4ebd7</div><div class="t-use">Subtle card container separation</div></div>
-        <div class="token-row"><div class="t-swatch" style="background:#370808;"></div><div class="t-name">--kds-oxblood</div><div class="t-hex">#370808</div><div class="t-use">Highly visible primary borders &amp; text</div></div>
-        <div class="token-row"><div class="t-swatch" style="background:#f8e47d;"></div><div class="t-name">Warnings</div><div class="t-hex">#f8e47d</div><div class="t-use">Buttered Gold &mdash; subdued highlight</div></div>
-        <div class="token-row"><div class="t-swatch" style="background:transparent;border:2px dashed rgba(255,255,255,0.12);"></div><div class="t-name">--radius-all</div><div class="t-hex">5px</div><div class="t-use">Strict uniform layout rounded corners</div></div>
+
+    <!-- Key Assumptions I Made -->
+    <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px; margin-bottom: 24px;">
+      <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--oxblood); margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+        <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--green);"></span>
+        KEY ASSUMPTIONS I MADE
+      </div>
+      <p style="font-size: 14px; color: var(--graphite); margin-bottom: 16px; line-height: 1.6;">
+        Before designing any screens, I set strict rules about how this kitchen operates in the real world:
+      </p>
+      <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="background: var(--linen); border: 1px solid var(--border); border-radius: 6px; padding: 14px 18px; font-size: 13.5px; color: var(--ink); line-height: 1.65;">
+          <strong>Cooks Have Their Own Station Displays</strong> &mdash; I assume there are simple digital displays at each individual station (<code>Hot</code>, <code>Grill</code>, <code>Assembly</code>). The priority and queue sequence set by the manager on their master display are automatically pushed to and followed by the cooks at these station screens.
+        </div>
+        <div style="background: var(--linen); border: 1px solid var(--border); border-radius: 6px; padding: 14px 18px; font-size: 13.5px; color: var(--ink); line-height: 1.65;">
+          <strong>Chefs Mark Items Done</strong> &mdash; When a cook finishes preparing an item, they mark it as cooked inside their station panel, which instantly updates the manager's master pass.
+        </div>
+        <div style="background: var(--linen); border: 1px solid var(--border); border-radius: 6px; padding: 14px 18px; font-size: 13.5px; color: var(--ink); line-height: 1.65;">
+          <strong>Packaging is Automated</strong> &mdash; Packaging happens outside of the manager's screen. Once prep is done, items are sent directly to the packing table and get bagged.
+        </div>
+        <div style="background: var(--linen); border: 1px solid var(--border); border-radius: 6px; padding: 14px 18px; font-size: 13.5px; color: var(--ink); line-height: 1.65;">
+          <strong>Exception-Based Notifications</strong> &mdash; The manager only gets a card under <code>Packed &amp; Waiting</code> if the food is packed but cannot be picked up yet because the delivery rider hasn't arrived. If the rider is already there (<strong style="color:var(--green);">🟢 HERE NOW</strong>), the order bypasses manual handovers and is delivered directly to them.
+        </div>
+        <div style="background: var(--linen); border: 1px solid var(--border); border-radius: 6px; padding: 14px 18px; font-size: 13.5px; color: var(--ink); line-height: 1.65;">
+          <strong>Limited Menu Catalog</strong> &mdash; The brand menus are strictly limited to exactly 10 items per brand, totaling 30 items for the entire kitchen system.
+        </div>
       </div>
     </div>
-    <div class="craft-grid reveal">
-      <div class="craft-card" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);">
-        <div class="craft-card-title" style="color:var(--gold);">Spacing &amp; Density</div>
-        <div class="craft-card-text" style="color:rgba(253,248,241,0.65);">To prevent 14+ active tickets from merging into a confusing wall of text, I applied a strict vertical <strong style="color:var(--vellum);">8pt Spacing Rhythm</strong> (<code>--spacing-8</code>, <code>--spacing-16</code>, <code>--spacing-24</code>). Cards are padded generously with 16px of inner margins, and items inside the card use an 8px vertical gap to ensure readability.</div>
+
+    <!-- Deciding between Ideas -->
+    <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px;">
+      <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--oxblood); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+        <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--oxblood);"></span>
+        DECIDING BETWEEN IDEAS
       </div>
-      <div class="craft-card" style="background:rgba(255,255,255,0.05);border-color:rgba(255,255,255,0.1);">
-        <div class="craft-card-title" style="color:var(--gold);">Auto Layout &amp; Scalability</div>
-        <div class="craft-card-text" style="color:rgba(253,248,241,0.65);">Every card, ticket, and modal was built using <strong style="color:var(--vellum);">Nested Auto Layout</strong> in Figma. This ensures that when an order&rsquo;s item list grows or when a &ldquo;Fulfill from Canceled&rdquo; prompt appears, the ticket scales dynamically without forcing any manual layout adjustments.</div>
+      <p style="font-size: 14px; color: var(--graphite); margin-bottom: 20px; line-height: 1.6;">
+        To deliver the project on time, I prioritized between my additional feature ideas and kept those that are needed to solve the core problem and skipped others:
+      </p>
+      <div style="overflow-x: auto; border: 1px solid var(--border); border-radius: 6px; box-shadow: 0 4px 16px rgba(55,8,8,0.06);">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 13.5px;">
+          <thead>
+            <tr style="background: var(--oxblood); color: var(--vellum);">
+              <th style="padding: 14px 20px; font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--vellum); width: 50%; border-right: 1px solid rgba(255,255,255,0.15);">ADDITIONAL FEATURES I BUILT</th>
+              <th style="padding: 14px 20px; font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--vellum); width: 50%;">COMPLEX IDEAS I SKIPPED</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border); background: var(--vellum);">
+              <td style="padding: 16px 20px; vertical-align: top; border-right: 1px solid var(--border); line-height: 1.65; color: var(--ink);">
+                <strong style="color: var(--oxblood); font-size: 13.5px; display: inline-block; margin-bottom: 4px;"><code>Stop Apps</code> with Timer</strong><br>
+                <span>An idea from my personal experience observing local restaurants manually pausing Swiggy/Zomato during peak hours (like Sunday afternoons) when they get overloaded.</span>
+              </td>
+              <td style="padding: 16px 20px; vertical-align: top; color: var(--ink); line-height: 1.65;">
+                <strong style="color: #b45309; font-size: 13.5px; display: inline-block; margin-bottom: 4px;">Previous Order <code>Logs</code> Section</strong><br>
+                <span>An idea to let the manager look back at previous order history. I killed this to keep the project light, but it could be the starting for future scope.</span>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border); background: var(--linen);">
+              <td style="padding: 16px 20px; vertical-align: top; border-right: 1px solid var(--border); line-height: 1.65; color: var(--ink);">
+                <strong style="color: var(--oxblood); font-size: 13.5px; display: inline-block; margin-bottom: 4px;"><code>Up for Grabs</code> (Waste Prevention)</strong><br>
+                <span>Normally, cancellations simply disappear from the screen, letting prepared food go to waste. I built this section where canceled items stay for 30 minutes to fulfill new matching orders instantly.</span>
+              </td>
+              <td style="padding: 16px 20px; vertical-align: top; color: var(--ink); line-height: 1.65;">
+                <strong style="color: #b45309; font-size: 13.5px; display: inline-block; margin-bottom: 4px;">Item <code>Pricing</code> and Billing</strong><br>
+                <span>The kitchen team doesn't handle pricing or payments they just execute, so I skipped it entirely.</span>
+              </td>
+            </tr>
+            <tr style="background: var(--vellum);">
+              <td style="padding: 16px 20px; vertical-align: top; border-right: 1px solid var(--border); line-height: 1.65; color: var(--ink);">
+                <strong style="color: var(--oxblood); font-size: 13.5px; display: inline-block; margin-bottom: 4px;"><code>Station-Wise Queues</code></strong><br>
+                <span>Decoupling individual items from parent cards into separate station tracks with active timers to prioritize preparation on sight.</span>
+              </td>
+              <td style="padding: 16px 20px; vertical-align: top; color: var(--ink); line-height: 1.65;">
+                <strong style="color: #b45309; font-size: 13.5px; display: inline-block; margin-bottom: 4px;"><code>Inventory Management</code> Page</strong><br>
+                <span>An idea to track ingredients and stock. This would be a massive, separate product section, so I omitted it due to my timeline.</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-    <div class="img-placeholder reveal" style="background:rgba(255,255,255,0.04);border-color:rgba(255,255,255,0.14);">
-      <svg class="img-ph-icon" viewBox="0 0 24 24" fill="none" stroke="rgba(253,248,241,0.35)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-      <span class="img-ph-label" style="color:rgba(253,248,241,0.4);">UI Component &amp; Token Architecture</span>
-      <span class="img-ph-sub" style="color:rgba(253,248,241,0.25);">Screenshot: Figma component library or the full UI annotated with design tokens</span>
-      <span class="img-ph-tag" style="border-color:rgba(255,255,255,0.1);color:rgba(253,248,241,0.28);">&#128247; Design Mockup &middot; Section 06</span>
-    </div>
+
   </div>
 </section>
 
-<!-- S7: REFLECTION -->
-<section id="s8" class="section alt-bg wip-grey">
+<!-- S8: USER STORIES IN ACTION -->
+<section id="s8" class="section">
   <div class="section-inner">
     <div class="s-num reveal">08 / 10</div>
-    <h2 class="s-title reveal">Shift Reflection: What Building Under Pressure Taught Me About Visual Discipline</h2>
+    <h2 class="s-title reveal">User Stories in Action</h2>
+    <p class="s-sub reveal">Beyond the standard happy path, a kitchen manager faces unpredictable operational crises every single day. Here are four specific, high-pressure scenarios Ramesh faces during a typical shift, and how the system's tools help him resolve them quickly and stay in control.</p>
     <div class="divider reveal"></div>
-    <div class="big-quote reveal">
-      <p class="big-quote-text">&ldquo;Great utility design is quiet. It is not about decorative features, gradients, or aggressive animations &mdash; it&rsquo;s about removing cognitive weight so humans can work with confidence under pressure.&rdquo;</p>
-      <div class="big-quote-cite">Shift Reflection &mdash; 4-Week Sprint</div>
+
+    <!-- Step 1: Text Left, GIF Right -->
+    <div class="journey-step reveal">
+      <div class="journey-text">
+        <div class="ds-badge"><span class="ds-badge-dot"></span>1 &middot; PAUSING THE APPS FOR A KITCHEN BREAK</div>
+        <p style="font-size: 15px; color: var(--ink); line-height: 1.8;">
+          Ramesh’s team is completely exhausted after a brutal lunch rush, and they desperately need a quick 15-minute break to clean up. He clicks <code>&#9208; Stop Apps</code> in the header, selects all channels, and pauses the kitchen's order inflow for exactly 15 minutes.
+        </p>
+        <p style="font-size: 15px; color: var(--ink); line-height: 1.8;">
+          The team rests in complete calm without worrying about missed aggregator timeouts or penalty fees while a running banner counts down their remaining break time. Once the kitchen is ready to go again, Ramesh simply clicks the manual <code>Resume</code> button to instantly open the order flow.
+        </p>
+      </div>
+      <div class="journey-media">
+        <img data-gif="assets/user-story-1-stop-apps.gif" alt="Pausing the apps for a kitchen break" class="journey-gif" loading="lazy">
+      </div>
     </div>
-    <p class="body reveal">This project taught me a major lesson about operational design. When a kitchen re-opens and orders flood in, a loud UI is a liability. By strictly rationing color, keeping card backgrounds neutral, and using smooth, in-place text updates, we create an interface that calms the user instead of distracting them.</p>
-    <p class="body reveal">What I will carry forward into my next project is this: <strong>Do not design for the ideal, calm user. Design for the stressed, distracted user working under harsh conditions.</strong> That is where real UX maturity shows.</p>
-    <div class="img-placeholder reveal">
-      <svg class="img-ph-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-      <span class="img-ph-label">Full Pass View During a Rush</span>
-      <span class="img-ph-sub">Screenshot or screen recording: full 4-column view with 8&ndash;12 active tickets during a simulated dinner rush</span>
-      <span class="img-ph-tag">&#128247; Product Screenshot &middot; Rush Hour View</span>
+
+    <!-- Step 2: GIF Left, Text Right (Swapped Sides) -->
+    <div class="journey-step reverse reveal">
+      <div class="journey-text">
+        <div class="ds-badge"><span class="ds-badge-dot"></span>2 &middot; HANDLING OUT OF STOCK ITEMS UPFRONT</div>
+        <p style="font-size: 15px; color: var(--ink); line-height: 1.8;">
+          The chef informs Ramesh that they have run out of a key ingredient for their menu item. Ramesh clicks <code>Out of Stock</code> in the header, selects the brand, and toggles the runout item to <code>OFF</code> to prevent any more automated acceptances.
+        </p>
+        <p style="font-size: 15px; color: var(--ink); line-height: 1.8;">
+          When a new order lands requiring that specific item, the system blocks the auto-accept and flags the card with a warning badge. Ramesh cleanly rejects the order upfront, saving his cooks from wasted prep work and preventing the customer from receiving wrong, substituted items.
+        </p>
+      </div>
+      <div class="journey-media">
+        <img data-gif="assets/user-story-2-out-of-stock.gif" alt="Handling out of stock items upfront" class="journey-gif" loading="lazy">
+      </div>
     </div>
+
+    <!-- Step 3: Text Left, GIF Right -->
+    <div class="journey-step reveal">
+      <div class="journey-text">
+        <div class="ds-badge"><span class="ds-badge-dot"></span>3 &middot; PREVENTING FOOD WASTAGE USING UP FOR GRABS</div>
+        <p style="font-size: 15px; color: var(--ink); line-height: 1.8;">
+          When an order is canceled mid-prep, its items are automatically sent to the <code>Up for Grabs</code> section for 30 minutes to guarantee freshness. This prevents prepared food from simply disappearing from the screen and going straight into the trash.
+        </p>
+        <p style="font-size: 15px; color: var(--ink); line-height: 1.8;">
+          When a new order arrives with that same item, Ramesh clicks Accept and is prompted to reuse the <code>Up for Grabs</code> stock. Fulfilling it immediately bypasses the cooks, reducing food waste, saving money, and speeding up deliveries.
+        </p>
+      </div>
+      <div class="journey-media">
+        <img data-gif="assets/user-story-3-up-for-grabs.gif" alt="Preventing food wastage using up for grabs" class="journey-gif" loading="lazy">
+      </div>
+    </div>
+
+    <!-- Step 4: GIF Left, Text Right (Swapped Sides) -->
+    <div class="journey-step reverse reveal">
+      <div class="journey-text">
+        <div class="ds-badge"><span class="ds-badge-dot"></span>4 &middot; HANDING OVER ORDERS TO DELIVERY RIDERS</div>
+        <p style="font-size: 15px; color: var(--ink); line-height: 1.8;">
+          Riders arrive and wait outside for orders in preparation while packed orders are getting cold waiting for a rider. To manage this, the system shows if a rider is waiting (<code>🟢 Arrived</code>), helping Ramesh prioritize those specific orders for immediate handoff.
+        </p>
+        <p style="font-size: 15px; color: var(--ink); line-height: 1.8;">
+          If an order is packed but the delivery rider is not there yet, Ramesh can simply click <code>Call Rider</code> on the card to alert them, preventing cooked food from sitting and going cold.
+        </p>
+      </div>
+      <div class="journey-media">
+        <img data-gif="assets/user-story-4-rider-handover.gif" alt="Handing over orders to delivery riders" class="journey-gif" loading="lazy">
+      </div>
+    </div>
+
+    
+
   </div>
 </section>
 
-<!-- S8: UNFINISHED EDGE -->
-<section id="s9" class="section wip-grey">
+<!-- S9: AI WORKFLOW -->
+<section id="s9" class="section alt-bg">
   <div class="section-inner">
     <div class="s-num reveal">09 / 10</div>
-    <h2 class="s-title reveal">The Unfinished Edge: What I Would Explore with More Time</h2>
-    <p class="s-sub reveal">While the current version of the Willow Kitchen is fully functional, there are two key areas I would explore with more resources.</p>
+    <h2 class="s-title reveal">The AI-Assisted Workflow &amp; Human-in-the-Loop</h2>
+    <p class="s-sub reveal">Rather than depending on AI to do my thinking, I used it strictly as a high-leverage tool to accelerate my design process. I acted as the Strategic Architect mapping out the operational logic, physical constraints, and business rules while using the AI as a high-speed compiler to translate my inputs into a working prototype.</p>
     <div class="divider reveal"></div>
-    <div class="edge-grid reveal">
-      <div class="edge-card">
-        <div class="edge-num">01</div>
-        <div class="edge-title">Direct Thermal Printer Integration</div>
-        <div class="edge-text">Building a direct web-print handshake so that when manual accept is toggled <code>OFF</code>, the system automatically triggers a printed physical chit on the pass &mdash; allowing hybrid kitchens to run both digital and paper workflows together simultaneously.</div>
+
+    <!-- The Iteration Loop -->
+    <h3 class="reveal" style="font-family: var(--font-ser); font-size: 20px; font-weight: 700; color: var(--oxblood); margin: 32px 0 8px;">The Iteration Loop: From Concept to Code</h3>
+    
+    <div class="pipeline-wrap reveal">
+      <div class="pipeline-step">
+        <div class="pipeline-badge">🧠 STAGE 1 &middot; BRAINSTORMING</div>
+        <div class="pipeline-title">Google AI Studio</div>
+        <div class="pipeline-desc">I used <code>Google AI Studio</code> as my ideation canvas where I threw in my understanding of problem and ideas. Instead of a solution, I gave prompts based on the intent of the user and asked it to build markdown(md) files.</div>
       </div>
-      <div class="edge-card">
-        <div class="edge-num">02</div>
-        <div class="edge-title">Rider GPS Distance Triggers</div>
-        <div class="edge-text">Instead of relying purely on simulated transit times, integrating live GPS distance APIs from Swiggy and Zomato. The system could automatically hold fast-prep items from cooking until the rider&rsquo;s physical distance falls under a 2-kilometer threshold, ensuring 100% hot food delivery.</div>
+      <div class="pipeline-step">
+        <div class="pipeline-badge">💻 STAGE 2 &middot; BUILD</div>
+        <div class="pipeline-title">Antigravity</div>
+        <div class="pipeline-desc">Once the markdown was ready, I moved between Google AI studio and <code>Antigravity</code> to build the product step by step, iteration by iteration which gave me opportunity to understand the capabilities and come up with new ideas.</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-badge">🛠️ STAGE 3 &middot; RE-ITERATE</div>
+        <div class="pipeline-title">Refinement &amp; Debugging</div>
+        <div class="pipeline-desc">I tested the product and caught the bugs &amp; pain points faced by the user in their journey and refined every element. I directly fixed minor bugs and glitches on antigravity itself and went to Google AI studio for restructuring and complete revamps</div>
+      </div>
+      <div class="pipeline-step">
+        <div class="pipeline-badge">🎯 STAGE 4 &middot; POLISHING</div>
+        <div class="pipeline-title">Deployed Prototype</div>
+        <div class="pipeline-desc">I kept polishing the product with every iteration and it kept evolving based on the changes made rooted for the experience of the user. There were atleast 3 to 5 iterations to every feature apart from the bugs and AI mishaps.</div>
       </div>
     </div>
+
+    <!-- Where the AI Broke -->
+    <h3 class="reveal" style="font-family: var(--font-ser); font-size: 20px; font-weight: 700; color: var(--oxblood); margin: 44px 0 16px;">Where the AI Broke &amp; Designer Instinct Helped</h3>
+
+    <p class="reveal" style="font-size: 15px; color: var(--ink); line-height: 1.8; margin-bottom: 16px;">
+      Throughout this project, almost everything the AI built was only up to an average, standard level of what we commonly see on the web. While it did generate some good initial layout ideas, none of them actually fit the real, high-pressure physical journey of the kitchen manager.
+    </p>
+    <p class="reveal" style="font-size: 15px; color: var(--ink); line-height: 1.8;">
+      That is where my designer instinct had to step in. To make the interface work under pressure, I had to put myself in the shoes of the manager, mapping out their true thought process and the intent behind every single action. Instead of starting from scratch, the AI gave me a zero-to-40% baseline and the entire project was about using my own human judgment to push that baseline from 40% to a fully working product.
+    </p>
+
   </div>
 </section>
 
-<!-- S9: FEEDBACK -->
-<section id="s10" class="section dark-bg wip-grey">
+<!-- S10: REFLECTIONS, FUTURE SCOPE & CLOSING -->
+<section id="s10" class="section">
   <div class="section-inner">
     <div class="s-num reveal">10 / 10</div>
-    <h2 class="s-title reveal">Closing the Shift: A Human Invitation for Feedback</h2>
-    <p class="s-sub reveal">Willow Kitchen proves that thoughtful, disciplined operations design can bring quiet structure to one of the most chaotic work environments. I am eager to continue learning and growing.</p>
+    <h2 class="s-title reveal">Reflections, Future Scope &amp; Closing the Shift</h2>
     <div class="divider reveal"></div>
-    <p style="font-size:14px;color:rgba(253,248,241,0.65);margin-bottom:20px;" class="reveal">I would love your honest feedback on three specific areas of this case study:</p>
-    <div class="fb-list reveal">
-      <div class="fb-item"><div class="fb-num">1</div><div class="fb-text"><strong>The 4-Column Layout</strong> &mdash; Does the transition from Column 1 to Column 4 feel natural and easy to follow?</div></div>
-      <div class="fb-item"><div class="fb-num">2</div><div class="fb-text"><strong>The Station Queue Mechanics</strong> &mdash; Is the visual relationship between parent cards and station lanes clear and logically believable?</div></div>
-      <div class="fb-item"><div class="fb-num">3</div><div class="fb-text"><strong>The Sensory Discipline</strong> &mdash; Does the reduction in animations and flashing make sense given the physical kitchen context?</div></div>
+
+    <!-- Part 1: Key Learnings & Reflections -->
+    <h3 class="reveal" style="font-family: var(--font-ser); font-size: 20px; font-weight: 700; color: var(--oxblood); margin: 24px 0 12px;">Key Learnings &amp; Reflections</h3>
+    <p class="reveal" style="font-size: 15px; color: var(--ink); line-height: 1.7; margin-bottom: 20px;">
+      Building a working operational product in seven days taught me a core lesson about working with AI tools and designing under pressure:
+    </p>
+
+    <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 24px; margin-bottom: 40px;">
+      <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--oxblood); margin-bottom: 8px;">1 &middot; PROMPT THE INTENT, NOT THE SOLUTION</div>
+      <p style="font-size: 14.5px; color: var(--ink); line-height: 1.75; margin-bottom: 12px;">
+        Instead of asking the AI to directly code a feature, describing the <strong>operational intent</strong> behind the action yields far superior results.
+      </p>
+      <p style="font-size: 14px; color: var(--graphite); line-height: 1.7; margin-bottom: 0;">
+        <em>Example:</em> Asking for a generic &ldquo;order card&rdquo; resulted in a cluttered, standard layout. But describing the physical context that the order number must be huge so the manager can read it from a distance, and that the <code>Cancel</code> button needs a double-tap to prevent accidental misclicks next to <code>Call Rider</code> made the AI to compile highly specialized, context-aware code.
+      </p>
     </div>
-    <p style="font-size:13px;color:rgba(253,248,241,0.5);margin-top:16px;margin-bottom:32px;" class="reveal">Please feel free to leave your thoughts as a comment on my LinkedIn post, or reach out to me directly here. Thank you for your time!</p>
-    <div style="display:flex;gap:10px;flex-wrap:wrap;" class="reveal">
-      <a class="btn-primary" href="https://willow-kitchen.vercel.app/" target="_blank" rel="noopener" style="background:var(--gold);color:var(--ink);">Try the Live Demo &rarr;</a>
-      <a class="btn-ghost" href="#s1" style="border-color:rgba(255,255,255,0.15);color:var(--vellum);">Back to Top &uarr;</a>
+
+    <!-- Part 2: Future Scope -->
+    <h3 class="reveal" style="font-family: var(--font-ser); font-size: 20px; font-weight: 700; color: var(--oxblood); margin: 36px 0 12px;">Future Scope (Expanding the Product)</h3>
+    <p class="reveal" style="font-size: 15px; color: var(--ink); line-height: 1.7; margin-bottom: 20px;">
+      If I had more time to expand this project, I would return to the three complex features I ruthlessly cut during our 1-week sprint to make Willow Kitchen more scalable:
+    </p>
+
+    <div class="reveal" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 40px;">
+      <div style="background: var(--linen); border: 1px solid var(--border); border-radius: 8px; padding: 22px 20px;">
+        <div style="font-family: var(--font-ser); font-size: 16px; font-weight: 700; color: var(--oxblood); margin-bottom: 8px;">Previous Order Logs Section</div>
+        <p style="font-size: 13.5px; color: var(--graphite); line-height: 1.65; margin-bottom: 0;">Building a queryable database panel to let managers look back at previous shift tickets for audits or disputes.</p>
+      </div>
+      <div style="background: var(--linen); border: 1px solid var(--border); border-radius: 8px; padding: 22px 20px;">
+        <div style="font-family: var(--font-ser); font-size: 16px; font-weight: 700; color: var(--oxblood); margin-bottom: 8px;">Item Pricing and Billing</div>
+        <p style="font-size: 13.5px; color: var(--graphite); line-height: 1.65; margin-bottom: 0;">Integrating transaction values, payouts, and billing status directly on the pass for reconciliation, without creating visual clutter.</p>
+      </div>
+      <div style="background: var(--linen); border: 1px solid var(--border); border-radius: 8px; padding: 22px 20px;">
+        <div style="font-family: var(--font-ser); font-size: 16px; font-weight: 700; color: var(--oxblood); margin-bottom: 8px;">Connected Inventory Management</div>
+        <p style="font-size: 13.5px; color: var(--graphite); line-height: 1.65; margin-bottom: 0;">A dedicated, real-time inventory tracking system that dynamically links available raw stocks to station prep capacities.</p>
+      </div>
     </div>
+
+    <!-- Part 3: Closing -->
+    <div class="reveal" style="margin-top: 48px; border-top: 1px solid var(--border); padding-top: 36px;">
+      <h3 style="font-family: var(--font-ser); font-size: clamp(28px, 4vw, 36px); font-weight: 700; color: var(--oxblood); margin-bottom: 14px;">Thank You!</h3>
+      <p style="font-size: 16px; color: var(--ink); line-height: 1.8; margin-bottom: 12px; max-width: 720px;">
+        Thank you so much for reading through! As someone curious about building and designing products, I learned a lot about working with AI tools, testing ideas, and solving user problems in this project.
+      </p>
+      <p style="font-size: 15px; color: var(--graphite); line-height: 1.7; margin-bottom: 28px; max-width: 720px;">
+        I would love to hear any thoughts, suggestions, or feedback you might have!
+      </p>
+
+      <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px;">
+        <a class="btn-primary" href="https://willow-kitchen.vercel.app/" target="_blank" rel="noopener">TRY WORKING LIVE PROTOTYPE &rarr;</a>
+      </div>
+
+      <div style="border-top: 1px solid var(--border); padding-top: 24px;">
+        <div style="font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--oxblood); margin-bottom: 12px;">LET'S CONNECT</div>
+        <p style="font-size: 14px; color: var(--ink); line-height: 1.6; margin-bottom: 16px;">
+          If you found this interesting, have feedback, or just want to connect, feel free to reach out!
+        </p>
+        <div style="display: flex; gap: 24px; flex-wrap: wrap; font-size: 14px;">
+          <a href="https://www.linkedin.com/in/tk-designs/" target="_blank" rel="noopener" style="color: var(--oxblood); text-decoration: underline; text-underline-offset: 4px; font-weight: 600;">LinkedIn &#8599;</a>
+          <a href="mailto:tarunkumarmtk25@gmail.com" style="color: var(--oxblood); text-decoration: underline; text-underline-offset: 4px; font-weight: 600;">Email (tarunkumarmtk25@gmail.com) &#8599;</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -955,13 +1416,14 @@
       <path d="M 50 82 L 50 42" stroke-width="7"/>
       <path d="M 50 44 C 40 28 40 8 50 8 C 60 8 60 28 50 44 Z" fill="rgba(253,248,241,0.15)" stroke="none"/>
     </svg>
-    <span class="footer-brand-text">Willow Kitchen &middot; v0.0.1 &middot; UX Case Study</span>
-  </div>
-  <div class="footer-links">
-    <a class="footer-link" href="https://willow-kitchen.vercel.app/" target="_blank" rel="noopener">Live Demo &#8599;</a>
-    <a class="footer-link" href="#s1">Back to Top</a>
+    <span class="footer-brand-text">Willow Kitchen &middot; UX Case Study</span>
   </div>
 </footer>
+
+<a href="#s1" id="back-to-top" class="floating-top-btn" aria-label="Back to top">
+  <span>Back to Top</span>
+  <span style="font-size: 13px; line-height: 1;">&uarr;</span>
+</a>
 
 <script>
 // ── Willow Kitchen Interactive Prototype ──────────────────────
@@ -1216,7 +1678,6 @@
     const bar = document.getElementById('progress-bar');
     if (bar) bar.style.width = Math.min(pct, 100) + '%';
   }, { passive: true });
-
   const sections = document.querySelectorAll('section[id]');
   const dots = document.querySelectorAll('.toc-dot');
   const io = new IntersectionObserver(entries => {
@@ -1229,11 +1690,61 @@
   }, { rootMargin: '-38% 0px -38% 0px' });
   sections.forEach(s => io.observe(s));
 
+  // Reveal Animation System - Robust local file & observer handling
   const reveals = document.querySelectorAll('.reveal');
   const ro = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.06, rootMargin: '0px 0px -24px 0px' });
+  }, { threshold: 0.01, rootMargin: '0px 0px 50px 0px' });
   reveals.forEach(el => ro.observe(el));
+
+  function revealAllVisible() {
+    reveals.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight + 100) {
+        el.classList.add('visible');
+      }
+    });
+  }
+
+  // Execute immediately to prevent blank page on fast local file:// loads
+  revealAllVisible();
+  document.querySelectorAll('#s1 .reveal').forEach(el => el.classList.add('visible'));
+
+  document.addEventListener('DOMContentLoaded', () => {
+    revealAllVisible();
+    document.querySelectorAll('#s1 .reveal').forEach(el => el.classList.add('visible'));
+    resizeProtoIframe();
+  });
+
+  window.addEventListener('load', () => {
+    revealAllVisible();
+    document.querySelectorAll('#s1 .reveal').forEach(el => el.classList.add('visible'));
+    resizeProtoIframe();
+  });
+
+  window.addEventListener('scroll', revealAllVisible, { passive: true });
+
+  // Failsafe fallback: Force all elements visible after 400ms if still hidden
+  setTimeout(() => {
+    reveals.forEach(el => el.classList.add('visible'));
+  }, 400);
+
+  // Floating Back to Top Button: Reveals smoothly once user enters Section 3
+  const backToTopBtn = document.getElementById('back-to-top');
+  const s3Section = document.getElementById('s3');
+  function updateBackToTop() {
+    if (!backToTopBtn || !s3Section) return;
+    const s3Top = s3Section.getBoundingClientRect().top;
+    if (s3Top <= window.innerHeight * 0.6) {
+      backToTopBtn.classList.add('visible');
+    } else {
+      backToTopBtn.classList.remove('visible');
+    }
+  }
+
+  window.addEventListener('scroll', updateBackToTop, { passive: true });
+  window.addEventListener('load', updateBackToTop);
+  document.addEventListener('DOMContentLoaded', updateBackToTop);
 
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', e => {
@@ -1244,12 +1755,6 @@
       }
     });
   });
-
-  window.addEventListener('load', () => {
-    document.querySelectorAll('#s1 .reveal').forEach((el, i) => {
-      setTimeout(() => el.classList.add('visible'), i * 100);
-    });
-  });
 </script>
 <script>
   function resizeProtoIframe() {
@@ -1257,14 +1762,39 @@
     const iframe = document.getElementById('proto-iframe');
     if (!box || !iframe) return;
     const containerWidth = box.clientWidth;
-    const targetWidth = 1280;
-    const scale = containerWidth / targetWidth;
+    const scale = containerWidth / 1920;
     iframe.style.transform = `scale(${scale})`;
-    box.style.height = `${780 * scale}px`;
+    box.style.height = `${1080 * scale}px`;
   }
   window.addEventListener('resize', resizeProtoIframe);
   window.addEventListener('load', resizeProtoIframe);
   document.addEventListener('DOMContentLoaded', resizeProtoIframe);
+
+  // ── Scroll-Triggered Journey GIF Playback ─────────────────────
+  const journeyGifs = document.querySelectorAll('.journey-gif');
+  if ('IntersectionObserver' in window) {
+    const gifObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const img = entry.target;
+        const gifUrl = img.getAttribute('data-gif');
+        if (!gifUrl) return;
+        if (entry.isIntersecting) {
+          if (!img.src || img.dataset.playing !== 'true') {
+            img.src = gifUrl + '?t=' + Date.now();
+            img.dataset.playing = 'true';
+          }
+        } else {
+          img.dataset.playing = 'false';
+        }
+      });
+    }, { threshold: 0.15 });
+
+    journeyGifs.forEach(gif => gifObserver.observe(gif));
+  } else {
+    journeyGifs.forEach(img => {
+      img.src = img.getAttribute('data-gif');
+    });
+  }
 </script>
 </body>
 </html>
