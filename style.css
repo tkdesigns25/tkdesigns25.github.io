@@ -101,27 +101,29 @@ a:not(.bento-card):not(.hobby-link),
 .dark ::-webkit-scrollbar-track       { background: #121212; }
 .dark ::-webkit-scrollbar-thumb       { background: #3F3F46; }
 .dark ::-webkit-scrollbar-thumb:hover { background: #52525B; }
-/* ─── Project Card Progressive Gradient Blur ─────────── */
-.card-gradient-blur {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 75%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.90) 0%, rgba(0, 0, 0, 0.45) 55%, transparent 100%);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 100%);
-    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0) 100%);
-    pointer-events: none;
-    z-index: 1;
-}
-
-.card-text-content {
+/* ─── Project Card Dark Grey Gradient Blur (16px Above Text) ─── */
+.card-text-wrap {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 1.5rem;
+    padding: 2.5rem 1.5rem 1.5rem; /* 40px top (16px above 24px baseline), 24px sides/bottom */
+    background: linear-gradient(
+        to top,
+        rgba(12, 12, 14, 0.96) 0%,
+        rgba(24, 24, 27, 0.88) 55%,
+        rgba(24, 24, 27, 0.40) 85%,
+        transparent 100%
+    );
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 1) 70%, rgba(0, 0, 0, 0) 100%);
     z-index: 2;
+    pointer-events: none;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+}
+.card-text-wrap * {
+    pointer-events: auto;
 }
