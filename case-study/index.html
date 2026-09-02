@@ -784,18 +784,18 @@
   <div class="section-inner">
     <div class="s-num reveal">05 / 10</div>
     <h2 class="s-title reveal">Solution as a Journey</h2>
-    <p class="s-sub reveal">This journey shows how a <strong>cloud kitchen operations manager</strong> goes from <strong>facing a sudden, uncoordinated weekend order flood</strong> to <strong>clearing the entire rush calmly on time</strong>, covering steps like <strong>batching matching items together</strong>, <strong>reordering active station queues</strong>, and <strong>managing delivery executive dispatch times</strong>. The aim is to help them <strong>fast-track order preparation and handovers without letting food go cold</strong>.</p>
+    <p class="s-sub reveal">This journey shows how a <strong>cloud kitchen manager</strong> goes from <strong>facing a sudden, uncoordinated weekend rush of orders</strong> to <strong>handling the entire rush calmly on time</strong>, covering steps like <strong>batch cooking items together</strong>, <strong>reordering active station queues</strong>, and <strong>managing delivery executive dispatch times</strong>. The aim is to help them <strong>make faster decisions to fast-track order preparation and hand over orders without letting food go cold</strong>.</p>
     <div class="divider reveal"></div>
 
     <!-- STEP 1 -->
     <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px; margin-bottom: 24px;">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;">
-        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 1 &middot; INGESTION &amp; TRIAGING</div>
-        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Column 1 &mdash; Just Came In</span>
+        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 1 &middot; ORDER ARRIVAL</div>
+        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Order just arrived</span>
       </div>
       
       <div style="border-radius: 6px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(55,8,8,0.08); margin-bottom: 20px; background: var(--linen);">
-        <img src="assets/journey-step-1.png" alt="Step 1 — Ingestion &amp; Triaging" style="width: 100%; height: auto; display: block;" loading="lazy">
+        <img src="assets/journey-step-1.png" alt="Step 1 — Order Arrival" style="width: 100%; height: auto; display: block;" loading="lazy">
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; border-top: 1px solid var(--border); padding-top: 18px;">
@@ -814,7 +814,7 @@
     <div class="reveal" style="display: flex; align-items: center; justify-content: center; margin: 20px 0; gap: 12px; font-size: 12px; font-weight: 600;">
       <div style="flex: 1; height: 1px; background: var(--border);"></div>
       <div style="background: var(--linen); border: 1px solid var(--border); border-radius: 999px; padding: 6px 16px; display: flex; align-items: center; gap: 8px; color: var(--oxblood);">
-        <span>Ramesh clicks &ldquo;Start This Order&rdquo; to accept the ticket</span>
+        <span>Ramesh clicks &ldquo;Start This Order&rdquo; to accept the order</span>
         <span style="font-weight: 800;">&rarr;</span>
       </div>
       <div style="flex: 1; height: 1px; background: var(--border);"></div>
@@ -823,22 +823,22 @@
     <!-- STEP 2 -->
     <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px; margin-bottom: 24px;">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;">
-        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 2 &middot; AUTOMATED ROUTING</div>
-        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Column 2 &amp; Column 3 &mdash; Active Pass</span>
+        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 2 &middot; ITEMS ADDED TO STATION QUEUES</div>
+        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Order items split into station queues</span>
       </div>
       
       <div style="border-radius: 6px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(55,8,8,0.08); margin-bottom: 20px; background: var(--linen);">
-        <img src="assets/journey-step-2.png" alt="Step 2 — Automated Routing" style="width: 100%; height: auto; display: block;" loading="lazy">
+        <img src="assets/journey-step-2.png" alt="Step 2 — Items Added to Station Queues" style="width: 100%; height: auto; display: block;" loading="lazy">
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; border-top: 1px solid var(--border); padding-top: 18px;">
         <div>
           <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #b45309; margin-bottom: 6px;">USER GOAL</div>
-          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Ensure the accepted order's items are distributed to the correct station lines.</p>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Ensure order is accepted and analyze the cooking priority</p>
         </div>
         <div>
           <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oxblood); margin-bottom: 6px;">USER ACTION</div>
-          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">The system automatically splits the order. The items populate under <code>Hot Station</code> in Column 3, allowing Ramesh to track their individual prep states.</p>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">The system automatically splits the order into station queues. The items are added to <code>Hot Station</code> queue, allowing Ramesh to track their individual prep states.</p>
         </div>
       </div>
     </div>
@@ -847,7 +847,7 @@
     <div class="reveal" style="display: flex; align-items: center; justify-content: center; margin: 20px 0; gap: 12px; font-size: 12px; font-weight: 600;">
       <div style="flex: 1; height: 1px; background: var(--border);"></div>
       <div style="background: var(--linen); border: 1px solid var(--border); border-radius: 999px; padding: 6px 16px; display: flex; align-items: center; gap: 8px; color: var(--oxblood);">
-        <span>Ramesh opens the station queue in Column 3</span>
+        <span>Ramesh opens the station queue</span>
         <span style="font-weight: 800;">&rarr;</span>
       </div>
       <div style="flex: 1; height: 1px; background: var(--border);"></div>
@@ -856,22 +856,22 @@
     <!-- STEP 3 -->
     <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px; margin-bottom: 24px;">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;">
-        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 3 &middot; GROUP COOKING EXECUTION</div>
-        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Column 3A &mdash; Hot Station Queue</span>
+        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 3 &middot; MANAGING ITEMS IN STATION QUEUE</div>
+        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Prep together and hot station queue</span>
       </div>
       
       <div style="border-radius: 6px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(55,8,8,0.08); margin-bottom: 20px; background: var(--linen);">
-        <img src="assets/journey-step-3.png" alt="Step 3 — Group Cooking Execution" style="width: 100%; height: auto; display: block;" loading="lazy">
+        <img src="assets/journey-step-3.png" alt="Step 3 — Managing Items in Station Queue" style="width: 100%; height: auto; display: block;" loading="lazy">
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; border-top: 1px solid var(--border); padding-top: 18px;">
         <div>
           <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #b45309; margin-bottom: 6px;">USER GOAL</div>
-          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Batch-cook duplicate items across different orders to save preparation time.</p>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Manage order items and prioritize preparation based on the orders. Batch cook the same items across different orders to save preparation time.</p>
         </div>
         <div>
           <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oxblood); margin-bottom: 6px;">USER ACTION</div>
-          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Ramesh clicks the prominent <code>Prep Together</code> button on the highlighted green block, instantly putting the matching <code>Veg Patty Burgers</code> from both orders into <code>Cooking</code>.</p>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Ramesh clicks <code>&ldquo;Prep together&rdquo;</code> to start cooking the Veg patty burger.</p>
         </div>
       </div>
     </div>
@@ -889,12 +889,12 @@
     <!-- STEP 4 -->
     <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px; margin-bottom: 24px;">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;">
-        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 4 &middot; QUEUE REPRIORITIZATION</div>
-        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Column 3A &mdash; Hot Station Queue</span>
+        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 4 &middot; COOKING REST OF THE ITEMS</div>
+        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Prioritizing items in hot station queue</span>
       </div>
       
       <div style="border-radius: 6px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(55,8,8,0.08); margin-bottom: 20px; background: var(--linen);">
-        <img src="assets/journey-step-4.png" alt="Step 4 — Queue Reprioritization" style="width: 100%; height: auto; display: block;" loading="lazy">
+        <img src="assets/journey-step-4.png" alt="Step 4 — Cooking Rest of the Items" style="width: 100%; height: auto; display: block;" loading="lazy">
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; border-top: 1px solid var(--border); padding-top: 18px;">
@@ -913,7 +913,7 @@
     <div class="reveal" style="display: flex; align-items: center; justify-content: center; margin: 20px 0; gap: 12px; font-size: 12px; font-weight: 600;">
       <div style="flex: 1; height: 1px; background: var(--border);"></div>
       <div style="background: var(--linen); border: 1px solid var(--border); border-radius: 999px; padding: 6px 16px; display: flex; align-items: center; gap: 8px; color: var(--oxblood);">
-        <span>The first item finishes prep at the griddle</span>
+        <span>The first item finishes prep</span>
         <span style="font-weight: 800;">&rarr;</span>
       </div>
       <div style="flex: 1; height: 1px; background: var(--border);"></div>
@@ -922,22 +922,22 @@
     <!-- STEP 5 -->
     <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px; margin-bottom: 24px;">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;">
-        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 5 &middot; STEADY PACING</div>
-        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Column 2 &amp; Column 3A &mdash; Active Pass</span>
+        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 5 &middot; COOKING ITEMS THAT ARE PENDING</div>
+        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Cooking remaining items</span>
       </div>
       
       <div style="border-radius: 6px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(55,8,8,0.08); margin-bottom: 20px; background: var(--linen);">
-        <img src="assets/journey-step-5.png" alt="Step 5 — Steady Pacing" style="width: 100%; height: auto; display: block;" loading="lazy">
+        <img src="assets/journey-step-5.png" alt="Step 5 — Cooking Items That Are Pending" style="width: 100%; height: auto; display: block;" loading="lazy">
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; border-top: 1px solid var(--border); padding-top: 18px;">
         <div>
           <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #b45309; margin-bottom: 6px;">USER GOAL</div>
-          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Track completed items on the card and launch remaining held items.</p>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Track completed items on the card and prep remaining items that can be prepared in short time</p>
         </div>
         <div>
           <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oxblood); margin-bottom: 6px;">USER ACTION</div>
-          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">The <code>Veg Patty Burger</code> finishes cooking and automatically checks itself off on Card <code>#111</code>. Ramesh clicks <code>Prep</code> on the remaining <code>BBQ Bacon Smash Burger</code> to start its cooking timer.</p>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">The <code>Veg Patty Burger</code> finishes cooking and automatically checks itself off on Card <code>#111</code>. Ramesh clicks <code>Prep</code> on the remaining <code>BBQ Bacon Smash Burger</code>.</p>
         </div>
       </div>
     </div>
@@ -955,12 +955,12 @@
     <!-- STEP 6 -->
     <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px; margin-bottom: 24px;">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;">
-        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 6 &middot; TRACKING MULTI-ITEM COHESION</div>
-        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Column 2 &amp; Column 3A &mdash; Active Pass</span>
+        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 6 &middot; WAITING FOR THE LAST ITEM TO COOK</div>
+        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Final item cooking</span>
       </div>
       
       <div style="border-radius: 6px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(55,8,8,0.08); margin-bottom: 20px; background: var(--linen);">
-        <img src="assets/journey-step-6.png" alt="Step 6 — Tracking Multi-Item Cohesion" style="width: 100%; height: auto; display: block;" loading="lazy">
+        <img src="assets/journey-step-6.png" alt="Step 6 — Waiting for the Last Item to Cook" style="width: 100%; height: auto; display: block;" loading="lazy">
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; border-top: 1px solid var(--border); padding-top: 18px;">
@@ -970,7 +970,7 @@
         </div>
         <div>
           <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oxblood); margin-bottom: 6px;">USER ACTION</div>
-          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">The <code>Paneer Fresh Burger</code> is fully cooked and marked ready, while the final <code>BBQ Bacon Smash Burger</code> is actively cooking.</p>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">The <code>Paneer Fresh Burger</code> is fully cooked and marked ready, while the final <code>BBQ Bacon Smash Burger</code> is cooking.</p>
         </div>
       </div>
     </div>
@@ -979,7 +979,7 @@
     <div class="reveal" style="display: flex; align-items: center; justify-content: center; margin: 20px 0; gap: 12px; font-size: 12px; font-weight: 600;">
       <div style="flex: 1; height: 1px; background: var(--border);"></div>
       <div style="background: var(--linen); border: 1px solid var(--border); border-radius: 999px; padding: 6px 16px; display: flex; align-items: center; gap: 8px; color: var(--oxblood);">
-        <span>The final burger is cooked, and the order is boxed</span>
+        <span>The final burger is cooked, and the order is packed</span>
         <span style="font-weight: 800;">&rarr;</span>
       </div>
       <div style="flex: 1; height: 1px; background: var(--border);"></div>
@@ -988,22 +988,22 @@
     <!-- STEP 7 -->
     <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px; margin-bottom: 24px;">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;">
-        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 7 &middot; RIDER DELAY HANDLING</div>
-        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Column 4 &mdash; Packed &amp; Waiting</span>
+        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 7 &middot; HANDLING RIDER DELAY</div>
+        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Order packed &amp; waiting for rider</span>
       </div>
       
       <div style="border-radius: 6px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(55,8,8,0.08); margin-bottom: 20px; background: var(--linen);">
-        <img src="assets/journey-step-7.png" alt="Step 7 — Rider Delay Handling" style="width: 100%; height: auto; display: block;" loading="lazy">
+        <img src="assets/journey-step-7.png" alt="Step 7 — Handling Rider Delay" style="width: 100%; height: auto; display: block;" loading="lazy">
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; border-top: 1px solid var(--border); padding-top: 18px;">
         <div>
           <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #b45309; margin-bottom: 6px;">USER GOAL</div>
-          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Coordinate pickup for a fully packed order when the courier is delayed.</p>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">Coordinate pickup for a fully packed order when the rider is delayed.</p>
         </div>
         <div>
           <div style="font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--oxblood); margin-bottom: 6px;">USER ACTION</div>
-          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">The final item is cooked, the card turns gold, and the packer boxes it. Because rider <code>Kavita N.</code> has not arrived, the order moves to Column 4. Ramesh clicks <code>[ Call Rider ]</code> to ping her.</p>
+          <p style="font-size: 14px; color: var(--ink); line-height: 1.65; margin: 0;">The final item is cooked and packed. Because rider <code>Kavita N.</code> has not arrived, the order moves to Packed &amp; Waiting. Ramesh clicks <code>[ Call Rider ]</code> to inform her.</p>
         </div>
       </div>
     </div>
@@ -1012,7 +1012,7 @@
     <div class="reveal" style="display: flex; align-items: center; justify-content: center; margin: 20px 0; gap: 12px; font-size: 12px; font-weight: 600;">
       <div style="flex: 1; height: 1px; background: var(--border);"></div>
       <div style="background: var(--linen); border: 1px solid var(--border); border-radius: 999px; padding: 6px 16px; display: flex; align-items: center; gap: 8px; color: var(--oxblood);">
-        <span>Kavita arrives, scans the bag, and clears the pass</span>
+        <span>Kavita arrives and order is handed over</span>
         <span style="font-weight: 800;">&rarr;</span>
       </div>
       <div style="flex: 1; height: 1px; background: var(--border);"></div>
@@ -1021,12 +1021,12 @@
     <!-- STEP 8 -->
     <div class="story-block reveal" style="background: var(--vellum); border: 1px solid var(--border); border-radius: 8px; padding: 28px; margin-bottom: 24px;">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 16px;">
-        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 8 &middot; SHIFT COMPLETION &amp; ANALYTICS</div>
-        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: System Overlay &mdash; Rush Summary Analytics</span>
+        <div class="ds-badge" style="margin-bottom: 0;"><span class="ds-badge-dot"></span>STEP 8 &middot; RUSH COMPLETION SUMMARY</div>
+        <span style="font-size: 11px; font-weight: 700; color: var(--oxblood); background: var(--linen); padding: 4px 12px; border-radius: 4px; border: 1px solid var(--border);">Screen: Rush summary</span>
       </div>
       
       <div style="border-radius: 6px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 8px 24px rgba(55,8,8,0.08); margin-bottom: 20px; background: var(--linen);">
-        <img src="assets/journey-step-8.png" alt="Step 8 — Shift Completion &amp; Analytics" style="width: 100%; height: auto; display: block;" loading="lazy">
+        <img src="assets/journey-step-8.png" alt="Step 8 — Rush Completion Summary" style="width: 100%; height: auto; display: block;" loading="lazy">
       </div>
 
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; border-top: 1px solid var(--border); padding-top: 18px;">
