@@ -327,8 +327,21 @@
     .reveal.visible { opacity: 1; transform: translateY(0); }
     .d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; } .d3 { transition-delay: 0.3s; } .d4 { transition-delay: 0.4s; }
     @media (max-width: 900px) {
-      .hero-wrap { grid-template-columns: 1fr; }
-      .hero-visual { display: none; }
+      .hero-wrap {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        gap: 32px;
+      }
+      .hero-visual {
+        display: block;
+        order: -1;
+        width: 100%;
+        max-width: 540px;
+        margin: 0 auto;
+      }
+      .hero-left {
+        order: 1;
+      }
       #side-toc { display: none; }
       .section-inner { padding: 0 20px; }
       .wf-diagram { grid-template-columns: 1fr 1fr; }
@@ -413,6 +426,11 @@
     .monitor-screen img { width: 100%; display: block; border-radius: 6px; }
     .monitor-stand { width: 70px; height: 24px; background: linear-gradient(180deg, var(--parchment), var(--linen)); border: 1px solid var(--border); border-top: none; }
     .monitor-base { width: 180px; height: 8px; background: var(--linen); border: 1px solid var(--border); border-radius: 3px 3px 6px 6px; box-shadow: 0 4px 12px rgba(55,8,8,0.1); }
+    @media (max-width: 600px) {
+      .monitor-screen { padding: 6px; border-radius: 8px; box-shadow: 0 16px 40px rgba(55,8,8,0.16); }
+      .monitor-stand { width: 44px; height: 16px; }
+      .monitor-base { width: 120px; height: 6px; }
+    }
     
     /* Interactive Prototype Controls & Station Buttons */
     .proto-lane-btn-group { display: flex; gap: 3px; align-items: center; }
