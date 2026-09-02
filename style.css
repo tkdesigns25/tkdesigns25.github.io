@@ -123,3 +123,14 @@ a:not(.bento-card):not(.hobby-link),
 .card-text-wrap * {
     pointer-events: auto;
 }
+
+/* ─── Project Card Responsive Proportions ────────────── */
+@media (max-width: 767px) {
+    .project-card {
+        aspect-ratio: 1616 / 1052;
+        height: auto !important;
+    }
+    .card-text-wrap {
+        padding: 2rem 1.25rem 1.25rem;
+    }
+}
